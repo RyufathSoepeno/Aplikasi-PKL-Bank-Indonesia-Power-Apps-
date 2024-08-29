@@ -1,0 +1,255 @@
+{
+  "15b28d57-a801-4d66-a8aa-4cf0bf2e3c88": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "3d339b3c-4284-4051-80c8-0dcc71bb7364": {
+          "value": "shared_office365"
+        },
+        "a9345c75-157c-4977-a2f4-6f41eec0adc3": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "ConfirmedStatus"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "86f7333d-abac-455d-8126-3a427c9a9a19"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "3d339b3c-4284-4051-80c8-0dcc71bb7364"
+        },
+        "shared_sharepointonline": {
+          "value": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+        },
+        "workflowDisplayName": {
+          "value": "ConfirmedStatus"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "86f7333d-abac-455d-8126-3a427c9a9a19"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ConfirmedStatus"
+    ],
+    "dependencies": {
+      "shared_office365": "3d339b3c-4284-4051-80c8-0dcc71bb7364",
+      "shared_sharepointonline": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+    },
+    "dependents": [],
+    "id": "15b28d57-a801-4d66-a8aa-4cf0bf2e3c88"
+  },
+  "257c4066-9789-4404-924b-a391b6b5606d": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "a9345c75-157c-4977-a2f4-6f41eec0adc3": {
+          "value": "shared_sharepointonline"
+        },
+        "bd10dfe5-c60a-46e6-baab-45fd3e4c53f3": {
+          "value": "shared_excelonline"
+        },
+        "workflowDisplayName": {
+          "value": "NewCars"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "d0d24b8e-b1c3-40a9-aeb8-2af297155e24"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_excelonline": {
+          "value": "bd10dfe5-c60a-46e6-baab-45fd3e4c53f3"
+        },
+        "shared_sharepointonline": {
+          "value": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+        },
+        "workflowDisplayName": {
+          "value": "NewCars"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "d0d24b8e-b1c3-40a9-aeb8-2af297155e24"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "NewCars"
+    ],
+    "dependencies": {
+      "shared_excelonline": "bd10dfe5-c60a-46e6-baab-45fd3e4c53f3",
+      "shared_sharepointonline": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+    },
+    "dependents": [],
+    "id": "257c4066-9789-4404-924b-a391b6b5606d"
+  },
+  "3d339b3c-4284-4051-80c8-0dcc71bb7364": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3695/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "ab640dc3-7690-4232-a301-da71cefbcc6b",
+      "15b28d57-a801-4d66-a8aa-4cf0bf2e3c88"
+    ],
+    "id": "3d339b3c-4284-4051-80c8-0dcc71bb7364"
+  },
+  "a9345c75-157c-4977-a2f4-6f41eec0adc3": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://studentssbac.sharepoint.com/sites/BankIndonesia": {
+        "dataSources": {
+          "BI Email Accounts": {
+            "tableName": "1ff96302-a03b-4730-b9af-79bb7c1bcf3d"
+          },
+          "Confirmation List": {
+            "tableName": "2f2019b3-aef5-425c-b0c9-7e9f96df3b18"
+          },
+          "Confirmation List (Angkut)": {
+            "tableName": "6e233b9b-64f6-441b-9e27-011a17fdf085"
+          },
+          "Daftar Mobil2": {
+            "tableName": "66e663da-8eb0-41db-a2b7-684e357b727b"
+          },
+          "Driver Phonebook": {
+            "tableName": "d57f14aa-3d62-46ed-ab2f-ccfaac3190a1"
+          },
+          "Incident Reports": {
+            "tableName": "77360233-d996-4c72-a843-f3c94477dcf5"
+          },
+          "User-to-Admin": {
+            "tableName": "5da070aa-d344-4a58-8b57-808cdb2b562e"
+          },
+          "User-to-Angkut": {
+            "tableName": "73602ec0-b7c0-4fc9-97b6-12fa582cbe6a"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "User-to-Admin",
+      "Incident Reports",
+      "Confirmation List",
+      "Driver Phonebook",
+      "BI Email Accounts",
+      "User-to-Angkut",
+      "Confirmation List (Angkut)",
+      "Daftar Mobil2"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "257c4066-9789-4404-924b-a391b6b5606d",
+      "ab640dc3-7690-4232-a301-da71cefbcc6b",
+      "15b28d57-a801-4d66-a8aa-4cf0bf2e3c88"
+    ],
+    "id": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+  },
+  "ab640dc3-7690-4232-a301-da71cefbcc6b": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "3d339b3c-4284-4051-80c8-0dcc71bb7364": {
+          "value": "shared_office365"
+        },
+        "a9345c75-157c-4977-a2f4-6f41eec0adc3": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "Angkut"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "5203597b-1719-4800-9e5b-cae875340e6c"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "3d339b3c-4284-4051-80c8-0dcc71bb7364"
+        },
+        "shared_sharepointonline": {
+          "value": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+        },
+        "workflowDisplayName": {
+          "value": "Angkut"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "5203597b-1719-4800-9e5b-cae875340e6c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Angkut"
+    ],
+    "dependencies": {
+      "shared_office365": "3d339b3c-4284-4051-80c8-0dcc71bb7364",
+      "shared_sharepointonline": "a9345c75-157c-4977-a2f4-6f41eec0adc3"
+    },
+    "dependents": [],
+    "id": "ab640dc3-7690-4232-a301-da71cefbcc6b"
+  },
+  "bd10dfe5-c60a-46e6-baab-45fd3e4c53f3": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (OneDrive)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1705/1.0.1705.3833/excelonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "257c4066-9789-4404-924b-a391b6b5606d"
+    ],
+    "id": "bd10dfe5-c60a-46e6-baab-45fd3e4c53f3"
+  }
+}
