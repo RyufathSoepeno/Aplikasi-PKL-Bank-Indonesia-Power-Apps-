@@ -4,6 +4,10 @@ To download the entire app, download the .msapp file which can be found in the M
 
 To search for the source code, simply check the "Src" file and you will find the .yaml "fx" files of each screens
 
+To search for the source code for all the elements available, simply check the Pkgs file and you will find the .yaml "fx" files of each elements
+
+<br><br>
+
 
 To extract the source code with Microsoft Visual Studio
 1. Download Power Platform Tools
