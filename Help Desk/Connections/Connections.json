@@ -1,0 +1,217 @@
+{
+  "43705da5-be39-412c-ae9e-7dff0280ecc0": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1702/1.0.1702.3813/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "a3c1db29-7362-466e-bd92-ba834804d89e"
+    ],
+    "id": "43705da5-be39-412c-ae9e-7dff0280ecc0"
+  },
+  "5204f467-2515-4d40-8577-c88124b50545": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "77f507b1-a7a3-407c-837f-7c970f9b52c2": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "4189f596-4769-49d3-a63b-7ec5e4316ed4"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "77f507b1-a7a3-407c-837f-7c970f9b52c2"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "4189f596-4769-49d3-a63b-7ec5e4316ed4"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Kirim"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "77f507b1-a7a3-407c-837f-7c970f9b52c2"
+    },
+    "dependents": [],
+    "id": "5204f467-2515-4d40-8577-c88124b50545"
+  },
+  "6f288bf3-b40b-4acd-bc08-df51cecec7d0": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "829f90f5-5d41-4103-9a65-af66b02731e5": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "KirimEmailBro"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ac832944-572e-4847-b56e-65fe3a9b8001"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "829f90f5-5d41-4103-9a65-af66b02731e5"
+        },
+        "workflowDisplayName": {
+          "value": "KirimEmailBro"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "ac832944-572e-4847-b56e-65fe3a9b8001"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "KirimEmailBro"
+    ],
+    "dependencies": {
+      "shared_office365": "829f90f5-5d41-4103-9a65-af66b02731e5"
+    },
+    "dependents": [],
+    "id": "6f288bf3-b40b-4acd-bc08-df51cecec7d0"
+  },
+  "77f507b1-a7a3-407c-837f-7c970f9b52c2": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://studentssbac.sharepoint.com/sites/BankIndonesia": {
+        "dataSources": {
+          "Daftar Mobil2": {
+            "tableName": "66e663da-8eb0-41db-a2b7-684e357b727b"
+          },
+          "Incident Reports": {
+            "tableName": "77360233-d996-4c72-a843-f3c94477dcf5"
+          },
+          "Phone Book": {
+            "tableName": "d7b9d771-f37e-4c44-85c3-dd40335f77f7"
+          },
+          "User-to-Admin": {
+            "tableName": "5da070aa-d344-4a58-8b57-808cdb2b562e"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "User-to-Admin",
+      "Daftar Mobil2",
+      "Incident Reports",
+      "Phone Book"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "5204f467-2515-4d40-8577-c88124b50545"
+    ],
+    "id": "77f507b1-a7a3-407c-837f-7c970f9b52c2"
+  },
+  "829f90f5-5d41-4103-9a65-af66b02731e5": {
+    "appActions": [
+      "GetEventsCalendarViewV2"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3695/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "6f288bf3-b40b-4acd-bc08-df51cecec7d0"
+    ],
+    "id": "829f90f5-5d41-4103-9a65-af66b02731e5"
+  },
+  "a3c1db29-7362-466e-bd92-ba834804d89e": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "43705da5-be39-412c-ae9e-7dff0280ecc0": {
+          "value": "shared_excelonlinebusiness"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim (Excel)"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "9b8235ac-b9e9-4249-bd3b-72d73ce8cf1c"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_excelonlinebusiness": {
+          "value": "43705da5-be39-412c-ae9e-7dff0280ecc0"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim (Excel)"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "9b8235ac-b9e9-4249-bd3b-72d73ce8cf1c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Kirim(Excel)"
+    ],
+    "dependencies": {
+      "shared_excelonlinebusiness": "43705da5-be39-412c-ae9e-7dff0280ecc0"
+    },
+    "dependents": [],
+    "id": "a3c1db29-7362-466e-bd92-ba834804d89e"
+  }
+}

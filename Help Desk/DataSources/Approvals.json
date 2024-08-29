@@ -1,0 +1,190 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crfb9_approvals",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crfb9_approval",
+    "MaxGetRowsCount": 500,
+    "Name": "Approvals",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crfb9_approval": "Persutujuan",
+      "crfb9_approval_AsyncOperations": "System Jobs",
+      "crfb9_approval_BulkDeleteFailures": "Bulk Delete Failures",
+      "crfb9_approval_DuplicateBaseRecord": "Duplicate Records (crfb9_approval_DuplicateBaseRecord)",
+      "crfb9_approval_DuplicateMatchingRecord": "Duplicate Records (crfb9_approval_DuplicateMatchingRecord)",
+      "crfb9_approval_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crfb9_approval_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crfb9_approval_ProcessSession": "Process Sessions",
+      "crfb9_approval_SyncErrors": "Sync Errors",
+      "crfb9_approvalid": "Approval",
+      "crfb9_car": "Mobil",
+      "crfb9_date": "Tanggal",
+      "crfb9_emailaddress": "Alamat Email",
+      "crfb9_maintenancecontract": "Kontrak Pemeliharaan",
+      "crfb9_name": "Nama",
+      "crfb9_type": "Jenis",
+      "crfb9_vendor": "Vendor",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Approvals",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Approvals (Views)",
+    "Name": "_crfb9_approval_views",
+    "RelatedEntityName": "Approvals",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1660f0a4-36d1-43e0-ac2a-97aa6c5ce978": "Active Approvals",
+      "1b8984fe-c5ef-4da1-b243-09042c393c57": "Approval Lookup View",
+      "716c4ce3-385d-4205-ad3a-1d7509a6bdba": "Inactive Approvals",
+      "c351f335-a91d-447b-b23c-fcdd189b469e": "Approval Advanced Find View",
+      "e5c65e33-c21e-4662-9ef8-4290496ce5cd": "Approval Associated View"
+    }
+  },
+  {
+    "DisplayName": "Persutujuan (Approvals)",
+    "Name": "crfb9_approval_crfb9_approval",
+    "OptionSetInfoNameMapping": {
+      "0": "Persutujuan",
+      "1": "Setuju",
+      "2": "Tolak"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crfb9_approval",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crfb9_approval",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Kontrak Pemeliharaan (Approvals)",
+    "Name": "crfb9_approval_crfb9_maintenancecontract",
+    "OptionSetInfoNameMapping": {
+      "0": "Kontrak Pemeliharaan",
+      "1": "MyFix",
+      "2": "Itukamu",
+      "3": "Kontrakku"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crfb9_maintenancecontract",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crfb9_maintenancecontract",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Jenis (Approvals)",
+    "Name": "crfb9_approval_crfb9_type",
+    "OptionSetInfoNameMapping": {
+      "0": "Jenis",
+      "1": "Dinas",
+      "2": "Sewa"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crfb9_type",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crfb9_type",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Vendor (Approvals)",
+    "Name": "crfb9_approval_crfb9_vendor",
+    "OptionSetInfoNameMapping": {
+      "0": "Vendor",
+      "1": "Nusantara",
+      "2": "Vendorku",
+      "3": "Citra"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crfb9_vendor",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crfb9_vendor",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Approvals)",
+    "Name": "crfb9_approval_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Approvals)",
+    "Name": "crfb9_approval_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Approvals"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Approvals",
+    "Type": "OptionSetInfo"
+  }
+]
