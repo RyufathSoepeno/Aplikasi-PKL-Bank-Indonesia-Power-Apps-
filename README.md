@@ -2,6 +2,8 @@
 
 To download the entire app, download the .msapp file which can be found in the Microsoft.PowerApps Folder
 
+To import this to your PowerApps, simply create a blank canvas app in PowerApps, click the triple dots in the header section, select "Open", and navigate to the msapp file
+
 To search for the source code, simply check the "Src" file and you will find the .yaml "fx" files of each screens
 
 To search for the source code for all the elements available, simply check the Pkgs file and you will find the .yaml "fx" files of each elements
