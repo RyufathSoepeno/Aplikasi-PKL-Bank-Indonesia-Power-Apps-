@@ -2,7 +2,7 @@
 
 ## User App (Transportation)
 
-<div style="display: inline-block; border: 2px solid black;">
+<div style="display: inline-block;">
     <img src="https://github.com/user-attachments/assets/1bdadf77-a31f-4cab-951f-ee711d5b186d" alt="Image 1" width="200" />
     <img src="https://github.com/user-attachments/assets/9d7b1f62-a2f4-4302-a6cd-fa3270667ab3" alt="Image 2" width="200" />
 </div>
@@ -11,7 +11,7 @@
 
 ## DLAF Staff App (Transportation)
 
-<div style="display: inline-block; border: 2px solid black;">
+<div style="display: inline-block;">
     <img src="https://github.com/user-attachments/assets/87152f87-6d6d-48d6-955d-430ada3857e3" alt="Image 1" width="200" />
     <img src="https://github.com/user-attachments/assets/4c5afa74-4831-4b83-a420-56083aaddaec" alt="Image 2" width="200" />
 </div>
@@ -20,7 +20,7 @@
 
 ## Help Desk App (Transportation)
 
-<div style="display: inline-block; border: 2px solid black;">
+<div style="display: inline-block;">
     <img src="https://github.com/user-attachments/assets/994943b7-beb9-4650-9761-a6b843c8cd1a" alt="Image 1" width="200" />
     <img src="https://github.com/user-attachments/assets/435148e9-0879-4114-ab9b-50b675b453cd" alt="Image 2" width="200" />
 </div>
