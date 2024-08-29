@@ -1,0 +1,18 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_adx_setting_forms",
+      "Namespace": "Settings (Forms)",
+      "Values": {
+        "Information": "f2cef676-b675-4c6d-bfd2-8f28ab21d7d1"
+      }
+    },
+    {
+      "Kind": "default.cds_crfb9_myheader_forms",
+      "Namespace": "MyHeaders (Forms)",
+      "Values": {
+        "Information": "bbeaa689-5daa-4a23-b3e2-d230e20fabae"
+      }
+    }
+  ]
+}

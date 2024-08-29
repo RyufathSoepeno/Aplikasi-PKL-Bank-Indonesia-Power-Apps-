@@ -1,0 +1,23 @@
+[
+  {
+    "Data": "[{\"Alamat Email\":null,\"Jenis\":\"Dinas\",\"Kontrak Pemeliharaan\":\"MyFix\",\"Mobil\":null,\"Nama\":null,\"Persutujuan\":\"Setuju\",\"Tanggal\":null,\"Vendor\":\"Nusantara\"},{\"Alamat Email\":null,\"Jenis\":\"Sewa\",\"Kontrak Pemeliharaan\":\"Itukamu\",\"Mobil\":null,\"Nama\":null,\"Persutujuan\":\"Tolak\",\"Tanggal\":null,\"Vendor\":\"Vendorku\"},{\"Alamat Email\":null,\"Jenis\":null,\"Kontrak Pemeliharaan\":\"Kontrakku\",\"Mobil\":null,\"Nama\":null,\"Persutujuan\":null,\"Tanggal\":null,\"Vendor\":\"Citra\"}]",
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "Table1",
+    "OrderedColumnNames": [
+      "Nama",
+      "Alamat Email",
+      "Mobil",
+      "Jenis",
+      "Vendor",
+      "Kontrak Pemeliharaan",
+      "Tanggal",
+      "Persutujuan"
+    ],
+    "OriginalName": "Table1",
+    "OriginalSchema": "*['Alamat Email':s, Jenis:s, 'Kontrak Pemeliharaan':s, Mobil:s, Nama:s, Persutujuan:s, Tanggal:s, Vendor:s]",
+    "Schema": "*['Alamat Email':s, Jenis:s, 'Kontrak Pemeliharaan':s, Mobil:s, Nama:s, Persutujuan:s, Tanggal:s, Vendor:s]",
+    "Token": "dummyToken",
+    "Type": "StaticDataSourceInfo"
+  }
+]

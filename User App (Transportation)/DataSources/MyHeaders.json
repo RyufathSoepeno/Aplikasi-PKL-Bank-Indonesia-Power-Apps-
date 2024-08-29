@@ -1,0 +1,117 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crfb9_myheaders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crfb9_myheader",
+    "MaxGetRowsCount": 500,
+    "Name": "MyHeaders",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crfb9_myheader_AsyncOperations": "System Jobs",
+      "crfb9_myheader_BulkDeleteFailures": "Bulk Delete Failures",
+      "crfb9_myheader_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crfb9_myheader_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crfb9_myheader_ProcessSession": "Process Sessions",
+      "crfb9_myheader_SyncErrors": "Sync Errors",
+      "crfb9_myheaderid": "MyHeader",
+      "crfb9_settings": "Settings",
+      "crfb9_victorykey1": "Victory Key",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "MyHeaders",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "MyHeaders (Views)",
+    "Name": "_crfb9_myheader_views",
+    "RelatedEntityName": "MyHeaders",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "55673b10-aee3-4b23-bf1b-bf3de58f7c3b": "MyHeader Advanced Find View",
+      "8af71767-683f-4714-8599-a4717a7271e4": "MyHeader Associated View",
+      "93ef22c5-9756-41d0-ac8f-f63bca994610": "Inactive MyHeaders",
+      "a3e663dd-bd69-4824-a172-292a3f8bec33": "MyHeader Lookup View",
+      "d2ace84f-a455-45f1-b16b-d443382ca36c": "Active MyHeaders"
+    }
+  },
+  {
+    "DisplayName": "Settings (MyHeaders)",
+    "Name": "crfb9_myheader_crfb9_settings",
+    "OptionSetInfoNameMapping": {
+      "0": "Pengaturan",
+      "1": "Status Pengajuan",
+      "2": "Sejarah"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crfb9_settings",
+        "OptionSetReferenceEntityName": "MyHeaders"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crfb9_settings",
+    "RelatedEntityName": "MyHeaders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (MyHeaders)",
+    "Name": "crfb9_myheader_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "MyHeaders"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "MyHeaders",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (MyHeaders)",
+    "Name": "crfb9_myheader_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "MyHeaders"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "MyHeaders",
+    "Type": "OptionSetInfo"
+  }
+]

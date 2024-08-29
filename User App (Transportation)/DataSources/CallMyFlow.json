@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "7aa5a243-5ae5-4b93-b637-3c81cc1a5b0a",
+    "Name": "CallMyFlow",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "91849739-4d22-ef11-840a-6045bd56f67a"
+  }
+]

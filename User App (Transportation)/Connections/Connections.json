@@ -1,0 +1,429 @@
+{
+  "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://studentssbac.sharepoint.com/sites/BankIndonesia": {
+        "dataSources": {
+          "BI Email Accounts": {
+            "tableName": "1ff96302-a03b-4730-b9af-79bb7c1bcf3d"
+          },
+          "Confirmation List": {
+            "tableName": "2f2019b3-aef5-425c-b0c9-7e9f96df3b18"
+          },
+          "Confirmation List (Angkut)": {
+            "tableName": "6e233b9b-64f6-441b-9e27-011a17fdf085"
+          },
+          "Daftar Mobil2": {
+            "tableName": "66e663da-8eb0-41db-a2b7-684e357b727b"
+          },
+          "Katalog Mobil": {
+            "tableName": "596e2b5b-fea4-484b-895e-741c97eed249"
+          },
+          "User-to-Admin": {
+            "tableName": "5da070aa-d344-4a58-8b57-808cdb2b562e"
+          },
+          "User-to-Angkut": {
+            "tableName": "73602ec0-b7c0-4fc9-97b6-12fa582cbe6a"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Katalog Mobil",
+      "Daftar Mobil2",
+      "User-to-Admin",
+      "Confirmation List",
+      "BI Email Accounts",
+      "Confirmation List (Angkut)",
+      "User-to-Angkut"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "5b39ac57-182d-43ae-9b63-6873af887ecb",
+      "a9726909-5b21-4f83-9dc9-af977748c4fc",
+      "2acec965-8a56-45c3-848e-e0be49313c9b",
+      "32d5a641-402a-4007-9ff0-3a4db368be4c",
+      "f2c114d5-08c0-400c-a638-380df59c56a5",
+      "7809e3cc-4725-4a0f-8933-f4a6af095e13"
+    ],
+    "id": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+  },
+  "2acec965-8a56-45c3-848e-e0be49313c9b": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "Insiden"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "1afa8f0a-e1cd-45f5-bc21-18d535889b76"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "Insiden"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "1afa8f0a-e1cd-45f5-bc21-18d535889b76"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Insiden"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "2acec965-8a56-45c3-848e-e0be49313c9b"
+  },
+  "32d5a641-402a-4007-9ff0-3a4db368be4c": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "f01dbedc-f24f-420d-b745-850e7932c680": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "Download Ticket"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c18f4177-f38b-4acc-b909-5113b47e0f69"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "f01dbedc-f24f-420d-b745-850e7932c680"
+        },
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "Download Ticket"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "c18f4177-f38b-4acc-b909-5113b47e0f69"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "DownloadTicket"
+    ],
+    "dependencies": {
+      "shared_office365": "f01dbedc-f24f-420d-b745-850e7932c680",
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "32d5a641-402a-4007-9ff0-3a4db368be4c"
+  },
+  "476dcdaf-980a-4be8-8337-c79e39588b48": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel Online (Business)",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1702/1.0.1702.3813/excelonlinebusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excelonlinebusiness",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "5b39ac57-182d-43ae-9b63-6873af887ecb"
+    ],
+    "id": "476dcdaf-980a-4be8-8337-c79e39588b48"
+  },
+  "5b39ac57-182d-43ae-9b63-6873af887ecb": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "476dcdaf-980a-4be8-8337-c79e39588b48": {
+          "value": "shared_excelonlinebusiness"
+        },
+        "f01dbedc-f24f-420d-b745-850e7932c680": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim HelpDesk"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "16c1de28-5fe0-42eb-a72b-b179c5f6970c"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_excelonlinebusiness": {
+          "value": "476dcdaf-980a-4be8-8337-c79e39588b48"
+        },
+        "shared_office365": {
+          "value": "f01dbedc-f24f-420d-b745-850e7932c680"
+        },
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "Kirim HelpDesk"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "16c1de28-5fe0-42eb-a72b-b179c5f6970c"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "KirimHelpDesk"
+    ],
+    "dependencies": {
+      "shared_excelonlinebusiness": "476dcdaf-980a-4be8-8337-c79e39588b48",
+      "shared_office365": "f01dbedc-f24f-420d-b745-850e7932c680",
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "5b39ac57-182d-43ae-9b63-6873af887ecb"
+  },
+  "7809e3cc-4725-4a0f-8933-f4a6af095e13": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "f01dbedc-f24f-420d-b745-850e7932c680": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "Angkutan"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "09d3bbf5-c8d6-4d37-ab62-fbde1e0f1322"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "f01dbedc-f24f-420d-b745-850e7932c680"
+        },
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "Angkutan"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "09d3bbf5-c8d6-4d37-ab62-fbde1e0f1322"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Angkutan"
+    ],
+    "dependencies": {
+      "shared_office365": "f01dbedc-f24f-420d-b745-850e7932c680",
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "7809e3cc-4725-4a0f-8933-f4a6af095e13"
+  },
+  "a9726909-5b21-4f83-9dc9-af977748c4fc": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "CallMyFlow"
+        },
+        "workflowEntityId": {
+          "value": "91849739-4d22-ef11-840a-6045bd56f67a"
+        },
+        "workflowName": {
+          "value": "e05404ad-5631-7bf6-e1ca-2bc58deaf3b3"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "CallMyFlow"
+        },
+        "workflowEntityId": {
+          "value": "91849739-4d22-ef11-840a-6045bd56f67a"
+        },
+        "workflowName": {
+          "value": "e05404ad-5631-7bf6-e1ca-2bc58deaf3b3"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "CallMyFlow"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "a9726909-5b21-4f83-9dc9-af977748c4fc"
+  },
+  "d257a892-1cbb-4114-980c-339ed9efe48c": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft Translator V2",
+      "executionRestrictions": {
+        "apiId": "/providers/microsoft.powerapps/apis/shared_translatorv2",
+        "appVer": "3.24082.13",
+        "modifiedOn": "2024-08-27 08:20:40",
+        "policy": "{\"type\":\"unused\"}",
+        "version": 1
+      },
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1700/1.0.1700.3795/translatorv2/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_translatorv2",
+      "parameterHints": {},
+      "parameterHintsV2": {},
+      "sharedConnectionId": "/providers/microsoft.powerapps/apis/shared_translatorv2/connections/ede680af28f1401da4b785e0e713f242"
+    },
+    "datasets": {},
+    "dataSources": [
+      "MicrosoftTranslatorV2"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d257a892-1cbb-4114-980c-339ed9efe48c"
+  },
+  "f01dbedc-f24f-420d-b745-850e7932c680": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1686/1.0.1686.3695/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "5b39ac57-182d-43ae-9b63-6873af887ecb",
+      "32d5a641-402a-4007-9ff0-3a4db368be4c",
+      "f2c114d5-08c0-400c-a638-380df59c56a5",
+      "7809e3cc-4725-4a0f-8933-f4a6af095e13"
+    ],
+    "id": "f01dbedc-f24f-420d-b745-850e7932c680"
+  },
+  "f2c114d5-08c0-400c-a638-380df59c56a5": {
+    "appActions": [
+      "Run"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "13f84b4e-605c-42ac-813e-05a89ec38d9c": {
+          "value": "shared_sharepointonline"
+        },
+        "f01dbedc-f24f-420d-b745-850e7932c680": {
+          "value": "shared_office365"
+        },
+        "workflowDisplayName": {
+          "value": "MySend"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "fec65fe1-0e97-4752-969f-d7d589d39e0b"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "f01dbedc-f24f-420d-b745-850e7932c680"
+        },
+        "shared_sharepointonline": {
+          "value": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+        },
+        "workflowDisplayName": {
+          "value": "MySend"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "fec65fe1-0e97-4752-969f-d7d589d39e0b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "MySend"
+    ],
+    "dependencies": {
+      "shared_office365": "f01dbedc-f24f-420d-b745-850e7932c680",
+      "shared_sharepointonline": "13f84b4e-605c-42ac-813e-05a89ec38d9c"
+    },
+    "dependents": [],
+    "id": "f2c114d5-08c0-400c-a638-380df59c56a5"
+  }
+}

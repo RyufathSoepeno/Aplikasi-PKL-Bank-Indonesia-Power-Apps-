@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "adx_settings",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "adx_setting",
+    "MaxGetRowsCount": 500,
+    "Name": "Settings",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "adx_description": "Description",
+      "adx_encryptedcontent": "Encrypted Content",
+      "adx_name": "Name",
+      "adx_setting_AsyncOperations": "System Jobs",
+      "adx_setting_BulkDeleteFailures": "Bulk Delete Failures",
+      "adx_setting_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "adx_setting_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "adx_setting_ProcessSession": "Process Sessions",
+      "adx_setting_SyncErrors": "Sync Errors",
+      "adx_settingid": "Setting",
+      "adx_value": "Value",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Settings",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Settings (Views)",
+    "Name": "_adx_setting_views",
+    "RelatedEntityName": "Settings",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2329ce08-c61a-4d84-b4eb-25530e46fa5e": "Inactive Settings",
+      "6cf56d70-c672-49bc-a779-c07aab20e185": "Active Settings",
+      "72454e22-e7e2-4bf7-ac86-f23d013570c4": "Setting Advanced Find View",
+      "a63cf05b-da1a-4aa1-8124-4d4594e6162a": "Setting Associated View",
+      "f2412d43-c6c8-4b91-8a14-e999d373e8f5": "Setting Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Settings)",
+    "Name": "adx_setting_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Settings"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Settings",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Settings)",
+    "Name": "adx_setting_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Settings"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Settings",
+    "Type": "OptionSetInfo"
+  }
+]
