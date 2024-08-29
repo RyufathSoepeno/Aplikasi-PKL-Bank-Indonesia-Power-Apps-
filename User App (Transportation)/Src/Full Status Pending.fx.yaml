@@ -1,0 +1,263 @@
+"'Full Status Pending' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Refresh('User-to-Admin');
+        Refresh('Confirmation List');
+
+    Image6_25 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Button12_3 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =350
+        HoverBorderColor: =
+        HoverFill: =
+        RadiusBottomLeft: =36
+        RadiusBottomRight: =36
+        RadiusTopLeft: =36
+        RadiusTopRight: =36
+        Size: =36
+        Text: ="Button"
+        Width: =640
+        Y: =123
+        ZIndex: =2
+
+    "Gallery2_4 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =717
+        Items: =Sort('Confirmation List', Modified, SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =90
+        Y: =219
+        ZIndex: =3
+
+        Title2_4 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =245
+            X: =23
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2_5.Size * 1.8)) / 2
+            ZIndex: =1
+
+        Subtitle2_5 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Mulai
+            VerticalAlign: =VerticalAlign.Top
+            Width: =153
+            X: =23
+            Y: =Title2_4.Y + Title2_4.Height
+            ZIndex: =2
+
+        Separator2_5 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle4_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =2
+            Height: =Parent.TemplateHeight - Separator2_5.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+        Button1_29 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =24
+            OnSelect: |-
+                =Navigate('Tiket Penerimaan');
+                Set(TiketClassifier, ThisItem.ID);
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =9
+            Text: ="Download"
+            Visible: =If(ThisItem.'Status Pengajuan' = "Waiting List", false, true)
+            Width: =78
+            X: =545
+            Y: =35
+            ZIndex: =7
+
+        Label11_4 As label:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            DisabledColor: =
+            Fill: |-
+                =If (
+                    ThisItem.'Status Pengajuan' = "Disetujui", RGBA(54, 176, 75, 100), /// Green Color
+                    ThisItem.'Status Pengajuan' = "Waiting List", RGBA(255, 191, 0, 100), /// Orange Color,
+                    RGBA(0, 0, 0, 0)
+                )
+            Height: =39
+            OnSelect: =Select(Parent)
+            Size: =13.8
+            Text: =Switch(ThisItem.'Status Pengajuan', "Disetujui", "Confirmed", "Waiting List")
+            Width: =212
+            X: =293
+            Y: =21
+            ZIndex: =8
+
+        Icon7_2 As icon.Edit:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =24
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Navigate('Edit Status');
+                Set(selectedID, ThisItem.ID);
+            Visible: =If(ThisItem.'Status Pengajuan' = "Waiting List", true, false)
+            Width: =31
+            X: =588
+            Y: =28
+            ZIndex: =9
+
+    LblAppName1_31 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =22
+        Text: ="Status Page"
+        Width: =516
+        X: =124
+        Y: =8
+        ZIndex: =4
+
+    Icon3_16 As icon.BackArrow:
+        Height: =51
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Status Pending')
+        Width: =52
+        X: =9
+        Y: =152
+        ZIndex: =5
+
+    Image10_27 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        X: =9
+        Y: =16
+        ZIndex: =7
+
+    Gallery6_4 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =147
+        Items: =Filter(Sort('User-to-Admin', Modified, SortOrder.Descending), Read = "Unread")
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =66
+        Y: =988
+        ZIndex: =8
+
+        Title2_6 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =245
+            X: =16
+            Y: =8
+            ZIndex: =2
+
+        Subtitle2_8 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Mulai
+            VerticalAlign: =VerticalAlign.Top
+            Width: =153
+            X: =16
+            Y: =41
+            ZIndex: =3
+
+        Separator2_8 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle4_6 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =2
+            Height: =Parent.TemplateHeight - Separator2_8.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            Y: =8
+            ZIndex: =5
+
+        Icon7_4 As icon.Edit:
+            BorderColor: =RGBA(166, 166, 166, 1)
+            BorderThickness: =2
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =24
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Navigate('Edit Status');
+                Set(selectedID, ThisItem.ID);
+            Width: =31
+            X: =586
+            Y: =18
+            ZIndex: =7
+
+    Label24_1 As label:
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =52
+        Size: =15
+        Text: |-
+            ="Pending:"
+        Width: =640
+        Y: =936
+        ZIndex: =9
+

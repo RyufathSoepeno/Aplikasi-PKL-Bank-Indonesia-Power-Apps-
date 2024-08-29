@@ -1,0 +1,203 @@
+"'Tiket Penerimaan_2' As screen.'printableLayout_A4Landscape_ver1.0'":
+    Fill: =Color.MintCream
+    Height: =650
+    OnVisible: |-
+        =Set(RandomNumber, RandBetween(100000, 999999));
+        DownloadTicket.Run(Label14_4.Text, Tiket_ID_3.Text, Label13_1.Text, PDF('Tiket Penerimaan_2'));
+    Width: =1123
+
+    "Gallery6_2 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =535
+        Items: =Filter('Confirmation List', ID = TiketClassifier)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =535
+        Width: =1043
+        X: =40
+        Y: =42
+        ZIndex: =1
+
+        Label13_1 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =52
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =686
+            X: =312
+            ZIndex: =5
+
+        Label14_4 As label:
+            Font: =Font.Georgia
+            Height: =70
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =15
+            Text: =ThisItem.'Nama Pegawai'
+            Width: =334
+            X: =312
+            Y: =105
+            ZIndex: =6
+
+        Label14_6 As label:
+            Font: =Font.Georgia
+            Height: =70
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =15
+            Text: =ThisItem.Mulai
+            Width: =334
+            X: =312
+            Y: =246
+            ZIndex: =7
+
+        Label14_7 As label:
+            Font: =Font.Georgia
+            Height: =70
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =15
+            Text: =ThisItem.Jenis
+            Width: =334
+            X: =312
+            Y: =379
+            ZIndex: =8
+
+        Label14_5 As label:
+            Font: =Font.Georgia
+            Height: =70
+            OnSelect: =Select(Parent)
+            PaddingLeft: =10
+            Size: =15
+            Text: =ThisItem.Akhir
+            Width: =334
+            X: =687
+            Y: =242
+            ZIndex: =9
+
+    Image2_11 As image:
+        Height: =163
+        Image: ='Spesifikasi-Kijang-Innova'
+        Width: =286
+        X: =33
+        Y: =207
+        ZIndex: =1
+
+    Rectangle3_6 As rectangle:
+        Height: =11
+        Width: =725
+        X: =357
+        Y: =92
+        ZIndex: =3
+
+    Image5_3 As image:
+        Height: =103
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =106
+        ZIndex: =4
+
+    Label8_22 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nama Pegawai:"
+        Width: =181
+        X: =357
+        Y: =109
+        ZIndex: =6
+
+    Label8_24 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Mulai:"
+        Width: =181
+        X: =357
+        Y: =233
+        ZIndex: =7
+
+    Label8_25 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Akhir:"
+        Width: =181
+        X: =736
+        Y: =233
+        ZIndex: =8
+
+    Label8_26 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Jenis Mobil:"
+        Width: =181
+        X: =357
+        Y: =367
+        ZIndex: =9
+
+    Label8_23 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nomor Tiket:"
+        Width: =181
+        X: =736
+        Y: =109
+        ZIndex: =10
+
+    Label8_27 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Titik Kumpul:"
+        Width: =256
+        X: =736
+        Y: =367
+        ZIndex: =11
+
+    Lokasi_3 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="Parkiran Kebon Sirih"
+        Width: =221
+        X: =736
+        Y: =411
+        ZIndex: =17
+
+    Label8_21 As label:
+        Font: =Font.Verdana
+        Height: =70
+        Size: =16.5
+        Text: ="Tiket Kendaraan BI"
+        Width: =181
+        X: =118
+        Y: =8
+        ZIndex: =18
+
+    Rectangle3_7 As rectangle:
+        Height: =11
+        Width: =1071
+        X: =11
+        Y: =579
+        ZIndex: =19
+
+    Tiket_ID_3 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =RandomNumber
+        Width: =221
+        X: =736
+        Y: =146
+        ZIndex: =20
+

@@ -1,0 +1,284 @@
+"'Main Menu' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Image7_1 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Image6_4 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =2
+
+    Button1_17 As button:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =54
+        OnSelect: =Exit()
+        RadiusBottomLeft: =3
+        RadiusBottomRight: =3
+        RadiusTopLeft: =3
+        RadiusTopRight: =3
+        Size: =18
+        Text: ="Exit"
+        Width: =117
+        X: =509
+        Y: =89
+        ZIndex: =3
+
+    Image10_4 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =8
+
+    Canvas3_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =968
+        Width: =Parent.Width
+        Y: =167
+        ZIndex: =9
+
+        DataCard3_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1500
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Button14_2 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate(User_Catalog_3)
+                Size: =24
+                Text: =
+                Width: =252
+                X: =42
+                Y: =27
+                ZIndex: =1
+
+            Button14_3 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Insiden Menu')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =350
+                Y: =27
+                ZIndex: =2
+
+            Label10_1 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Request Car"
+                Width: =239
+                X: =49
+                Y: =184
+                ZIndex: =4
+
+            Label10_3 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Report Incident"
+                Width: =239
+                X: =356
+                Y: =184
+                ZIndex: =5
+
+            Button14_4 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Status Pending Menu')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =350
+                Y: =324
+                ZIndex: =10
+
+            Image10_11 As image:
+                Height: =124
+                Image: ='411735'
+                Width: =127
+                X: =415
+                Y: =345
+                ZIndex: =11
+
+            Label10_4 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Status Page"
+                Width: =239
+                X: =357
+                Y: =479
+                ZIndex: =12
+
+            Image11 As image:
+                Height: =129
+                Image: ='450872'
+                Width: =127
+                X: =104
+                Y: =53
+                ZIndex: =16
+
+            Image12 As image:
+                Height: =155
+                Image: ='13089661'
+                Width: =111
+                X: =430
+                Y: =27
+                ZIndex: =17
+
+            Button14_5 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Info Angkut')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =42
+                Y: =324
+                ZIndex: =18
+
+            Label10_5 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Request Pickup"
+                Width: =239
+                X: =49
+                Y: =479
+                ZIndex: =20
+
+            Image2 As image:
+                Height: =118
+                Image: ='3737129'
+                Width: =154
+                X: =91
+                Y: =350
+                ZIndex: =21
+
+            Button14_6 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Sejarah Menu')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =349
+                Y: =625
+                ZIndex: =22
+
+            Label10_2 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="History"
+                Width: =253
+                X: =349
+                Y: =784
+                ZIndex: =23
+
+            Image5_5 As image:
+                Height: =137
+                Image: ='5582334'
+                Width: =154
+                X: =401
+                Y: =647
+                ZIndex: =24
+
+            Button14_7 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Calendar Menu')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =42
+                Y: =625
+                ZIndex: =25
+
+            Label10_6 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Schedule List"
+                Width: =239
+                X: =49
+                Y: =790
+                ZIndex: =26
+
+            Image1_4 As image:
+                Height: =114
+                Image: ='9926396'
+                Width: =114
+                X: =111
+                Y: =654
+                ZIndex: =27
+
+    Label16 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =27
+        Text: ="Main Menu"
+        Width: =264
+        X: =126
+        Y: =15
+        ZIndex: =10
+
+    Image7 As image:
+        Height: =83
+        Image: =Pencilation
+        Width: =44
+        X: =517
+        Y: =517
+        ZIndex: =12
+
+    Toggle2 As toggleSwitch:
+        Color: =RGBA(255, 255, 255, 1)
+        FalseFill: =RGBA(255, 255, 255, 1)
+        FalseHoverFill: =ColorFade(Self.TrueFill, 15%)
+        FalseText: ="Bahasa Indonesia"
+        HandleFill: =RGBA(0, 0, 0, 1)
+        Height: =49
+        OnChange: |-
+            =If(Toggle2.Value = true, Launch("https://apps.powerapps.com/play/e/759417a2-08f3-e498-9d17-08260e5ab68f/a/717464ee-2eb8-4b16-b9b0-50f194940e11?tenantId=3018ecb9-2438-4581-b036-4b625dac9579&sourcetime=1718351847704"))
+        Reset: =true
+        Size: =15
+        TrueFill: =RGBA(246, 88, 16, 1)
+        TrueText: =""
+        Width: =274
+        X: =19
+        Y: =104
+        ZIndex: =13
+

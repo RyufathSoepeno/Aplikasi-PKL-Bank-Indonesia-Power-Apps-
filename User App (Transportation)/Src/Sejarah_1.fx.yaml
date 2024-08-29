@@ -1,0 +1,140 @@
+"Sejarah_1 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    RectQuickActionBar1_7 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_7 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Sejarah"
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Canvas1_7 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_7.Y + RectQuickActionBar1_7.Height
+        ZIndex: =3
+
+        DataCard1_7 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Rectangle1_10 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Width: =640
+                Y: =199
+                ZIndex: =1
+
+            Image2_19 As image:
+                Height: =75
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =118
+                X: =17
+                Y: =211
+                ZIndex: =2
+
+            Label1_27 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Dinas"
+                Width: =138
+                X: =324
+                Y: =230
+                ZIndex: =3
+
+            Label1_26 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Toyota Kijang"
+                Width: =138
+                X: =160
+                Y: =230
+                ZIndex: =4
+
+            Label1_28 As label:
+                Color: =RGBA(202, 202, 202, 1)
+                Height: =37
+                Size: =13.5
+                Text: ="6/1/2024"
+                Width: =138
+                X: =484
+                Y: =230
+                ZIndex: =5
+
+    Image1_7 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+
+    Rectangle1_11 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =2
+        Fill: =RGBA(0, 0, 0, 0)
+        Width: =640
+        Y: =180
+        ZIndex: =5
+
+    Image2_20 As image:
+        Height: =75
+        Image: ='Spesifikasi-Kijang-Innova'
+        Width: =118
+        X: =17
+        Y: =192
+        ZIndex: =6
+
+    Label1_30 As label:
+        Height: =37
+        Size: =13.5
+        Text: ="Dinas"
+        Width: =138
+        X: =324
+        Y: =211
+        ZIndex: =7
+
+    Label1_29 As label:
+        Height: =37
+        Size: =13.5
+        Text: ="Toyota Kijang"
+        Width: =138
+        X: =160
+        Y: =211
+        ZIndex: =8
+
+    Label1_31 As label:
+        Color: =RGBA(202, 202, 202, 1)
+        Height: =37
+        Size: =13.5
+        Text: ="6/1/2024"
+        Width: =138
+        X: =484
+        Y: =211
+        ZIndex: =9
+
+    Icon3_6 As icon.BackArrow:
+        Color: =RGBA(204, 208, 225, 1)
+        Height: =51
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(User_Catalog)
+        Width: =52
+        X: =18
+        Y: =108
+        ZIndex: =10
+

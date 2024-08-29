@@ -1,0 +1,522 @@
+"'Edit Status' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Set(ConfirmationBox, false);
+        Set(ConfirmationBox2, false);
+
+    Image6_17 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Rectangle10_3 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =1028
+        Width: =640
+        Y: =108
+        ZIndex: =2
+
+    Image10_19 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =3
+
+    Canvas3_4 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =1028
+        Width: =Parent.Width
+        Y: =108
+        ZIndex: =4
+
+        DataCard3_4 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1500
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Gallery7_1 As gallery.galleryVertical:
+                DelayItemLoading: =true
+                Height: =1500
+                Items: =Filter('Confirmation List', ID = selectedID) /// To make it only one item -- for Text purposes
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplateSize: =1395
+                ZIndex: =24
+
+                Nama_9 As text:
+                    Default: =ThisItem.'Nama Pegawai'
+                    Height: =52
+                    HintText: ="Nama"
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Nama_9.Text) && !IsBlank(Email_15.Text) && !IsBlank(Email_16.Text)}) // A *Required* Condition
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =40
+                    Y: =414
+                    ZIndex: =2
+
+                Email_15 As text:
+                    Default: ="you@bi.go.com"
+                    Height: =52
+                    HintText: ="Email"
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Nama_9.Text) && !IsBlank(Email_15.Text) && !IsBlank(Email_16.Text)})
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =42
+                    Y: =544
+                    ZIndex: =3
+
+                Tanggal_10 As datepicker:
+                    BorderThickness: =1
+                    DefaultDate: =ThisItem.Mulai
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =52
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Tanggal_10.SelectedDate)})
+                    Size: =15
+                    Width: =515
+                    X: =47
+                    Y: =1067
+                    ZIndex: =4
+
+                Keterangan_6 As text:
+                    Default: ="N/A"
+                    Height: =117
+                    HintText: ="Isi"
+                    OnChange: =
+                    PaddingBottom: =80
+                    PaddingLeft: =7
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =42
+                    Y: =1211
+                    ZIndex: =5
+
+                Email_16 As text:
+                    Default: =ThisItem.NIP
+                    Height: =52
+                    HintText: ="No. Telp"
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Nama_9.Text) && !IsBlank(Email_15.Text) && !IsBlank(Email_16.Text)})
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =47
+                    Y: =674
+                    ZIndex: =6
+
+                Departemen2_7 As text:
+                    Default: ="DLAF"
+                    Height: =52
+                    HintText: ="Departemen"
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Nama_9.Text) && !IsBlank(Email_15.Text) && !IsBlank(Departemen2_7.Text)})
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =44
+                    Y: =804
+                    ZIndex: =7
+
+                Departemen2_8 As text:
+                    Default: =ThisItem.Lokasi
+                    Height: =52
+                    HintText: ="Destination"
+                    OnChange: |-
+                        =UpdateContext({FormIsValid: !IsBlank(Nama_9.Text) && !IsBlank(Email_15.Text) && !IsBlank(Departemen2_8.Text)})
+                    Reset: =true
+                    Size: =15
+                    Width: =515
+                    X: =47
+                    Y: =932
+                    ZIndex: =8
+
+                Rectangle5_10 As rectangle:
+                    Height: =4
+                    Width: =298
+                    X: =40
+                    Y: =228
+                    ZIndex: =12
+
+                Label6_10 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =38
+                    Size: =20
+                    Text: ="Forms"
+                    Width: =560
+                    X: =40
+                    Y: =178
+                    ZIndex: =13
+
+                Button1_23 As button:
+                    DisplayMode: |-
+                        =If(FormIsValid, DisplayMode.Edit, DisplayMode.Disabled) /// You must insert required forms first
+                        /// --> Found in OnChange in "Alamat Email" on OnChange
+                    Fill: =RGBA(246, 88, 16, 1)
+                    Height: =36
+                    OnSelect: =Set(ConfirmationBox2, true)
+                    Size: =17
+                    Text: ="Submit"
+                    Width: =114
+                    X: =503
+                    Y: =1359
+                    ZIndex: =14
+
+                Label5_56 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Email"
+                    Width: =236
+                    X: =40
+                    Y: =494
+                    ZIndex: =15
+
+                Label5_60 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Date of Use"
+                    Width: =206
+                    X: =45
+                    Y: =1017
+                    ZIndex: =16
+
+                Label5_55 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Name"
+                    Width: =137
+                    X: =40
+                    Y: =363
+                    ZIndex: =17
+
+                Label5_61 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="Comments (Ignore if None)"
+                    Width: =487
+                    X: =40
+                    Y: =1155
+                    ZIndex: =18
+
+                Label5_57 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Nomor Induk Pegawai (NIP)"
+                    Width: =436
+                    X: =45
+                    Y: =624
+                    ZIndex: =19
+
+                Label5_58 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Department"
+                    Width: =436
+                    X: =42
+                    Y: =754
+                    ZIndex: =20
+
+                Label5_59 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: |-
+                        ="*Destination:"
+                    Width: =436
+                    X: =45
+                    Y: =882
+                    ZIndex: =21
+
+                Icon3_24 As icon.BackArrow:
+                    Icon: =Icon.BackArrow
+                    OnSelect: =Navigate('Main Menu')
+                    X: =10
+                    Y: =13
+                    ZIndex: =22
+
+                Button9 As button:
+                    Fill: =RGBA(168, 0, 0, 1)
+                    Height: =36
+                    OnSelect: =Set(ConfirmationBox2, true)
+                    Size: =18
+                    Text: ="Cancel"
+                    Width: =116
+                    X: =363
+                    Y: =1359
+                    ZIndex: =23
+
+                "'Car Image_7' As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    DelayItemLoading: =true
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =149
+                    Items: =Filter('Daftar Mobil2', Nama = Dropdown3.Selected.Nama) /// To make it only one item -- for Text purposes
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Data
+                    ShowScrollbar: =false
+                    TemplatePadding: =0
+                    TemplateSize: =140
+                    Width: =293
+                    X: =173
+                    Y: =13
+                    ZIndex: =24
+
+                    Image9_7 As image:
+                        Height: =140
+                        Image: =ThisItem.GambarMobil
+                        OnSelect: =Select(Parent)
+                        Width: =293
+                        ZIndex: =6
+
+                Label5_62 As label:
+                    FontWeight: =FontWeight.Semibold
+                    Height: =42
+                    Size: =18
+                    Text: ="*Car Name"
+                    Width: =236
+                    X: =40
+                    Y: =252
+                    ZIndex: =26
+
+                Dropdown3 As dropdown:
+                    Default: =Title2.Text
+                    Height: =52
+                    Items: ='Daftar Mobil2'.Nama
+                    OnChange: =Set(CarChange, ThisItem.Title);
+                    OnSelect: =Set(CarChange, ThisItem.Title);
+                    Size: =15
+                    Width: =519
+                    X: =40
+                    Y: =294
+                    ZIndex: =27
+
+    LblAppName1_26 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =63
+        Size: =22
+        Text: ="Edit Forms"
+        Width: =516
+        X: =124
+        Y: =18
+        ZIndex: =14
+
+    "'Confirmation Box_3' As group":
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =23
+
+        Rectangle11_4 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =302
+            Visible: =ConfirmationBox2
+            Width: =537
+            X: =71
+            Y: =498
+            ZIndex: =15
+
+        Label19_4 As label:
+            Height: =70
+            Size: =18
+            Text: ="Are you sure you want to change this?"
+            Visible: =ConfirmationBox2
+            Width: =437
+            X: =122
+            Y: =498
+            ZIndex: =16
+
+        Button15_3 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =35
+            OnSelect: =Set(ConfirmationBox, false)
+            Size: =17
+            Text: ="Cancel"
+            Visible: =ConfirmationBox2
+            Width: =105
+            X: =155
+            Y: =736
+            ZIndex: =17
+
+        Button1_25 As button:
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =36
+            OnSelect: |-
+                =Remove(
+                    'Confirmation List', 
+                    Gallery7_1.Selected
+                );
+                Navigate('Main Menu');
+            Size: =17
+            Text: ="Submit"
+            Visible: =ConfirmationBox2
+            Width: =114
+            X: =393
+            Y: =736
+            ZIndex: =18
+
+        Label20_17 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =14
+            Text: |-
+                ="Destination:"
+            Visible: =ConfirmationBox2
+            Width: =160
+            X: =100
+            Y: =568
+            ZIndex: =19
+
+        Label20_16 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =14
+            Text: |-
+                ="Date:"
+            Visible: =ConfirmationBox2
+            Width: =160
+            X: =100
+            Y: =647
+            ZIndex: =20
+
+        Label20_15 As label:
+            Height: =70
+            Size: =14
+            Text: =Departemen2_8.Text
+            Visible: =ConfirmationBox2
+            Width: =366
+            X: =242
+            Y: =567
+            ZIndex: =21
+
+        Label20_14 As label:
+            Height: =70
+            Size: =14
+            Text: =Tanggal_10.SelectedDate
+            Visible: =ConfirmationBox2
+            Width: =366
+            X: =242
+            Y: =647
+            ZIndex: =22
+
+    "'Confirmation Box_2' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =25
+
+        Rectangle11_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =302
+            Visible: =ConfirmationBox
+            Width: =537
+            X: =51
+            Y: =478
+            ZIndex: =6
+
+        Label19_3 As label:
+            Height: =70
+            Size: =18
+            Text: ="Are you sure you want to submit thisi?"
+            Visible: =ConfirmationBox
+            Width: =437
+            X: =102
+            Y: =478
+            ZIndex: =7
+
+        Button15_2 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =35
+            OnSelect: =Set(ConfirmationBox, false)
+            Size: =17
+            Text: ="Cancel"
+            Visible: =ConfirmationBox
+            Width: =105
+            X: =135
+            Y: =716
+            ZIndex: =8
+
+        Button1_24 As button:
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =36
+            OnSelect: |-
+                =UpdateContext({selectedList: Gallery7_1.Selected});
+                Patch('Confirmation List', LookUp('Confirmation List', ID = selectedList.ID), {'Nama Pegawai': Nama_9.Text}, {NIP: Email_16.Text}, {Lokasi: Departemen2_8.Text}, {Mulai: Tanggal_10.SelectedDate}); // To update it the changes made in the edit
+                Navigate('Main Menu');
+            Size: =17
+            Text: ="Submit"
+            Visible: =ConfirmationBox
+            Width: =114
+            X: =373
+            Y: =716
+            ZIndex: =9
+
+        Label20_11 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =14
+            Text: |-
+                ="Destination:"
+            Visible: =ConfirmationBox
+            Width: =160
+            X: =80
+            Y: =548
+            ZIndex: =10
+
+        Label20_12 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =14
+            Text: |-
+                ="Date:"
+            Visible: =ConfirmationBox
+            Width: =160
+            X: =80
+            Y: =627
+            ZIndex: =11
+
+        Label20_10 As label:
+            Height: =70
+            Size: =14
+            Text: =Departemen2_8.Text
+            Visible: =ConfirmationBox
+            Width: =366
+            X: =222
+            Y: =547
+            ZIndex: =12
+
+        Label20_13 As label:
+            Height: =70
+            Size: =14
+            Text: =Tanggal_10.SelectedDate
+            Visible: =ConfirmationBox
+            Width: =366
+            X: =222
+            Y: =627
+            ZIndex: =13
+

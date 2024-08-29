@@ -1,0 +1,252 @@
+"'Status Pending [DRAFT]' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    RectQuickActionBar1_14 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_14 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Status Pengajuan"
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Canvas1_11 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_14.Y + RectQuickActionBar1_14.Height
+        ZIndex: =4
+
+        DataCard1_11 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Rectangle1_7 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Width: =640
+                Y: =69
+                ZIndex: =2
+
+            Image2_16 As image:
+                Height: =74
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =110
+                X: =17
+                Y: =81
+                ZIndex: =3
+
+            Rectangle1_8 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Width: =640
+                Y: =169
+                ZIndex: =4
+
+            Image2_17 As image:
+                Height: =74
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =110
+                X: =17
+                Y: =181
+                ZIndex: =5
+
+            Rectangle1_9 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(0, 0, 0, 0)
+                Width: =640
+                Y: =269
+                ZIndex: =6
+
+            Image2_18 As image:
+                Height: =74
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =110
+                X: =17
+                Y: =281
+                ZIndex: =7
+
+            Label1_18 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Dinas"
+                Width: =138
+                X: =309
+                Y: =100
+                ZIndex: =8
+
+            Label1_17 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Toyota Kijang"
+                Width: =138
+                X: =145
+                Y: =100
+                ZIndex: =9
+
+            Label1_24 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Dinas"
+                Width: =138
+                X: =309
+                Y: =300
+                ZIndex: =10
+
+            Label1_23 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Toyota Kijang"
+                Width: =138
+                X: =145
+                Y: =300
+                ZIndex: =11
+
+            Label1_21 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Toyota Kijang"
+                Width: =138
+                X: =145
+                Y: =200
+                ZIndex: =12
+
+            Label1_22 As label:
+                Height: =37
+                Size: =13.5
+                Text: ="Sewa"
+                Width: =138
+                X: =309
+                Y: =200
+                ZIndex: =13
+
+            Label1_20 As label:
+                Align: =Align.Center
+                Fill: =RGBA(255, 255, 0, 1)
+                Height: =47
+                Size: =13.5
+                Text: ="Menunggu Persutujuan"
+                Width: =117
+                X: =409
+                Y: =195
+                ZIndex: =14
+
+            Label1_19 As label:
+                Align: =Align.Center
+                Fill: =RGBA(54, 176, 75, 1)
+                Height: =31
+                Size: =13.5
+                Text: ="Setujui"
+                Width: =117
+                X: =409
+                Y: =100
+                ZIndex: =15
+
+            Label1_25 As label:
+                Align: =Align.Center
+                Fill: =RGBA(255, 191, 0, 1)
+                Height: =31
+                Size: =13.5
+                Text: ="Waiting List"
+                Width: =117
+                X: =409
+                Y: =300
+                ZIndex: =16
+
+            Icon2_2 As icon.Information:
+                Color: =RGBA(128, 128, 128, 1)
+                Height: =17
+                Icon: =Icon.Information
+                Width: =27
+                X: =387
+                Y: =86
+                ZIndex: =18
+
+            Icon3_8 As icon.BackArrow:
+                Color: =RGBA(204, 208, 225, 1)
+                Height: =51
+                Icon: =Icon.BackArrow
+                OnSelect: =Navigate(User_Catalog)
+                Width: =52
+                X: =17
+                Y: =7
+                ZIndex: =19
+
+            Button1_3 As button:
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(219, 219, 219, 1)
+                FontWeight: =FontWeight.Lighter
+                Height: =24
+                OnSelect: |-
+                    =Navigate('Tiket Penerimaan');
+                    KirimHelpDesk.Run(Pegawai.Text, Tiket_ID.Text, Tanggal.SelectedDate, Akhir.Text, Jenis.Text, Lokasi.Text);
+                    Download("https://studentssbac.sharepoint.com/:b:/s/BankIndonesia/EX9n9Kb9rRtCnIqKJnyQIHIBhylq_ohL0b4ALgfW_ereBg?e=ra1q47");
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =9
+                Text: ="Download"
+                Width: =78
+                X: =547
+                Y: =100
+                ZIndex: =20
+
+    Image1_10 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =5
+
+    Label7_5 As label:
+        Height: =45
+        Size: =14
+        Text: ="Jenis"
+        Width: =55
+        X: =307
+        Y: =96
+        ZIndex: =6
+
+    Label7_6 As label:
+        Height: =45
+        Size: =14
+        Text: ="Status"
+        Width: =143
+        X: =412
+        Y: =96
+        ZIndex: =7
+
+    Label7_4 As label:
+        Height: =45
+        Size: =14
+        Text: ="Nama Mobil"
+        Width: =143
+        X: =141
+        Y: =96
+        ZIndex: =8
+
+    Label7_7 As label:
+        Height: =45
+        Size: =14
+        Text: ="Tiket"
+        Width: =65
+        X: =557
+        Y: =96
+        ZIndex: =9
+

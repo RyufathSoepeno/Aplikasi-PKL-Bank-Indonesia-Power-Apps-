@@ -1,0 +1,97 @@
+"'Insiden Menu' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Refresh('User-to-Admin');
+        Refresh('Confirmation List');
+
+    Image6_22 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    LblAppName1_29 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =22
+        Text: ="Incidents Menu"
+        Width: =516
+        X: =124
+        Y: =8
+        ZIndex: =4
+
+    Image10_24 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        X: =9
+        Y: =16
+        ZIndex: =7
+
+    Button9_8 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Laporan Insiden')
+        Size: =24
+        Text: =
+        Width: =598
+        X: =20
+        Y: =302
+        ZIndex: =8
+
+    Button9_9 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Laporan Insiden (Angkut)')
+        Size: =24
+        Text: =
+        Width: =598
+        X: =21
+        Y: =586
+        ZIndex: =9
+
+    Label8_36 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Car"
+        Width: =141
+        X: =214
+        Y: =357
+        ZIndex: =10
+
+    Image2_23 As image:
+        Height: =150
+        Image: ='3737129'
+        Width: =173
+        X: =25
+        Y: =599
+        ZIndex: =12
+
+    Label8_37 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =78
+        Size: =21
+        Text: ="Pickup"
+        Width: =164
+        X: =214
+        Y: =639
+        ZIndex: =13
+
+    Image11_3 As image:
+        Height: =129
+        Image: ='450872'
+        Width: =127
+        X: =36
+        Y: =320
+        ZIndex: =14
+
+    Icon1_12 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Menu')
+        X: =22
+        Y: =107
+        ZIndex: =15
+

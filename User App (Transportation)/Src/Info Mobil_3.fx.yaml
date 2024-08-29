@@ -1,0 +1,413 @@
+"'Info Mobil_3' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Reset(Email_10);
+        Reset(Nama_6);
+        Reset(Keterangan_3);
+        Reset(Email_11);
+
+    RectQuickActionBar1_22 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "'Car Info_4' As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =112
+        Items: =Filter('Daftar Mobil2', ID = selectedID) /// To make it only one item -- for Text purposes
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =112
+        Y: =291
+        ZIndex: =1
+
+        Label11_22 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Nama:"
+            Width: =72
+            X: =6
+            Y: =16
+            ZIndex: =6
+
+        Label11_21 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            Size: =14
+            Text: |-
+                ="Jenis:"
+            Width: =72
+            X: =255
+            Y: =14
+            ZIndex: =7
+
+        Label11_20 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =23
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Tipe:"
+            Width: =65
+            X: =454
+            Y: =9
+            ZIndex: =8
+
+        Label11_24 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Vendor:"
+            Width: =110
+            X: =28
+            Y: =62
+            ZIndex: =9
+
+        Label11_23 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Kontrak Pemeliharaan:"
+            Width: =251
+            X: =279
+            Y: =61
+            ZIndex: =10
+
+        Nama_Mobilio_3 As label:
+            Height: =19
+            OnSelect: =Select(Parent)
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Nama
+            VerticalAlign: =VerticalAlign.Top
+            Width: =172
+            X: =66
+            Y: =16
+            ZIndex: =11
+
+        Jenis_Mobilio_3 As label:
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Jenis
+            Width: =153
+            X: =305
+            Y: =17
+            ZIndex: =12
+
+        Tipe_Mobil_3 As label:
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Tipe
+            Width: =80
+            X: =500
+            Y: =14
+            ZIndex: =13
+
+        Vendor_3 As label:
+            Height: =30
+            OnSelect: =Select(Parent)
+            PaddingTop: =8
+            Size: =12
+            Text: =ThisItem.Vendor
+            Width: =153
+            X: =99
+            Y: =56
+            ZIndex: =14
+
+        "'Kontrak Pemelihara_3' As label":
+            Height: =17
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Kontrak_Pemelihara
+            Width: =133
+            X: =488
+            Y: =64
+            ZIndex: =15
+
+    LblAppName1_23 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: |-
+            ="Kendaraan Dinas
+            "
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Icon3_19 As icon.BackArrow:
+        Color: =RGBA(204, 208, 225, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(User_Catalog_3)
+        X: =12
+        Y: =106
+        ZIndex: =10
+
+    Image1_18 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =11
+
+    Label11_19 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Size: =14
+        Text: |-
+            ="Info Mobil:"
+        Underline: =true
+        Width: =112
+        X: =6
+        Y: =254
+        ZIndex: =12
+
+    "'Car Image_5' As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =171
+        Items: =Filter('Daftar Mobil2', ID = selectedID) /// To make it only one item -- for Text purposes
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =140
+        Width: =293
+        X: =175
+        Y: =106
+        ZIndex: =13
+
+        Image9_5 As image:
+            BorderThickness: =1
+            Height: =138
+            Image: =ThisItem.GambarMobil
+            OnSelect: =Select(Parent)
+            Width: =293
+            ZIndex: =6
+
+    Rectangle5_7 As rectangle:
+        Height: =4
+        Width: =298
+        X: =41
+        Y: =437
+        ZIndex: =21
+
+    Label6_7 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =20
+        Text: ="Formulir"
+        Width: =560
+        X: =41
+        Y: =387
+        ZIndex: =22
+
+    Button1_13 As button:
+        DisplayMode: |-
+            =If(FormIsValid, DisplayMode.Edit, DisplayMode.Disabled) /// You must insert required forms first
+            /// --> Found in OnChange in "Alamat Email" on OnChange
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =36
+        OnSelect: |-
+            =Navigate('Status Pending');
+            Notify("Sukses! Unduhkan Tiket Sekarang", NotificationType.Success, 2000);
+            MySend.Run(Nama_6.Text, Email_10.Text, Tanggal_7.SelectedDate, Nama_Mobilio_3.Text, Jenis_Mobilio_3.Text, Vendor_3.Text, Tipe_Mobil_3.Text, 'Kontrak Pemelihara_3'.Text, Keterangan_3.Text, Email_11.Text, Departemen2_2.Text, Departemen2_3.Text)
+        Size: =17
+        Text: ="Button"
+        Width: =114
+        X: =508
+        Y: =1000
+        ZIndex: =28
+
+    Canvas2_3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =1
+        Height: =522
+        Width: =640
+        Y: =452
+        ZIndex: =29
+
+        DataCard2_3 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1000
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Nama_6 As text:
+                Default: =Blank()
+                Height: =52
+                HintText: ="Nama"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_6.Text) && !IsBlank(Email_10.Text) && !IsBlank(Email_11.Text)}) // A *Required* Condition
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =41
+                Y: =43
+                ZIndex: =1
+
+            Email_10 As text:
+                Default: =Blank()
+                Height: =52
+                HintText: ="Email"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_6.Text) && !IsBlank(Email_10.Text) && !IsBlank(Email_11.Text)})
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =41
+                Y: =173
+                ZIndex: =2
+
+            Label5_32 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Alamat Email"
+                Width: =236
+                X: =36
+                Y: =131
+                ZIndex: =3
+
+            Label5_36 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: |-
+                    ="*Untuk:"
+                Width: =146
+                X: =41
+                Y: =667
+                ZIndex: =4
+
+            Tanggal_7 As datepicker:
+                BorderThickness: =1
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =52
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Tanggal_7.SelectedDate)})
+                Size: =15
+                Width: =515
+                X: =46
+                Y: =709
+                ZIndex: =5
+
+            Label5_31 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Nama"
+                Width: =137
+                X: =36
+                ZIndex: =6
+
+            Keterangan_3 As text:
+                Default: ="_"
+                Height: =117
+                HintText: ="Isi"
+                OnChange: =
+                PaddingBottom: =145
+                PaddingLeft: =7
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =41
+                Y: =866
+                ZIndex: =7
+
+            Label5_37 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="Keterangan (biarkan bila tak ada)"
+                Width: =487
+                X: =36
+                Y: =818
+                ZIndex: =8
+
+            Email_11 As text:
+                Default: =Blank()
+                Height: =52
+                HintText: ="No. Telp"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_6.Text) && !IsBlank(Email_10.Text) && !IsBlank(Email_11.Text)})
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =46
+                Y: =303
+                ZIndex: =9
+
+            Label5_33 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Nomor Induk Pegawai (NIP)"
+                Width: =436
+                X: =41
+                Y: =261
+                ZIndex: =10
+
+            Departemen2_2 As text:
+                Default: =Blank()
+                Height: =52
+                HintText: ="Departemen"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_6.Text) && !IsBlank(Email_10.Text) && !IsBlank(Departemen2_2.Text)})
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =43
+                Y: =433
+                ZIndex: =11
+
+            Label5_34 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Departemen"
+                Width: =436
+                X: =38
+                Y: =391
+                ZIndex: =12
+
+            Departemen2_3 As text:
+                Default: =Blank()
+                Height: =52
+                HintText: ="Lokasi Tujuan"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_6.Text) && !IsBlank(Email_10.Text) && !IsBlank(Departemen2_3.Text)})
+                Reset: =true
+                Size: =15
+                Width: =515
+                X: =46
+                Y: =574
+                ZIndex: =13
+
+            Label5_35 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: |-
+                    ="Lokasi Tujuan:"
+                Width: =436
+                X: =41
+                Y: =532
+                ZIndex: =14
+

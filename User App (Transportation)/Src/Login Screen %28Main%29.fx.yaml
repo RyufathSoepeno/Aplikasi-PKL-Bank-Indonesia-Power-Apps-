@@ -1,0 +1,135 @@
+"'Login Screen (Main)' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: =
+
+    RectQuickActionBar1 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Ajuan Kendaraan BI"
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1.Y + RectQuickActionBar1.Height
+        ZIndex: =3
+
+        DataCard1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Rectangle1_1 As rectangle:
+                Height: =5
+                Width: =321
+                X: =64
+                Y: =379
+                ZIndex: =1
+
+            Label1_1 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =21
+                Text: ="Login Help Desk"
+                Width: =235
+                X: =64
+                Y: =335
+                ZIndex: =2
+
+            Button1_1 As button:
+                BorderColor: =Color.Black
+                BorderThickness: =1
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =55
+                OnSelect: =Navigate('Login Admin_1')
+                PressedBorderColor: =Color.White
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =20
+                Text: ="Login"
+                Width: =192
+                X: =64
+                Y: =399
+                ZIndex: =4
+
+            Button1_2 As button:
+                BorderColor: =Color.Black
+                BorderThickness: =1
+                Color: =RGBA(0, 0, 0, 1)
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =55
+                OnSelect: |-
+                    =Navigate('Login User_1'); 
+                    Set(NavigateBack, true); // Variable Important for resetting the values on next screen
+                    Navigate('Login User_1', ScreenTransition.Fade); 
+                    Set(NavigateBack2, true);
+                    Navigate('Login User_1', ScreenTransition.Fade)
+                PressedBorderColor: =Color.White
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =20
+                Text: ="Login"
+                Width: =192
+                X: =64
+                Y: =154
+                ZIndex: =5
+
+            Rectangle1_2 As rectangle:
+                Height: =5
+                Width: =321
+                X: =64
+                Y: =134
+                ZIndex: =6
+
+            Label1_2 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Size: =21
+                Text: ="Login User"
+                Width: =235
+                X: =64
+                Y: =74
+                ZIndex: =7
+
+            Button1_8 As button:
+                Fill: =RGBA(109, 49, 162, 1)
+                Height: =54
+                OnSelect: =Set(Logout, true)
+                RadiusBottomLeft: =3
+                RadiusBottomRight: =3
+                RadiusTopLeft: =3
+                RadiusTopRight: =3
+                Size: =18
+                Text: ="Exit"
+                Width: =117
+                X: =507
+                Y: =867
+                ZIndex: =8
+
+    Image1 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+

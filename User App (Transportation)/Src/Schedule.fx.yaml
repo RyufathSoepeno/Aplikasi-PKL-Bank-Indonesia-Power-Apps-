@@ -1,0 +1,476 @@
+"Schedule As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |+
+        =/** Find names of the user*/
+        
+        ClearCollect(
+            UserDates,
+            Filter('Confirmation List', 'Nama Pegawai' = "Barbaro")
+        )
+        
+        /*retrieves calendar events for all days in current month view and selected calendar 
+        _minDate and _maxDate act as markers to prevent duplicate data collection*/         
+        If(IsBlank(_userDomain),         
+        	UpdateContext({_showLoading: true});         
+        	Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email)));         
+        	Set(_dateSelected, Today());         
+        	Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
+        	Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+        	Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))         
+        );         
+        Set(_calendarVisible, false);         
+        UpdateContext({_showLoading: true});                 
+        Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+        Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));                  
+        UpdateContext({_showLoading: false});         
+        Set(_calendarVisible, true);
+        Refresh('Confirmation List');
+        
+
+    Image6_16 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =6
+
+    Label1_35 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =20
+        Text: ="Insert Title"
+        Width: =466
+        X: =117
+        Y: =15
+        ZIndex: =7
+
+    Image10_17 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =8
+
+    Image7_3 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =9
+
+    Button11 As button:
+        BorderThickness: =0
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =70
+        HoverFill: =
+        PressedFill: =
+        RadiusBottomLeft: =18
+        RadiusBottomRight: =18
+        RadiusTopLeft: =18
+        RadiusTopRight: =18
+        Size: =24
+        Text: =
+        Width: =640
+        Y: =218
+        ZIndex: =10
+
+    Rectangle12 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =76
+        Width: =76
+        X: =540
+        Y: =106
+        ZIndex: =11
+
+    Rectangle11_2 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =942
+        Width: =640
+        Y: =194
+        ZIndex: =12
+
+    LblAppName2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Schedule List"
+        Width: =508
+        Wrap: =false
+        X: =117
+        Y: =15
+        ZIndex: =13
+
+    LblResetToday2 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =iconCalendar2.Color
+        FontWeight: =FontWeight.Bold
+        Height: =iconCalendar2.Height
+        PaddingTop: =12
+        Size: =15
+        Text: =DateDiff(Date(Year(Today()), Month(Today()), 1), Today(), TimeUnit.Days) + 1
+        Width: =iconCalendar2.Width
+        X: =iconCalendar2.X
+        Y: =iconCalendar2.Y
+        ZIndex: =14
+
+    iconCalendar2 As icon.CalendarBlank:
+        Height: =60
+        Icon: =Icon.CalendarBlank
+        OnSelect: |-
+            =/*resets calendar view and date selection to today*/
+                     
+            Set(_dateSelected, Today());         
+            Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
+            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))
+        TabIndex: =0
+        Tooltip: ="Reset selected date to today"
+        Width: =60
+        X: =548
+        Y: =114
+        ZIndex: =15
+
+    MonthDayGallery2 As gallery.MonthDayGallery:
+        AccessibleLabel: ="Days of selected month"
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =384
+        Items: =[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19, 20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41]
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateFill: =
+        TemplatePadding: =0
+        TemplateSize: =65
+        Visible: =_calendarVisible
+        WrapCount: =7
+        Y: =373
+        ZIndex: =16
+
+        Circle2 As circle:
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =Self.Width
+            OnSelect: =Select(Parent)
+            Visible: |-
+                =/// Use this to activate account system with the name "Barbaro"
+                /** CountRows(
+                    Filter(
+                        'Confirmation List', DateValue(Text(Mulai)) = DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days), 'Nama Pegawai' = "Barbaro")
+                    ) > 0 && !Subcircle2.Visible && Title6.Visible */ 
+                true
+            Width: =6.5
+            X: =MonthDayGallery2.TemplateWidth / 2 - Self.Width / 2
+            Y: =MonthDayGallery2.TemplateHeight * (0.75)
+            ZIndex: =1
+
+        Subcircle2 As circle:
+            Fill: =RGBA(109, 49, 162, 1)
+            Height: =3 * Title6.Size
+            OnSelect: =Select(Parent)
+            Visible: =And(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, Title6.Visible)
+            Width: =Self.Height
+            X: =MonthDayGallery2.TemplateWidth/2 - Self.Width/2
+            Y: =MonthDayGallery2.TemplateHeight / 2 - Self.Height / 2
+            ZIndex: =2
+
+        Title6 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =If(DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(255, 255, 255, 1), DateAdd(_firstDayInView, ThisItem.Value) = Today(), RGBA(47, 41, 43, 1), LblMonthSelected2.Color)
+            Fill: |-
+                =/*Fill value changes if the gallery item day = today, or if it lies outside of the current month*/             
+                If(
+                    /*Date selected is today*/
+                    DateAdd(_firstDayInView, ThisItem.Value) = Today() && DateAdd(_firstDayInView, ThisItem.Value) = _dateSelected, RGBA(0,0,0,0),
+                    /*Today when it is not selected*/
+                    DateAdd(_firstDayInView, ThisItem.Value) = Today(), ColorFade(Subcircle2.Fill, 0.67), 
+                    /*The day is outside the range of the currently selected month*/
+                    Abs(Self.Text - ThisItem.Value) > 10,RGBA(215, 223, 240, 1), RGBA(0, 0, 0, 0))
+            FocusedBorderColor: =Self.Color
+            FocusedBorderThickness: =2
+            Height: =MonthDayGallery2.TemplateHeight
+            OnSelect: =Set(_dateSelected, DateAdd(_firstDayInView, ThisItem.Value, TimeUnit.Days))
+            Size: =17 * MonthDayGallery2.TemplateWidth / 91
+            TabIndex: =0
+            Text: =Day(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days))
+            Visible: |-
+                =/*This item is in a row containing no days of the visible month. It is in the row after the row where the last day of the month occurs*/ 
+                 !(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days) - Weekday(DateAdd(_firstDayInView,ThisItem.Value, TimeUnit.Days)) + 1 > _lastDayOfMonth)
+            Width: =MonthDayGallery2.TemplateWidth
+            Wrap: =false
+            ZIndex: =3
+
+    WeekdayGallery2 As gallery.WeekdayGallery:
+        AccessibleLabel: ="Days of the week"
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =77
+        Items: =Calendar.WeekdaysShort()
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =91
+        Visible: =_calendarVisible
+        Y: =296
+        ZIndex: =17
+
+        Title5_1 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Height: =WeekdayGallery2.TemplateHeight
+            OnSelect: =Select(Parent)
+            Size: =17 * WeekdayGallery2.TemplateWidth / 77
+            Text: =ThisItem.Value
+            Width: =WeekdayGallery2.TemplateWidth
+            Wrap: =false
+            X: =WeekdayGallery2.TemplateWidth / 2 - Self.Width / 2
+            Y: =WeekdayGallery2.TemplateHeight / 2 - Self.Height / 2
+            ZIndex: =1
+
+    LblMonthSelected2 As label:
+        Align: =Align.Center
+        Fill: =RGBA(237, 237, 237, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =71
+        PaddingBottom: =14
+        Size: =21
+        Text: =Text(_firstDayOfMonth, "mmmm yyyy")
+        Visible: =_calendarVisible
+        Width: =Parent.Width
+        Wrap: =false
+        Y: =225
+        ZIndex: =18
+
+    iconPrevMonth2 As icon.ChevronLeft:
+        Icon: =Icon.ChevronLeft
+        OnSelect: |
+            =/*changes month view to previous month*/
+            
+            Set(_firstDayOfMonth, DateAdd(_firstDayOfMonth, -1, TimeUnit.Months));           
+            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));           
+            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));           
+            
+            /*updates _minDate to prevent duplicate data collection if user returns to this month view*/           
+            If(_minDate > _firstDayOfMonth,           
+                Set(_minDate, _firstDayInView)
+            )
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        TabIndex: =0
+        Tooltip: ="View previous month"
+        Visible: =_calendarVisible
+        Width: =91
+        X: =40
+        Y: =225
+        ZIndex: =19
+
+    iconNextMonth2 As icon.ChevronRight:
+        Icon: =Icon.ChevronRight
+        OnSelect: |-
+            =/*changes month view to next month*/
+                       
+            Set(_firstDayOfMonth, DateAdd(_firstDayOfMonth, 1, TimeUnit.Months));           
+            Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));           
+            /*collects calendar events for all days in current month view. Updates _maxDate to prevent duplicate data collection if user returns to this month view*/           
+            Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days));           
+            If(_maxDate < _lastDayOfMonth,                      
+             Set(_maxDate, DateAdd(_firstDayInView, 40, TimeUnit.Days)))
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        TabIndex: =0
+        Tooltip: ="View next month"
+        Visible: =_calendarVisible
+        Width: =91
+        X: =Parent.Width - Self.Width
+        Y: =225
+        ZIndex: =20
+
+    RectCalendarEventsHeader2 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =LblCalendarEventsHeader2.Height
+        Visible: =_calendarVisible
+        Width: =LblCalendarEventsHeader2.Width
+        X: =LblCalendarEventsHeader2.X
+        Y: =LblCalendarEventsHeader2.Y
+        ZIndex: =21
+
+    LblCalendarEventsHeader2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(227, 234, 243, 1)
+        Height: =60
+        PaddingLeft: =30
+        Size: =21
+        Text: =Text(_dateSelected, DateTimeFormat.LongDate)
+        Visible: =_calendarVisible
+        Width: =Parent.Width
+        Wrap: =false
+        Y: =701
+        ZIndex: =22
+
+    iconEmptyState2 As icon.CalendarBlank:
+        DisplayMode: =DisplayMode.View
+        Icon: =Icon.CalendarBlank
+        Visible: =IsBlank(_userDomain)
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =395
+        ZIndex: =23
+
+    LblEmptyState2 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Height: =150
+        Size: =21
+        Text: ="Select a calendar from the drop down to begin"
+        Visible: =IsBlank(_userDomain)
+        Width: =450
+        X: =Parent.Width / 2 - Self.Width / 2
+        Y: =459
+        ZIndex: =24
+
+    LblNoEvents2 As label:
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.View
+        Height: =64
+        Size: =21
+        Text: =If(_showLoading, "Loading events...", "No events scheduled")
+        Visible: =Or(_showLoading, CountRows(CalendarEventsGallery2_1.AllItems) = 0 && _calendarVisible)
+        Width: =CalendarEventsGallery2_1.Width
+        Wrap: =false
+        X: =CalendarEventsGallery2_1.X
+        Y: =897
+        ZIndex: =25
+
+    Canvas2_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =1
+        Height: =345
+        Width: =640
+        Y: =791
+        ZIndex: =26
+
+        DataCard2_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1000
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            CalendarEventsGallery2_1 As gallery.CalendarEventsGallery:
+                AccessibleLabel: ="Calendar events for selected day"
+                Height: =397
+                Items: |-
+                    =/*Shows events only on selected date*/
+                    
+                    /// Use this to filter by account name "Barbaro"
+                    // SortByColumns(Filter('Confirmation List', DateValue(Mulai) = DateValue(_dateSelected) And 'Nama Pegawai' = "Barbaro"), "Mulai")
+                    
+                    SortByColumns(Filter('Confirmation List', DateValue(Mulai) = DateValue(_dateSelected)), "Mulai")
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =105
+                Visible: =_calendarVisible
+                ZIndex: =15
+
+                Rectangle7_1 As rectangle:
+                    BorderColor: =RGBA(255, 255, 255, 1)
+                    BorderThickness: =If(ThisItem.Id = _selectedCalendarEvent.Id, 2, 0)
+                    Fill: =RGBA(0,0,0,0)
+                    Height: =Parent.TemplateHeight
+                    HoverFill: =RGBA(0,0,0,0)
+                    OnSelect: =Select(Title7_1)
+                    TabIndex: =0
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =1
+
+                iconLocation2_1 As icon.Waypoint:
+                    Height: =Subtitle2_3.Height
+                    Icon: =Icon.Waypoint
+                    OnSelect: =Select(Title7_1)
+                    TabIndex: =0
+                    Width: =28
+                    X: =32
+                    Y: =58
+                    ZIndex: =2
+
+                Title7_1 As label:
+                    BorderColor: =Self.Color
+                    FocusedBorderThickness: =2
+                    FontWeight: =FontWeight.Semibold
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Set(_selectedCalendarEvent, ThisItem)
+                    Size: =19 * CalendarEventsGallery2_1.TemplateHeight / 105
+                    TabIndex: =0
+                    Text: =ThisItem.'Nama Pegawai'
+                    Tooltip: =ThisItem.'Nama Pegawai'
+                    Width: =579
+                    Wrap: =false
+                    X: =32
+                    Y: =21
+                    ZIndex: =3
+
+                Subtitle2_3 As label:
+                    FocusedBorderThickness: =2
+                    FontWeight: =FontWeight.Lighter
+                    Height: =Self.Size * 2
+                    OnSelect: =Select(Title7_1)
+                    PaddingBottom: =0
+                    Size: =18 * CalendarEventsGallery2_1.TemplateHeight / 105
+                    Text: =ThisItem.Lokasi
+                    Tooltip: =ThisItem.Location
+                    Wrap: =false
+                    X: =60
+                    Y: =55
+                    ZIndex: =4
+
+                Body2_1 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    FocusedBorderThickness: =2
+                    Height: =Title7_1.Height
+                    OnSelect: =Select(Title7_1)
+                    Size: =15
+                    Text: =Text(ThisItem.Akhir, DateTimeFormat.ShortTime)
+                    Width: =126
+                    Wrap: =false
+                    X: =368
+                    Y: =59
+                    ZIndex: =5
+
+                Separator2_3 As rectangle:
+                    Fill: =RGBA(0, 18, 107, 1)
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =7
+
+                Label8 As label:
+                    Height: =47
+                    OnSelect: =Select(Parent)
+                    Size: =15
+                    Text: |-
+                        ="End Date:"
+                    Width: =164
+                    X: =267
+                    Y: =52
+                    ZIndex: =8
+
+    Image10_12 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =15
+        ZIndex: =27
+
+    Icon1_9 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Calendar Menu')
+        X: =22
+        Y: =107
+        ZIndex: =28
+

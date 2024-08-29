@@ -1,0 +1,180 @@
+"'Tiket Penerimaan_1' As screen.'printableLayout_A4Landscape_ver1.0'":
+    Fill: =Color.MintCream
+    Height: =650
+    OnVisible: =Set(RandomNumber, RandBetween(100000, 999999))
+    Width: =1123
+
+    Image2_10 As image:
+        Height: =163
+        Image: ='Spesifikasi-Kijang-Innova'
+        Width: =286
+        X: =33
+        Y: =207
+        ZIndex: =1
+
+    Rectangle3_4 As rectangle:
+        Height: =11
+        Width: =725
+        X: =357
+        Y: =92
+        ZIndex: =3
+
+    Image5_2 As image:
+        Height: =103
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =106
+        ZIndex: =4
+
+    Label4_4 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Kijang Innova XL"
+        Width: =560
+        X: =357
+        Y: =16
+        ZIndex: =5
+
+    Label8_15 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nama Pegawai:"
+        Width: =181
+        X: =357
+        Y: =109
+        ZIndex: =6
+
+    Label8_17 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Mulai:"
+        Width: =181
+        X: =357
+        Y: =233
+        ZIndex: =7
+
+    Label8_18 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Akhir:"
+        Width: =181
+        X: =736
+        Y: =233
+        ZIndex: =8
+
+    Label8_19 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Jenis Mobil:"
+        Width: =181
+        X: =357
+        Y: =367
+        ZIndex: =9
+
+    Label8_16 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nomor Tiket:"
+        Width: =181
+        X: =736
+        Y: =109
+        ZIndex: =10
+
+    Label8_20 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Tempat Pengambilan:"
+        Width: =256
+        X: =736
+        Y: =367
+        ZIndex: =11
+
+    Pegawai_2 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =Nama.Text
+        Width: =221
+        X: =357
+        Y: =146
+        ZIndex: =12
+
+    Mulai_2 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =Tanggal.SelectedDate
+        Width: =221
+        X: =357
+        Y: =271
+        ZIndex: =14
+
+    Akhir_2 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="6/10/2024"
+        Width: =221
+        X: =736
+        Y: =271
+        ZIndex: =15
+
+    Jenis_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="Dinas"
+        Width: =221
+        X: =357
+        Y: =411
+        ZIndex: =16
+
+    Lokasi_2 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="Parkiran Kebon Sirih"
+        Width: =221
+        X: =736
+        Y: =411
+        ZIndex: =17
+
+    Label8_14 As label:
+        Font: =Font.Verdana
+        Height: =70
+        Size: =16.5
+        Text: ="Tiket Kendaraan BI"
+        Width: =181
+        X: =118
+        Y: =8
+        ZIndex: =18
+
+    Rectangle3_5 As rectangle:
+        Height: =11
+        Width: =1071
+        X: =11
+        Y: =579
+        ZIndex: =19
+
+    Tiket_ID_2 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =RandomNumber
+        Width: =221
+        X: =736
+        Y: =146
+        ZIndex: =20
+

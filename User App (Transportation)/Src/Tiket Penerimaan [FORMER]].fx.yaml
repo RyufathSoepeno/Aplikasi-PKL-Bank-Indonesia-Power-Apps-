@@ -1,0 +1,215 @@
+"'Tiket Penerimaan [FORMER]]' As screen.'printableLayout_A4Landscape_ver1.0'":
+    Fill: =Color.MintCream
+    Height: =650
+    OnVisible: =Set(RandomNumber, RandBetween(100000, 999999))
+    Width: =1123
+
+    "Gallery5 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =70
+        Items: =Filter('Daftar Mobil2', ID = selectedID) /// To make it only one item -- for Text purposes
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =70
+        Width: =244
+        X: =347
+        Y: =423
+        ZIndex: =1
+
+        Title1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            Font: =Font.Georgia
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Normal, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =15
+            Text: =ThisItem.Jenis
+            VerticalAlign: =VerticalAlign.Top
+            Width: =157
+            X: =16
+            Y: =12
+            ZIndex: =1
+
+    Rectangle3_2 As rectangle:
+        Height: =11
+        Width: =725
+        X: =357
+        Y: =92
+        ZIndex: =3
+
+    Image5_1 As image:
+        Height: =103
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =106
+        ZIndex: =4
+
+    Label4_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Kijang Innova XL"
+        Width: =560
+        X: =357
+        Y: =16
+        ZIndex: =5
+
+    Label8_8 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nama Pegawai:"
+        Width: =181
+        X: =357
+        Y: =109
+        ZIndex: =6
+
+    Label8_10 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Mulai:"
+        Width: =181
+        X: =357
+        Y: =233
+        ZIndex: =7
+
+    Label8_11 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Waktu Akhir:"
+        Width: =181
+        X: =736
+        Y: =233
+        ZIndex: =8
+
+    Label8_12 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Jenis Mobil:"
+        Width: =181
+        X: =357
+        Y: =367
+        ZIndex: =9
+
+    Label8_9 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Nomor Tiket:"
+        Width: =181
+        X: =736
+        Y: =109
+        ZIndex: =10
+
+    Label8_13 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =16.5
+        Text: |-
+            ="Tempat Pengambilan:"
+        Width: =256
+        X: =736
+        Y: =367
+        ZIndex: =11
+
+    Pegawai_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =Nama_3.Text
+        Width: =221
+        X: =357
+        Y: =146
+        ZIndex: =12
+
+    Mulai_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =Tanggal_4.SelectedDate
+        Width: =221
+        X: =357
+        Y: =271
+        ZIndex: =14
+
+    Akhir_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="6/10/2024"
+        Width: =221
+        X: =736
+        Y: =271
+        ZIndex: =15
+
+    Lokasi_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: ="Parkiran Kebon Sirih"
+        Width: =221
+        X: =736
+        Y: =411
+        ZIndex: =17
+
+    Label8_7 As label:
+        Font: =Font.Verdana
+        Height: =70
+        Size: =16.5
+        Text: ="Tiket Kendaraan BI"
+        Width: =181
+        X: =118
+        Y: =8
+        ZIndex: =18
+
+    Rectangle3_3 As rectangle:
+        Height: =11
+        Width: =1071
+        X: =11
+        Y: =579
+        ZIndex: =19
+
+    Tiket_ID_1 As label:
+        Font: =Font.Georgia
+        Height: =70
+        Size: =15
+        Text: =RandomNumber
+        Width: =221
+        X: =736
+        Y: =146
+        ZIndex: =20
+
+    "'Car Image_2' As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =181
+        Items: =Filter('Daftar Mobil2', ID = selectedID) /// To make it only one item -- for Text purposes
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =184
+        Width: =263
+        Y: =216
+        ZIndex: =21
+
+        Image9_2 As image:
+            Height: =146
+            Image: =ThisItem.GambarMobil
+            OnSelect: =Select(Parent)
+            Width: =263
+            ZIndex: =6
+

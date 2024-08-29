@@ -1,0 +1,234 @@
+"User_Catalog_4 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Reset(Dropdown1_4);
+        Reset(TextInput2_4);
+        Reset(Gallery1_1);
+        Set(Logout, false);
+        
+        Collect(CatalogueData, 'Daftar Mobil2')
+
+    RectQuickActionBar1_15 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "Gallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnVariant_ver5.0'":
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1.2
+        DelayItemLoading: =true
+        Height: =954
+        Items: =SearchResults2
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =Min(416, Self.Height - 60)
+        WrapCount: =2
+        Y: =182
+        ZIndex: =1
+
+        Image8_1 As image:
+            Height: =141
+            Image: =ThisItem.GambarMobil
+            ImagePosition: =ImagePosition.Fill
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =261
+            X: =16
+            Y: =16
+            ZIndex: =1
+
+        Title4_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Nama
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 64
+            X: =32
+            Y: =Image8_1.Y + Image8_1.Height + 16
+            ZIndex: =2
+
+        Subtitle4_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Jenis
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title4_1.Width
+            X: =Title4_1.X
+            Y: =Title4_1.Y + Title4_1.Height + 8
+            ZIndex: =3
+
+        Button5_1 As button:
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =47
+            OnSelect: |-
+                =Set(selectedID, ThisItem.ID); /// Important for Next Screen where specific ID for 'Car Info' and 'Kirim' Button is chosen
+                Navigate('Info Mobil_1');
+            Size: =16
+            Text: ="Lihat"
+            Width: =128
+            X: =160
+            Y: =287
+            ZIndex: =4
+
+    LblAppName1_15 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =22
+        Text: ="Katalog Mobil"
+        Width: =516
+        X: =90
+        ZIndex: =2
+
+    "'Logo BI_4' As image":
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+
+    TextInput2_4 As text:
+        Default: =""
+        HintText: ="Cari"
+        OnChange: |-
+            =UpdateContext({FormIsValid: !IsBlank(TextInput1.Text)});
+            ClearCollect(SearchResults2, Search('Daftar Mobil2', TextInput2_4.Text, Nama, Jenis))
+            /// ClearCollect defines the variable "SearchResult"
+        Width: =595
+        X: =10
+        Y: =110
+        ZIndex: =5
+
+    Icon1_4 As icon.Search:
+        Height: =40
+        Icon: =Icon.Search
+        OnSelect: |-
+            =ClearCollect(SearchResults2, Search('Daftar Mobil2', TextInput2_4.Text, Nama, Jenis))
+            /// ClearCollect defines the variable "SearchResult"
+        Width: =33
+        X: =526
+        Y: =110
+        ZIndex: =6
+
+    Icon4_4 As icon.ArrowsUpDown:
+        Height: =42
+        Icon: =Icon.Sort
+        Width: =30
+        X: =559
+        Y: =108
+        ZIndex: =9
+
+    Dropdown1_4 As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =0
+        ChevronBackground: =RGBA(246, 88, 16, 1)
+        Default: ="Blank()"
+        Height: =30
+        Items: =["Lain", "Pengaturan", "Laporan Insiden", "Sejarah", "Status Pengajuan"]
+        OnChange: |-
+            =If(
+                Dropdown1_4.Selected.Value = "Sejarah", 
+                Navigate(Sejarah),
+                Dropdown1_4.Selected.Value = "Status Pengajuan", 
+                Navigate('Status Pending'),
+                Dropdown1_4.Selected.Value = "Laporan Insiden", 
+                Navigate('Laporan Insiden')
+            )
+        OnSelect: =
+        Reset: =true
+        Size: =12
+        Width: =241
+        X: =304
+        Y: =29
+        ZIndex: =10
+
+    Icon3_18 As icon.Reload:
+        Color: =RGBA(0, 134, 208, 1)
+        Height: =21
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Daftar Mobil2')
+        Width: =34
+        X: =595
+        Y: =155
+        ZIndex: =11
+
+    Button1_12 As button:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =30
+        OnSelect: =Set(Logout, true)
+        RadiusBottomLeft: =3
+        RadiusBottomRight: =3
+        RadiusTopLeft: =3
+        RadiusTopRight: =3
+        Size: =12
+        Text: ="Exit"
+        Width: =81
+        X: =551
+        Y: =29
+        ZIndex: =12
+
+    Group1_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        Rectangle1_5 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =247
+            Visible: =Logout
+            Width: =534
+            X: =53
+            Y: =445
+            ZIndex: =13
+
+        Label4_5 As label:
+            Height: =70
+            Size: =21
+            Text: ="Apakah Anda yakin mau logout?"
+            Visible: =Logout
+            Width: =438
+            X: =121
+            Y: =460
+            ZIndex: =14
+
+        Button8_2 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            OnSelect: =Set(Logout, false)
+            Size: =18
+            Text: ="Tidak"
+            Visible: =Logout
+            Width: =125
+            X: =153
+            Y: =580
+            ZIndex: =15
+
+        Button8_3 As button:
+            Fill: =RGBA(0, 134, 208, 1)
+            OnSelect: =Exit()
+            Size: =18
+            Text: ="Iya"
+            Visible: =Logout
+            Width: =125
+            X: =387
+            Y: =580
+            ZIndex: =16
+

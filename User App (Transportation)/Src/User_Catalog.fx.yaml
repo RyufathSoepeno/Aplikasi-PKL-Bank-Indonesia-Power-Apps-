@@ -1,0 +1,328 @@
+"User_Catalog As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Reset(Dropdown1);
+        If(SearchBar, 
+           Reset(TextInput2);
+           Set(NavigateBack, false)
+        );
+
+    RectQuickActionBar1_2 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =22
+        Text: ="Kendaraan Dinas"
+        Width: =516
+        X: =90
+        ZIndex: =2
+
+    Canvas1_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_2.Y + RectQuickActionBar1_2.Height
+        ZIndex: =3
+
+        DataCard1_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: |
+                =3000
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Button2_1 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =24
+                Y: =84
+                ZIndex: =1
+
+            Button2_2 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =24
+                Y: =398
+                ZIndex: =2
+
+            Button2_3 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =357
+                Y: =84
+                ZIndex: =3
+
+            Button2_4 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =357
+                Y: =398
+                ZIndex: =4
+
+            Button2_5 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =357
+                Y: =702
+                ZIndex: =5
+
+            Button2_6 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =357
+                Y: =1010
+                ZIndex: =6
+
+            Button2_7 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =24
+                Y: =702
+                ZIndex: =7
+
+            Button2_8 As button:
+                BorderColor: =Color.Gray
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =239
+                Size: =24
+                Text: =
+                Width: =247
+                X: =24
+                Y: =1010
+                ZIndex: =8
+
+            Image2_1 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =36
+                Y: =99
+                ZIndex: =9
+
+            Image2_2 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =371
+                Y: =99
+                ZIndex: =10
+
+            Image2_3 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =38
+                Y: =414
+                ZIndex: =11
+
+            Image2_4 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =38
+                Y: =1029
+                ZIndex: =12
+
+            Image2_5 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =38
+                Y: =721
+                ZIndex: =13
+
+            Image2_6 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =371
+                Y: =1029
+                ZIndex: =14
+
+            Image2_7 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =371
+                Y: =721
+                ZIndex: =15
+
+            Image2_8 As image:
+                Height: =92
+                Image: ='Spesifikasi-Kijang-Innova'
+                Width: =218
+                X: =371
+                Y: =414
+                ZIndex: =16
+
+            Kijang As label:
+                Height: =38
+                Size: =15
+                Text: ="Toyota Kijang "
+                Width: =140
+                X: =38
+                Y: =217
+                ZIndex: =17
+
+            Type As label:
+                Color: =RGBA(116, 116, 116, 1)
+                Height: =15
+                Size: =12
+                Text: ="Dinas"
+                Width: =140
+                X: =38
+                Y: =202
+                ZIndex: =18
+
+            "'Book Now' As button":
+                Fill: =RGBA(246, 88, 16, 1)
+                Height: =39
+                OnSelect: |-
+                    =Set(MobilDinas2, true);
+                    Navigate('Info Mobil Dinas');
+                    
+                    Set(MobilDinas3, true);
+                    Navigate('Info Mobil Dinas');
+                    
+                    Set(MobilDinas, true);
+                    Navigate('Info Mobil Dinas')
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =14
+                Text: ="Book Sekarang"
+                Width: =150
+                X: =106
+                Y: =275
+                ZIndex: =19
+
+            Label4_2 As label:
+                Color: =RGBA(116, 116, 116, 1)
+                Height: =18
+                Size: =12
+                Text: ="Sewa"
+                Width: =140
+                X: =371
+                Y: =202
+                ZIndex: =20
+
+            Kijang_1 As label:
+                Height: =38
+                Size: =15
+                Text: ="Toyota Kijang "
+                Width: =140
+                X: =371
+                Y: =220
+                ZIndex: =21
+
+            "'Book Now_1' As button":
+                Fill: =RGBA(246, 88, 16, 1)
+                Height: =39
+                OnSelect: =Navigate('Info Mobil Sewa')
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =14
+                Text: ="Book Sekarang"
+                Width: =150
+                X: =439
+                Y: =275
+                ZIndex: =22
+
+    "'Logo BI' As image":
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+
+    TextInput2 As text:
+        Default: =Blank()
+        HintText: ="Cari"
+        OnChange: |-
+            =UpdateContext({FormIsValid: !IsBlank(TextInput1.Text)})
+        Width: =581
+        X: =25
+        Y: =110
+        ZIndex: =5
+
+    Icon1 As icon.Search:
+        Height: =40
+        Icon: =Icon.Search
+        Width: =33
+        X: =526
+        Y: =110
+        ZIndex: =6
+
+    Icon4 As icon.ArrowsUpDown:
+        Height: =42
+        Icon: =Icon.Sort
+        Width: =30
+        X: =559
+        Y: =108
+        ZIndex: =9
+
+    Dropdown1 As dropdown:
+        BorderThickness: =0
+        ChevronBackground: =RGBA(246, 88, 16, 1)
+        Default: ="Blank()"
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =30
+        Items: =["", "Pengaturan", "Sejarah", "Status Pengajuan", "Laporan Kejadian"]
+        OnChange: |-
+            =If(
+                Dropdown1.Selected.Value = "Pengaturan", 
+                Navigate(User_Catalog),
+                Dropdown1.Selected.Value = "Sejarah", 
+                Navigate(Sejarah),
+                Dropdown1.Selected.Value = "Status Pengajuan", 
+                Navigate('Status Pending')
+            )
+        OnSelect: =
+        Reset: =true
+        SelectionFill: =RGBA(54, 176, 75, 1)
+        Size: =12
+        Width: =180
+        X: =360
+        Y: =29
+        ZIndex: =10
+

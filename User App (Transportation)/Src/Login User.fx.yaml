@@ -1,0 +1,146 @@
+"'Login User' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Image6_1 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Button1_14 As button:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =54
+        OnSelect: =Exit()
+        RadiusBottomLeft: =3
+        RadiusBottomRight: =3
+        RadiusTopLeft: =3
+        RadiusTopRight: =3
+        Size: =18
+        Text: ="Exit"
+        Width: =117
+        X: =509
+        Y: =106
+        ZIndex: =9
+
+    Icon3_14 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Login Screen')
+        Width: =52
+        X: =33
+        Y: =115
+        ZIndex: =12
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Button10 As button:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =941
+            HoverFill: =
+            PressedBorderColor: =
+            RadiusBottomLeft: =36
+            RadiusBottomRight: =36
+            RadiusTopLeft: =36
+            RadiusTopRight: =36
+            Size: =24
+            Text: ="Button"
+            Width: =640
+            Y: =195
+            ZIndex: =10
+
+        Rectangle8 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =103
+            Width: =640
+            Y: =1033
+            ZIndex: =11
+
+    Image10 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =13
+
+    TextInput1_4 As text:
+        Default: =Blank()
+        Height: =70
+        HintText: ="isi"
+        OnChange: |-
+            =UpdateContext({FormIsValid: !IsBlank(TextInput1_4.Text) && !IsBlank(TextInput1_5.Text)}) // A *Required* Condition
+        Reset: =true
+        Size: =18
+        Width: =560
+        X: =33
+        Y: =369
+        ZIndex: =16
+
+    Label3_4 As label:
+        Height: =70
+        Size: =17
+        Text: |-
+            ="Email BI:"
+        Width: =560
+        X: =33
+        Y: =318
+        ZIndex: =17
+
+    TextInput1_5 As text:
+        Default: =Blank()
+        Height: =70
+        HintText: ="isi"
+        OnChange: |-
+            =UpdateContext({FormIsValid: !IsBlank(TextInput1_4.Text) && !IsBlank(TextInput1_5.Text)}) // A *Required* Condition
+        Reset: =true
+        Size: =18
+        Width: =560
+        X: =33
+        Y: =504
+        ZIndex: =18
+
+    Label3_5 As label:
+        Height: =70
+        Size: =17
+        Text: |-
+            ="Kata Sandi:"
+        Width: =560
+        X: =33
+        Y: =453
+        ZIndex: =19
+
+    Button2_12 As button:
+        DisplayMode: =If(FormIsValid, DisplayMode.Edit, DisplayMode.Disabled) // A *Required* Condition --> Found in TextInput1_1 in "Kata Sandi" on Change
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =41
+        OnSelect: |-
+            =Set(SearchBar, true); // Variable Important for resetting the values on next screen
+            If(!IsBlank(LookUp('BI Email Accounts', Title = TextInput1_4.Text && Password = TextInput1_5.Text)), Navigate ('Main Menu'), Navigate ('Main Menu') && Notify("Username atau Kata Sandi salah, try again!", NotificationType.Error))
+        Size: =18
+        Text: ="Button"
+        Width: =115
+        X: =478
+        Y: =620
+        ZIndex: =20
+
+    Label15 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =43
+        Size: =22
+        Text: ="Login User"
+        Width: =560
+        X: =33
+        Y: =252
+        ZIndex: =21
+
+    Rectangle5_2 As rectangle:
+        Height: =4
+        Width: =298
+        X: =38
+        Y: =300
+        ZIndex: =22
+

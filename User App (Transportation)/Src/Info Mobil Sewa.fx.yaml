@@ -1,0 +1,168 @@
+"'Info Mobil Sewa' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(255, 255, 255, 1)
+
+    RectQuickActionBar1_5 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_5 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Kendaraan Vendor"
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Canvas1_5 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_5.Y + RectQuickActionBar1_5.Height
+        ZIndex: =3
+
+        DataCard1_5 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            TextInput3_3 As text:
+                Color: =RGBA(202, 202, 202, 1)
+                Default: ="Text input"
+                Height: =48
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(TextInput3_3.Text)})
+                Size: =17
+                Width: =515
+                X: =44
+                Y: =460
+                ZIndex: =1
+
+            TextInput3_4 As text:
+                Color: =RGBA(202, 202, 202, 1)
+                Default: ="alamat email"
+                Height: =48
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(TextInput3_4.Text)})
+                Size: =17
+                Width: =515
+                X: =44
+                Y: =578
+                ZIndex: =2
+
+            Label5_4 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Alamat Email"
+                Width: =182
+                X: =44
+                Y: =536
+                ZIndex: =4
+
+            Label5_5 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: |-
+                    ="*Untuk:"
+                Width: =101
+                X: =44
+                Y: =665
+                ZIndex: =5
+
+            Button4_1 As button:
+                Height: =50
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =24
+                Text: ="Kirim"
+                Width: =157
+                X: =460
+                Y: =812
+                ZIndex: =6
+
+            Tanggal_1 As datepicker:
+                BorderThickness: =1
+                Height: =48
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Tanggal_1.SelectedDate)})
+                Size: =16
+                Width: =515
+                X: =44
+                Y: =707
+                ZIndex: =7
+
+    Image1_5 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+
+    Label5_6 As label:
+        Height: =133
+        Size: =18
+        Text: |-
+            ="Info Mobil:
+            -Tipe: xxxx
+            -Vendor: Vendor.com"
+        VerticalAlign: =VerticalAlign.Top
+        Width: =560
+        X: =41
+        Y: =290
+        ZIndex: =5
+
+    Image4_1 As image:
+        Height: =184
+        Image: ='Spesifikasi-Kijang-Innova'
+        Width: =304
+        X: =169
+        Y: =106
+        ZIndex: =6
+
+    Rectangle5_1 As rectangle:
+        Height: =4
+        Width: =298
+        X: =41
+        Y: =473
+        ZIndex: =7
+
+    Label6_1 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =19
+        Text: ="Formulir"
+        Width: =560
+        X: =41
+        Y: =423
+        ZIndex: =8
+
+    Label5_7 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =42
+        Size: =18
+        Text: ="*Nama"
+        Width: =101
+        X: =41
+        Y: =499
+        ZIndex: =9
+
+    Icon3_1 As icon.BackArrow:
+        Color: =RGBA(204, 208, 225, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(User_Catalog)
+        X: =12
+        Y: =106
+        ZIndex: =10
+

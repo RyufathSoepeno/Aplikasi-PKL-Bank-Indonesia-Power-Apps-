@@ -1,0 +1,253 @@
+"'Tiket Penerimaan (Angkut)' As screen.'printableLayout_A4Landscape_ver1.0'":
+    Fill: =Color.MintCream
+    Height: =650
+    OnVisible: |-
+        =// Print()
+        // Set(PDFFILE, Blank());
+        // DownloadTicket.Run(Label14_8.Text, Tiket_ID_4.Text, Label13_2.Text, PDF('Tiket Penerimaan_2'));
+        // Download(PDF('PDF Container'));
+    Width: =1123
+
+    "'PDF Container_1' As groupContainer.manualLayoutContainer":
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =650
+        Width: =1123
+        ZIndex: =21
+
+        "Gallery6_7 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =535
+            Items: =Filter('Confirmation List (Angkut)', ID = TiketClassifier)
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =535
+            Width: =1043
+            X: =40
+            Y: =42
+            ZIndex: =1
+
+            Label13_3 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =52
+                OnSelect: =Select(Parent)
+                Size: =21
+                Text: =ThisItem.Title
+                Width: =375
+                X: =352
+                Y: =48
+                ZIndex: =5
+
+            Label14_12 As label:
+                Font: =Font.Georgia
+                Height: =70
+                OnSelect: =Select(Parent)
+                PaddingLeft: =10
+                Size: =15
+                Text: =ThisItem.'Nama Driver'
+                Width: =334
+                X: =352
+                Y: =141
+                ZIndex: =6
+
+            Label14_14 As label:
+                Font: =Font.Georgia
+                Height: =70
+                OnSelect: =Select(Parent)
+                PaddingLeft: =10
+                Size: =15
+                Text: =ThisItem.Mulai
+                Width: =334
+                X: =352
+                Y: =266
+                ZIndex: =7
+
+            Label14_15 As label:
+                Font: =Font.Georgia
+                Height: =70
+                OnSelect: =Select(Parent)
+                PaddingLeft: =10
+                Size: =15
+                Text: =ThisItem.Jenis
+                Width: =334
+                X: =352
+                Y: =395
+                ZIndex: =8
+
+            Label14_13 As label:
+                Font: =Font.Georgia
+                Height: =70
+                OnSelect: =Select(Parent)
+                PaddingLeft: =10
+                Size: =15
+                Text: =ThisItem.Akhir
+                Width: =172
+                X: =733
+                Y: =262
+                ZIndex: =9
+
+            Label13_4 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =52
+                OnSelect: =Select(Parent)
+                Size: =21
+                Text: =ThisItem.Title
+                Width: =297
+                X: =746
+                Y: =48
+                ZIndex: =10
+
+            Label17_1 As label:
+                Font: =Font.Georgia
+                Height: =52
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: =ThisItem.Jam
+                Width: =190
+                X: =98
+                Y: =395
+                ZIndex: =11
+
+            Label22_1 As label:
+                Font: =Font.Georgia
+                Height: =70
+                OnSelect: =Select(Parent)
+                Size: =15
+                Text: =ThisItem.'Nomor Tiket'
+                Width: =282
+                X: =735
+                Y: =144
+                ZIndex: =12
+
+            Label25_1 As label:
+                Height: =70
+                OnSelect: =Select(Parent)
+                Size: =21
+                Text: =ThisItem.'Titik Kumpul'
+                Width: =271
+                X: =735
+                Y: =407
+                ZIndex: =13
+
+        Image2_13 As image:
+            Height: =163
+            Width: =286
+            X: =33
+            Y: =180
+            ZIndex: =2
+
+        Rectangle3_10 As rectangle:
+            Height: =11
+            Width: =705
+            X: =398
+            Y: =145
+            ZIndex: =3
+
+        Image5_6 As image:
+            Height: =103
+            Image: ='Screenshot 2024-05-30 172042'
+            Width: =106
+            ZIndex: =4
+
+        Label8_42 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="Name of Driver:"
+            Width: =181
+            X: =397
+            Y: =145
+            ZIndex: =5
+
+        Label8_44 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="Starting Date:"
+            Width: =259
+            X: =397
+            Y: =269
+            ZIndex: =6
+
+        Label8_45 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="End Date:"
+            Width: =181
+            X: =776
+            Y: =269
+            ZIndex: =7
+
+        Label8_47 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="Type of Pickup:"
+            Width: =181
+            X: =397
+            Y: =396
+            ZIndex: =8
+
+        Label8_43 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: ="Ticket Number"
+            Width: =181
+            X: =776
+            Y: =145
+            ZIndex: =9
+
+        Label8_48 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="Pickup Point:"
+            Width: =256
+            X: =776
+            Y: =396
+            ZIndex: =10
+
+        Label8_41 As label:
+            Font: =Font.Verdana
+            Height: =70
+            Size: =16.5
+            Text: ="Pickup Ticket"
+            Width: =181
+            X: =118
+            Y: =8
+            ZIndex: =12
+
+        Rectangle3_11 As rectangle:
+            Height: =11
+            Width: =1092
+            X: =11
+            Y: =561
+            ZIndex: =13
+
+        Label8_46 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =16.5
+            Text: |-
+                ="Time:"
+            Width: =181
+            X: =139
+            Y: =396
+            ZIndex: =15
+
+    Icon6_1 As icon.BackArrow:
+        Height: =52
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Status Pending')
+        Width: =59
+        X: =12
+        Y: =585
+        ZIndex: =22
+

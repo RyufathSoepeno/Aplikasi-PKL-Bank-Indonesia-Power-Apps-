@@ -1,0 +1,221 @@
+"User_Catalog_1 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Reset(Dropdown1_1);
+        If(SearchBar, 
+           Reset(TextInput2_1);
+           Set(NavigateBack, false)
+        );
+
+    RectQuickActionBar1_9 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_9 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =22
+        Text: ="Kendaraan Dinas"
+        Width: =516
+        X: =90
+        ZIndex: =2
+
+    Canvas1_9 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_9.Y + RectQuickActionBar1_9.Height
+        ZIndex: =3
+
+        DataCard1_9 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: |
+                =3000
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+    "'Logo BI_1' As image":
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =4
+
+    TextInput2_1 As text:
+        Default: =Blank()
+        HintText: ="Cari"
+        OnChange: |-
+            =UpdateContext({FormIsValid: !IsBlank(TextInput1.Text)})
+        Width: =581
+        X: =25
+        Y: =110
+        ZIndex: =5
+
+    Icon1_1 As icon.Search:
+        Height: =40
+        Icon: =Icon.Search
+        OnSelect: =Reset(Gallery3); // Reset the gallery to update its items
+        Width: =33
+        X: =526
+        Y: =110
+        ZIndex: =6
+
+    Icon4_1 As icon.ArrowsUpDown:
+        Height: =42
+        Icon: =Icon.Sort
+        Width: =30
+        X: =559
+        Y: =108
+        ZIndex: =9
+
+    Dropdown1_1 As dropdown:
+        ChevronBackground: =RGBA(246, 88, 16, 1)
+        Default: ="Blank()"
+        Height: =30
+        Items: =["Pengaturan", "Sejarah", "Status Pengajuan"]
+        OnChange: |-
+            =If(
+                Dropdown1_1.Selected.Value = "Pengaturan", 
+                Navigate(User_Catalog_1),
+                Dropdown1_1.Selected.Value = "Sejarah", 
+                Navigate(Sejarah),
+                Dropdown1_1.Selected.Value = "Status Pengajuan", 
+                Navigate('Status Pending')
+            )
+        OnSelect: =
+        Reset: =true
+        Size: =12
+        Width: =255
+        X: =374
+        Y: =29
+        ZIndex: =10
+
+    Gallery3 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Items: =Search(Kendaraan, TextInput2_1.Text, Tipe)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
+        Y: =150
+        ZIndex: =11
+
+        Button2_10 As button:
+            BorderColor: =Color.Gray
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =239
+            Size: =24
+            Text: =
+            Width: =247
+            X: =40
+            Y: =40
+            ZIndex: =1
+
+        Button2_11 As button:
+            BorderColor: =Color.Gray
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =239
+            Size: =24
+            Text: =
+            Width: =247
+            X: =373
+            Y: =40
+            ZIndex: =2
+
+        Image2_9 As image:
+            Height: =92
+            Image: ='Spesifikasi-Kijang-Innova'
+            Width: =218
+            X: =52
+            Y: =55
+            ZIndex: =3
+
+        Image2_15 As image:
+            Height: =92
+            Image: ='Spesifikasi-Kijang-Innova'
+            Width: =218
+            X: =387
+            Y: =55
+            ZIndex: =4
+
+        Kijang_2 As label:
+            Height: =38
+            Size: =15
+            Text: ="Toyota Kijang "
+            Width: =140
+            X: =54
+            Y: =173
+            ZIndex: =5
+
+        Type_1 As label:
+            Color: =RGBA(116, 116, 116, 1)
+            Height: =15
+            Size: =12
+            Text: ="Dinas"
+            Width: =140
+            X: =54
+            Y: =158
+            ZIndex: =6
+
+        "'Book Now_2' As button":
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =39
+            OnSelect: |-
+                =Set(MobilDinas2, true);
+                Navigate('Info Mobil Dinas');
+                
+                Set(MobilDinas3, true);
+                Navigate('Info Mobil Dinas');
+                
+                Set(MobilDinas, true);
+                Navigate('Info Mobil Dinas')
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: ="Book Sekarang"
+            Width: =150
+            X: =122
+            Y: =231
+            ZIndex: =7
+
+        Label4_3 As label:
+            Color: =RGBA(116, 116, 116, 1)
+            Height: =18
+            Size: =12
+            Text: ="Sewa"
+            Width: =140
+            X: =387
+            Y: =158
+            ZIndex: =8
+
+        Kijang_3 As label:
+            Height: =38
+            Size: =15
+            Text: ="Toyota Kijang "
+            Width: =140
+            X: =387
+            Y: =176
+            ZIndex: =9
+
+        "'Book Now_3' As button":
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =39
+            OnSelect: =Navigate('Info Mobil Sewa')
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =14
+            Text: ="Book Sekarang"
+            Width: =150
+            X: =455
+            Y: =231
+            ZIndex: =10
+

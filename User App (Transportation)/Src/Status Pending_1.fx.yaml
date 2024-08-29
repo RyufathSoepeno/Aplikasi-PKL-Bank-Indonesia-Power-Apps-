@@ -1,0 +1,143 @@
+"'Status Pending_1' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    RectQuickActionBar1_12 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =963
+        Items: =FirstN(Sort('User-to-Admin', Modified, SortOrder.Descending), 3)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =90
+        Y: =170
+        ZIndex: =1
+
+        Title2_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =427
+            X: =143
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle2_1.Size * 1.8)) / 2
+            ZIndex: =1
+
+        Subtitle2_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =23
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Tipe
+            VerticalAlign: =VerticalAlign.Top
+            Width: =425
+            X: =143
+            Y: =Title2_1.Y + Title2_1.Height
+            ZIndex: =2
+
+        Separator2_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle4_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =2
+            Height: =Parent.TemplateHeight - Separator2_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+        "Gallery4_2 As gallery.'BrowseLayout_Vertical_OneImageTwoColumnVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =86
+            Items: =Filter('Daftar Mobil2', ID = selectedID) /// To make it only one item -- for Text purposes
+            Layout: =Layout.Vertical
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =4
+            TemplateSize: =82
+            Width: =139
+            WrapCount: =2
+            X: =4
+            Y: =4
+            ZIndex: =6
+
+            Image10_2 As image:
+                Height: =82
+                Image: =ThisItem.GambarMobil
+                ImagePosition: =ImagePosition.Fill
+                OnSelect: =Select(Parent)
+                RadiusBottomLeft: =8
+                RadiusBottomRight: =8
+                RadiusTopLeft: =8
+                RadiusTopRight: =8
+                Width: =63.5
+                ZIndex: =1
+
+        Button1_7 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(219, 219, 219, 1)
+            FontWeight: =FontWeight.Lighter
+            Height: =24
+            OnSelect: |-
+                =Navigate('Tiket Penerimaan [FORMER]]');
+                KirimHelpDesk.Run(Pegawai.Text, Tiket_ID.Text, Tanggal.SelectedDate, Akhir.Text, Jenis.Text, Lokasi.Text);
+                Download("https://studentssbac.sharepoint.com/:b:/s/BankIndonesia/EX9n9Kb9rRtCnIqKJnyQIHIBhylq_ohL0b4ALgfW_ereBg?e=ra1q47");
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =9
+            Text: ="Download"
+            Width: =78
+            X: =545
+            Y: =35
+            ZIndex: =7
+
+    LblAppName1_12 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: ="Status Pengajuan"
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Image1_8 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =5
+
+    Icon3_9 As icon.BackArrow:
+        Color: =RGBA(204, 208, 225, 1)
+        Height: =51
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(User_Catalog_3)
+        Width: =52
+        X: =9
+        Y: =96
+        ZIndex: =10
+

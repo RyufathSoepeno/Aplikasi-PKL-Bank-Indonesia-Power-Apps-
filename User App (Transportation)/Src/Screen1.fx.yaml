@@ -1,0 +1,26 @@
+"Screen1 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    Image6_13 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =6
+
+    Label1_34 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =20
+        Text: ="Insert Title"
+        Width: =466
+        X: =117
+        Y: =15
+        ZIndex: =7
+
+    Image10_14 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =8
+

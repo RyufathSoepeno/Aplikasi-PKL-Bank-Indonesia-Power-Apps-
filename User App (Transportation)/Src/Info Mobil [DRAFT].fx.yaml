@@ -1,0 +1,213 @@
+"'Info Mobil [DRAFT]' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =If(MobilDinas, 
+           Reset(Nama_2);
+           Set(NavigateBack, false)
+        );
+        
+        If(MobilDinas2, 
+           Reset(Email_2);
+           Set(NavigateBack, false)
+        );
+        
+        If(MobilDinas3, 
+           Reset(Tanggal_3);
+           Set(NavigateBack, false)
+        );
+
+    RectQuickActionBar1_13 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    "Gallery6_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =93
+        Items: =Filter('Daftar Mobil2', ID = selectedID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =80
+        Y: =311
+        ZIndex: =1
+
+        SelectedCars_1 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =12.5
+            Text: |-
+                =Concatenate(
+                    "Nama: ", ThisItem.Nama, Char(13),
+                    "Jenis: ", ThisItem.Jenis, "                               Tipe: ", ThisItem.Tipe, Char(13),
+                    "Vendor: ", ThisItem.Vendor, "                         Kontrak Pemeliharaan: ", ThisItem.Kontrak_Pemelihara
+                )
+            Width: =548
+            X: =51
+            Y: =10
+            ZIndex: =5
+
+    LblAppName1_13 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =27
+        Text: |-
+            ="Kendaraan Dinas
+            "
+        Width: =516
+        X: =124
+        ZIndex: =2
+
+    Canvas1_13 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar1_13.Y + RectQuickActionBar1_13.Height
+        ZIndex: =3
+
+        DataCard1_13 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Nama_2 As text:
+                Default: =Blank()
+                Height: =48
+                HintText: ="Nama"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Nama_2.Text)})
+                Reset: =true
+                Size: =17
+                Width: =515
+                X: =44
+                Y: =460
+                ZIndex: =1
+
+            Email_2 As text:
+                Default: =Blank()
+                Height: =48
+                HintText: ="Email"
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Email_2.Text)})
+                Reset: =true
+                Size: =17
+                Width: =515
+                X: =44
+                Y: =578
+                ZIndex: =2
+
+            Label5_10 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: ="*Alamat Email"
+                Width: =182
+                X: =44
+                Y: =536
+                ZIndex: =4
+
+            Label5_12 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =18
+                Text: |-
+                    ="*Untuk:"
+                Width: =119
+                X: =44
+                Y: =665
+                ZIndex: =5
+
+            Button4_3 As button:
+                DisplayMode: =If(FormIsValid, DisplayMode.Edit, DisplayMode.Disabled)
+                Height: =50
+                OnSelect: |-
+                    =Navigate('Status Pending');
+                    Notify("Success! Download the Ticket now", NotificationType.Success, 2000)
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =24
+                Text: ="Kirim"
+                Width: =157
+                X: =460
+                Y: =812
+                ZIndex: =6
+
+            Tanggal_3 As datepicker:
+                BorderThickness: =1
+                Height: =48
+                OnChange: |-
+                    =UpdateContext({FormIsValid: !IsBlank(Tanggal_3.SelectedDate)})
+                Size: =16
+                Width: =515
+                X: =44
+                Y: =707
+                ZIndex: =7
+
+    Image4_3 As image:
+        Height: =184
+        Image: ='Spesifikasi-Kijang-Innova'
+        Width: =304
+        X: =169
+        Y: =106
+        ZIndex: =6
+
+    Rectangle5_3 As rectangle:
+        Height: =4
+        Width: =298
+        X: =41
+        Y: =473
+        ZIndex: =7
+
+    Label6_3 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Size: =19
+        Text: ="Formulir"
+        Width: =560
+        X: =41
+        Y: =423
+        ZIndex: =8
+
+    Label5_13 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =42
+        Size: =18
+        Text: ="*Nama"
+        Width: =101
+        X: =41
+        Y: =499
+        ZIndex: =9
+
+    Icon3_7 As icon.BackArrow:
+        Color: =RGBA(204, 208, 225, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(User_Catalog_3)
+        X: =12
+        Y: =106
+        ZIndex: =10
+
+    Image1_9 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =88
+        ZIndex: =11
+
+    Label11_1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =36
+        Text: |-
+            ="Info Mobil:"
+        Width: =112
+        X: =47
+        Y: =290
+        ZIndex: =12
+
