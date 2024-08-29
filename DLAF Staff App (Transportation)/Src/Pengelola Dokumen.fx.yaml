@@ -1,0 +1,422 @@
+"'Pengelola Dokumen' As screen":
+    OnVisible: |-
+        =Set(Imaging, JSON(AddPicture1_1.Media, JSONFormat.IncludeBinaryData));
+        Reset(TextInput4_3);
+        Reset(Dropdown1_7); 
+        Reset(AddPicture1_1);
+        Set(KendaraanNumber, RandBetween(1, 999))
+
+    Image6_6 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Label1_16 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =20
+        Text: ="Pengelola Dokumen Kendaraan"
+        Width: =466
+        X: =117
+        Y: =15
+        ZIndex: =2
+
+    Image10_12 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =10
+        ZIndex: =3
+
+    Icon1_12 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =58
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Menu')
+        Width: =67
+        X: =20
+        Y: =107
+        ZIndex: =4
+
+    Button10_5 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =933
+        HoverFill: =
+        RadiusBottomLeft: =36
+        RadiusBottomRight: =36
+        RadiusTopLeft: =36
+        RadiusTopRight: =36
+        Size: =24
+        Text: ="Button"
+        Width: =640
+        Y: =193
+        ZIndex: =5
+
+    Rectangle8_4 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =885
+        Width: =640
+        Y: =251
+        ZIndex: =6
+
+    Canvas3_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =885
+        Width: =640
+        Y: =251
+        ZIndex: =26
+
+        DataCard3_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1640
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Label21_5 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Car Name:"
+                Width: =228
+                X: =16
+                Y: =7
+                ZIndex: =1
+
+            Label21_6 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Tipe Mobil:"
+                Width: =425
+                X: =11
+                Y: =121
+                ZIndex: =2
+
+            Label21_7 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Jenis Mesin / Transmisi:"
+                Width: =405
+                X: =14
+                Y: =237
+                ZIndex: =3
+
+            TextInput4_3 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Car Name (Detail of Type)"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =66
+                ZIndex: =4
+
+            Dropdown1_7 As dropdown:
+                Height: =50
+                Items: =["--", "Sedan", "Non-Sedan", "Pickup"]
+                Size: =16
+                Width: =415
+                X: =16
+                Y: =181
+                ZIndex: =5
+
+            Dropdown1_8 As dropdown:
+                Height: =50
+                Items: =["--", "Manual", "Automatic", "Electric", "Hybrid"]
+                Size: =16
+                Width: =415
+                X: =16
+                Y: =297
+                ZIndex: =6
+
+            Label21_8 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Pilih Driver:"
+                Width: =405
+                X: =9
+                Y: =353
+                ZIndex: =7
+
+            Dropdown1_9 As dropdown:
+                Height: =50
+                Items: =Distinct('Driver Phonebook', Title)
+                Size: =16
+                Width: =415
+                X: =16
+                Y: =413
+                ZIndex: =8
+
+            Label21_9 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Foto Mobil:"
+                Width: =222
+                X: =11
+                Y: =471
+                ZIndex: =13
+
+            Label25_3 As label:
+                Height: =70
+                Size: =18
+                Text: ="Licence Plate"
+                Width: =384
+                X: =14
+                Y: =574
+                ZIndex: =16
+
+            TextInput4_4 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Licence Plate"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =632
+                ZIndex: =17
+
+            Label25_4 As label:
+                Height: =70
+                Size: =18
+                Text: ="Machine Number"
+                Width: =419
+                X: =13
+                Y: =698
+                ZIndex: =18
+
+            TextInput4_5 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Machine Number"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =755
+                ZIndex: =19
+
+            Label25_5 As label:
+                Height: =70
+                Size: =18
+                Text: ="Frame Number"
+                Width: =562
+                X: =13
+                Y: =822
+                ZIndex: =20
+
+            AddMediaWithImage4_1 As group:
+                Height: =5
+                Width: =5
+                X: =37
+                Y: =40
+                ZIndex: =20
+
+                UploadedImage4_1 As image:
+                    Height: =AddMediaButton4_1.Height
+                    Image: =If(IsBlank(Uploads), Uploads, Uploads)
+                    ImagePosition: =ImagePosition.Fill
+                    Width: =AddMediaButton4_1.Width
+                    X: =291
+                    Y: =485
+                    ZIndex: =9
+
+                AddMediaButton4_1 As addMedia:
+                    ChangePictureText: =
+                    Height: =153
+                    Size: =
+                    Text: =
+                    Width: =242
+                    X: =367
+                    Y: =485
+                    ZIndex: =10
+
+            TextInput4_6 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Frame Number"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =880
+                ZIndex: =21
+
+            Label25_6 As label:
+                Height: =70
+                Size: =18
+                Text: ="Year of Production"
+                Width: =562
+                X: =13
+                Y: =943
+                ZIndex: =22
+
+            TextInput4_7 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Year of Production"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =1003
+                ZIndex: =23
+
+            Label25_7 As label:
+                Height: =70
+                Size: =18
+                Text: ="Economical Value (in Years)"
+                Width: =565
+                X: =11
+                Y: =1053
+                ZIndex: =24
+
+            TextInput4_8 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Economical Value (in Years)"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =1111
+                ZIndex: =25
+
+            AddMediaWithImage6_1 As group:
+                Height: =5
+                Width: =5
+                X: =37
+                Y: =40
+                ZIndex: =25
+
+                UploadedImage6_1 As image:
+                    Height: =27
+                    Image: =
+                    ImagePosition: =ImagePosition.Fill
+                    OnSelect: =Set(Uploads, AddMediaButton4_1.Media)
+                    Width: =188
+                    X: =16
+                    Y: =542
+                    ZIndex: =11
+
+                AddMediaButton6_1 As addMedia:
+                    ChangePictureText: =
+                    Height: =27
+                    OnSelect: =Set(Uploads, AddMediaButton4_1.Media)
+                    Size: =25
+                    Text: =
+                    Width: =188
+                    X: =16
+                    Y: =542
+                    ZIndex: =12
+
+            Label21_10 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Tax Document:"
+                Width: =424
+                X: =12
+                Y: =1171
+                ZIndex: =32
+
+            Label25_8 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Administrator:"
+                Width: =564
+                X: =12
+                Y: =1278
+                ZIndex: =35
+
+            TextInput4_9 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Staff who Administrated the Input"
+                Size: =16
+                Width: =417
+                X: =16
+                Y: =1336
+                ZIndex: =36
+
+            Label25_9 As label:
+                Height: =70
+                Size: =18
+                Text: |-
+                    ="Service Advisor:"
+                Width: =563
+                X: =12
+                Y: =1386
+                ZIndex: =37
+
+            TextInput4_10 As text:
+                Default: =""
+                Height: =50
+                HintText: ="Service Advisor"
+                Size: =16
+                Width: =417
+                X: =19
+                Y: =1445
+                ZIndex: =38
+
+            Button14 As button:
+                Fill: =RGBA(168, 0, 0, 1)
+                Height: =45
+                Size: =18
+                Text: ="Cancel"
+                Width: =131
+                X: =326
+                Y: =1550
+                ZIndex: =41
+
+            Button14_8 As button:
+                Fill: =RGBA(246, 88, 16, 1)
+                Height: =45
+                OnSelect: |-
+                    =NewCars.Run(TextInput4_3.Text, Dropdown1_7.Selected.Value, AddPicture1_1.Media);
+                    Navigate('Main Menu');
+                Size: =18
+                Text: ="Submit"
+                Width: =131
+                X: =478
+                Y: =1550
+                ZIndex: =42
+
+            AddPicture1_1 As addMedia:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(56, 96, 178, 1)
+                Height: =52
+                Size: =15
+                Text: ="Upload Image"
+                Width: =163
+                X: =5
+                Y: =522
+                ZIndex: =43
+
+            AddPicture1_2 As addMedia:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(56, 96, 178, 1)
+                Height: =52
+                Size: =15
+                Text: ="Upload Document"
+                Width: =200
+                X: =9
+                Y: =1222
+                ZIndex: =44
+
+            Label21 As label:
+                Height: =52
+                Size: =15
+                Text: =AddPicture1_1.Media
+                Width: =376
+                X: =224
+                Y: =522
+                ZIndex: =45
+

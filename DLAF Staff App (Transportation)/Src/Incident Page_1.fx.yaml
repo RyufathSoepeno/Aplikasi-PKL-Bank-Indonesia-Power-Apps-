@@ -1,0 +1,128 @@
+"'Incident Page_1' As screen":
+
+    Rectangle1_12 As rectangle:
+        Width: =640
+        ZIndex: =1
+
+    "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =964
+        Items: =Sort('Incident Reports', Modified, SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =90
+        Y: =170
+        ZIndex: =1
+
+        Title8_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =111
+            X: =301
+            Y: =33
+            ZIndex: =1
+
+        Subtitle3_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'Nama Pegawai'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title8_1.Width
+            X: =24
+            Y: =48
+            ZIndex: =2
+
+        NextArrow1_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =If(
+                    ThisItem.Title = "Isu Driver", 
+                        Navigate('Incident Page (Isu Driver)'),
+                    ThisItem.Title = "Kerusakan", 
+                        Navigate('Incident Page (Kerusakan)'),
+                    ThisItem.Title = "Insidental", 
+                        Navigate('Incident Page (Incidental)'),
+                    Navigate('Incident Page (Yang Lain)')
+                    );
+                
+                Set(IncidentID, ThisItem.ID);
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator3_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle8_1 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =Parent.TemplateHeight - Separator3_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+        Label14_1 As label:
+            Height: =34
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: =ThisItem.'Nama Mobil'
+            Width: =222
+            X: =18
+            Y: =12
+            ZIndex: =6
+
+    Image2_13 As image:
+        Image: ='Screenshot 2024-05-30 172042'
+        ZIndex: =2
+
+    Label1_12 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Size: =25
+        Text: ="Insiden"
+        Width: =520
+        X: =120
+        Y: =15
+        ZIndex: =3
+
+    Icon3_1 As icon.Reload:
+        Height: =42
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Incident Reports')
+        Width: =31
+        X: =579
+        Y: =114
+        ZIndex: =4
+

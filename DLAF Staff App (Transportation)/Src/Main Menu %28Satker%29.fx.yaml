@@ -1,0 +1,253 @@
+"'Main Menu (Satker)' As screen":
+    OnVisible: |-
+        =Set(UnreadCount7, CountRows(Filter('Confirmation List', Status = "Resolved")));
+        Set(UnreadCount8, CountRows(Filter('Confirmation List (Angkut)', Status = "Resolved")));
+        Refresh('Confirmation List');
+        Refresh('Confirmation List (Angkut)');
+
+    Image7_10 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =2
+
+    Label4_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =28
+        Text: ="Halaman Utama"
+        Width: =346
+        X: =123
+        Y: =20
+        ZIndex: =3
+
+    Canvas3_2 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =993
+        Width: =Parent.Width
+        Y: =142
+        ZIndex: =6
+
+        DataCard3_2 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =1452
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Button14_3 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Daftar Pengajuan (Satker)')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =42
+                Y: =61
+                ZIndex: =1
+
+            Label10_11 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Car Requests"
+                Width: =239
+                X: =49
+                Y: =218
+                ZIndex: =4
+
+            Button14_12 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Calendar Menu')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =42
+                Y: =359
+                ZIndex: =13
+
+            Label10_15 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =70
+                Size: =20
+                Text: ="Calendar"
+                Width: =239
+                X: =49
+                Y: =524
+                ZIndex: =15
+
+            Label11_20 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 0, 0, 1)
+                Height: =41
+                Size: =21
+                Text: =Text(UnreadCount7) //  To count live -- Can be found in Main Screen on Visible
+                Visible: |-
+                    =If(
+                        UnreadCount < 1,
+                        false, true)
+                Width: =35
+                X: =226
+                Y: =83
+                ZIndex: =16
+
+            Image1_1 As image:
+                Height: =114
+                Image: ='9926396'
+                Width: =114
+                X: =111
+                Y: =388
+                ZIndex: =18
+
+            Button14_10 As button:
+                BorderThickness: =0
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                OnSelect: =Navigate('Kendaraan Angkut')
+                Size: =24
+                Text: =
+                Width: =252
+                X: =349
+                Y: =61
+                ZIndex: =22
+
+            Label10_13 As label:
+                Align: =Align.Center
+                Color: =RGBA(0, 121, 187, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =85
+                Size: =20
+                Text: ="Pickup Requests"
+                Width: =252
+                X: =349
+                Y: =218
+                ZIndex: =23
+
+            Image4_1 As image:
+                Height: =122
+                Image: ='450872'
+                Width: =125
+                X: =105
+                Y: =88
+                ZIndex: =24
+
+            Image5_1 As image:
+                Height: =131
+                Image: ='3737129'
+                Width: =125
+                X: =412
+                Y: =87
+                ZIndex: =25
+
+            Label11_22 As label:
+                Align: =Align.Center
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 0, 0, 1)
+                Height: =41
+                Size: =21
+                Text: =Text(UnreadCount8) //  To count live -- Can be found in Main Screen on Visible
+                Visible: |-
+                    =If(
+                        UnreadCount3 < 1,
+                        false, true)
+                Width: =35
+                X: =530
+                Y: =81
+                ZIndex: =26
+
+    Image10_26 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        X: =15
+        Y: =15
+        ZIndex: =7
+
+    Button2_8 As button:
+        DisplayMode: =If(SewaButton, DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =46
+        OnSelect: =Exit()
+        Size: =20
+        Text: ="Exit"
+        Width: =141
+        X: =469
+        Y: =32
+        ZIndex: =8
+
+    Icon2_4 As icon.Reload:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Refresh('User-to-Admin');
+            Refresh('User-to-Angkut');
+            Refresh('Confirmation List');
+            Refresh('Confirmation List (Angkut)');
+        X: =529
+        Y: =112
+        ZIndex: =9
+
+    Button14_6 As button:
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =250
+        OnSelect: =Navigate('Pengelola Dokumen')
+        Size: =24
+        Text: =
+        Width: =248
+        X: =345
+        Y: =499
+        ZIndex: =10
+
+    Label10_6 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 121, 187, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =85
+        Size: =20
+        Text: ="Vehicle Documentation"
+        Width: =252
+        X: =341
+        Y: =660
+        ZIndex: =11
+
+    Image3 As image:
+        Height: =127
+        Image: ='2666501'
+        Width: =123
+        X: =418
+        Y: =532
+        ZIndex: =12
+
+    Toggle2_2 As toggleSwitch:
+        Color: =RGBA(255, 255, 255, 1)
+        FalseFill: =RGBA(255, 255, 255, 1)
+        FalseHoverFill: =ColorFade(Self.TrueFill, 15%)
+        FalseText: ="Bahasa Indonesia"
+        HandleFill: =RGBA(0, 0, 0, 1)
+        Height: =49
+        OnChange: |-
+            =If(Toggle2_2.Value = true, Launch("https://apps.powerapps.com/play/e/759417a2-08f3-e498-9d17-08260e5ab68f/a/0413d915-a98f-4f4f-8f36-51fde1a5051a?tenantId=3018ecb9-2438-4581-b036-4b625dac9579&sourcetime=1724745274332"))
+        Reset: =true
+        Size: =15
+        TrueFill: =RGBA(246, 88, 16, 1)
+        TrueText: =""
+        Width: =274
+        X: =15
+        Y: =119
+        ZIndex: =13
+

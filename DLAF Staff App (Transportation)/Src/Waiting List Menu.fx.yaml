@@ -1,0 +1,117 @@
+"'Waiting List Menu' As screen":
+
+    Image6_15 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    LblAppName1_11 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =22
+        Text: ="Waiting List"
+        Width: =516
+        X: =108
+        Y: =4
+        ZIndex: =2
+
+    Image10_17 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =12
+        ZIndex: =3
+
+    Button9_4 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Waiting List Page')
+        Size: =24
+        Text: =
+        Width: =598
+        X: =22
+        Y: =342
+        ZIndex: =4
+
+    Button9_5 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Waiting List Page (Angkut)')
+        Size: =24
+        Text: =
+        Width: =598
+        X: =22
+        Y: =626
+        ZIndex: =5
+
+    Label8_17 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Mobil"
+        Width: =141
+        X: =234
+        Y: =397
+        ZIndex: =6
+
+    Image2_21 As image:
+        Height: =150
+        Image: ='3737129'
+        Width: =173
+        X: =45
+        Y: =639
+        ZIndex: =7
+
+    Label8_18 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =78
+        Size: =21
+        Text: ="Angkut"
+        Width: =164
+        X: =234
+        Y: =679
+        ZIndex: =8
+
+    Image11_1 As image:
+        Height: =129
+        Image: ='450872'
+        Width: =127
+        X: =56
+        Y: =360
+        ZIndex: =9
+
+    Icon1_15 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Menu')
+        X: =13
+        Y: =110
+        ZIndex: =10
+
+    Label11_10 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 0, 0, 1)
+        Height: =41
+        Size: =21
+        Text: =Text(UnreadCount2) //  To count live -- Can be found in Main Screen on Visible
+        Width: =35
+        X: =552
+        Y: =365
+        ZIndex: =11
+
+    Label11_11 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 0, 0, 1)
+        Height: =41
+        Size: =21
+        Text: =Text(UnreadCount4) //  To count live -- Can be found in Main Screen on Visible
+        Width: =35
+        X: =552
+        Y: =649
+        ZIndex: =12
+

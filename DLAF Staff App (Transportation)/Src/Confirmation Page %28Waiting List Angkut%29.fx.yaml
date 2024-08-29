@@ -1,0 +1,634 @@
+"'Confirmation Page (Waiting List Angkut)' As screen":
+    OnVisible: |-
+        =Set(Confirmation, false); // For DisplayMode
+        Set(Setuju, true); // For persutujuan invisible property in DisplayMode
+        Set(TheReset, true);
+        Set(varShowPopup, false);
+
+    Image8_1 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Rectangle7_3 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =981
+        Width: =640
+        Y: =154
+        ZIndex: =2
+
+    "Gallery1_6 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =717
+        Items: =Filter('Confirmation List (Angkut)', ID = YourID2)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =717
+        Width: =638
+        Y: =230
+        ZIndex: =3
+
+        Title1_5 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Nama Mobil:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =165
+            X: =20
+            Y: =28
+            ZIndex: =1
+
+        Title1_21 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Untuk:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =165
+            X: =20
+            Y: =87
+            ZIndex: =4
+
+        Title1_22 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =25
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="NIP:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =46
+            X: =349
+            Y: =88
+            ZIndex: =5
+
+        Label7_18 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Tanggal Pemulaian Baru adalah:"
+            Width: =560
+            X: =13
+            Y: =230
+            ZIndex: =6
+
+        Label8_15 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Title
+            Width: =243
+            X: =138
+            Y: =5
+            ZIndex: =9
+
+        Label10_8 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Mulai
+            Width: =103
+            X: =82
+            Y: =65
+            ZIndex: =11
+
+        Label11_9 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.NIP
+            Width: =122
+            X: =387
+            Y: =65
+            ZIndex: =12
+
+        Label7_19 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Bisa disesutujukan Pemakaian Kendaraan s/d: "
+            Visible: =Setuju
+            Width: =560
+            X: =13
+            Y: =293
+            ZIndex: =14
+
+        DatePicker1_5 As datepicker:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(149, 149, 149, 1)
+            Height: =30
+            OnChange: |-
+                =UpdateContext({FormIsValid: !IsBlank(DatePicker1_4) && !IsBlank(DatePicker1_5)})
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            Reset: =TheReset
+            Size: =10
+            Visible: =Setuju
+            Width: =175
+            X: =454
+            Y: =313
+            ZIndex: =15
+
+        Button3_9 As button:
+            Fill: =RGBA(141, 198, 63, 1)
+            Height: =58
+            OnSelect: =Set(varShowPopup, true)
+            Size: =20
+            Text: ="Kirimkan"
+            Visible: =Setuju
+            Width: =136
+            X: =489
+            Y: =629
+            ZIndex: =16
+
+        Label12_3 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.'Nama Pegawai'
+            Visible: =false
+            Width: =146
+            X: =483
+            Y: =300
+            ZIndex: =18
+
+        DatePicker1_4 As datepicker:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(149, 149, 149, 1)
+            Height: =30
+            OnChange: |-
+                =UpdateContext({FormIsValid: !IsBlank(DatePicker1_4) && !IsBlank(DatePicker1_5)})
+            OnSelect: =Select(Parent)
+            PaddingBottom: =3
+            Reset: =TheReset
+            Size: =10
+            Visible: =Setuju
+            Width: =175
+            X: =333
+            Y: =250
+            ZIndex: =19
+
+        Title1_20 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =26
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Lokasi:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =66
+            X: =349
+            Y: =27
+            ZIndex: =24
+
+        Group1_1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =24
+
+            Rectangle4_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =2
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =287
+                OnSelect: =Select(Parent)
+                Visible: =varShowPopup
+                Width: =617
+                X: =13
+                Y: =259
+                ZIndex: =20
+
+            Label9_1 As label:
+                Height: =70
+                OnSelect: =Select(Parent)
+                Size: =18
+                Text: ="Apakah Anda sudah yakin dengan pengajuan tanggal baru ini?"
+                Visible: =varShowPopup
+                Width: =560
+                X: =41
+                Y: =280
+                ZIndex: =21
+
+            Button6_2 As button:
+                Fill: =RGBA(255, 0, 0, 1)
+                Height: =50
+                OnSelect: =Set(varShowPopup, false);
+                Size: =24
+                Text: ="Tidak"
+                Visible: =varShowPopup
+                Width: =165
+                X: =251
+                Y: =441
+                ZIndex: =22
+
+            Button6_3 As button:
+                Fill: =RGBA(141, 198, 63, 1)
+                Height: =50
+                OnSelect: |-
+                    =UpdateContext({selectedList: Gallery2.Selected});
+                    Patch('Confirmation List (Angkut)', LookUp('Confirmation List (Angkut)', ID = selectedList.ID), {'Status Pengajuan': "Disetujui"}, {'Nama Driver': Dropdown1_4}, {Akhir: DatePicker1_4.SelectedDate}, {Mulai: DatePicker1_5.SelectedDate}, {Jam: Label22_1}); // To update it has been read
+                    Navigate('Main Menu');
+                Size: =24
+                Text: ="Iya"
+                Visible: =varShowPopup
+                Width: =165
+                X: =440
+                Y: =441
+                ZIndex: =23
+
+        Label8_16 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Lokasi
+            Width: =202
+            X: =415
+            Y: =5
+            ZIndex: =25
+
+        Dropdown1_4 As dropdown:
+            Height: =38
+            Items: ='Driver Phonebook'.Title
+            Size: =12
+            Visible: =Setuju
+            Width: =492
+            X: =137
+            Y: =471
+            ZIndex: =29
+
+        Label7_20 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Pilih Driver:"
+            Width: =135
+            X: =12
+            Y: =454
+            ZIndex: =30
+
+        Label16_1 As label:
+            Height: =39
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                =":"
+            Width: =48
+            X: =160
+            Y: =383
+            ZIndex: =31
+
+        TextInput5_2 As text:
+            Align: =Align.Center
+            Default: =Blank()
+            Height: =39
+            HintText: ="00"
+            OnSelect: =Select(Parent)
+            PaddingLeft: =5
+            Size: =16
+            Width: =74
+            X: =80
+            Y: =385
+            ZIndex: =32
+
+        TextInput5_3 As text:
+            Align: =Align.Center
+            Default: =Blank()
+            Height: =39
+            HintText: ="00"
+            OnSelect: =Select(Parent)
+            PaddingLeft: =5
+            Size: =16
+            Width: =74
+            X: =177
+            Y: =385
+            ZIndex: =33
+
+        Label22_1 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =Concatenate(TextInput5_2.Text, Label16_1.Text, TextInput5_3.Text)
+            Visible: =false
+            Width: =153
+            X: =333
+            Y: =370
+            ZIndex: =34
+
+        Label7_22 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: |-
+                ="Jam:"
+            Width: =56
+            X: =13
+            Y: =367
+            ZIndex: =35
+
+        Dropdown1_6 As dropdown:
+            Height: =33
+            Items: =["Lobby Kebon Sirih", "Lobby Tipikal", "Parkiran Fasos"]
+            Visible: =Setuju
+            Width: =341
+            X: =155
+            Y: =553
+            ZIndex: =36
+
+        Label25_2 As label:
+            Height: =33
+            Size: =16
+            Text: |-
+                ="Titik Kumpul:"
+            Visible: =Setuju
+            Width: =146
+            X: =12
+            Y: =553
+            ZIndex: =37
+
+        Title1_23 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Nama atau Tipe Barang:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =220
+            X: =20
+            Y: =134
+            ZIndex: =38
+
+        Title1_24 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Total Barang:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =124
+            X: =20
+            Y: =191
+            ZIndex: =39
+
+        Title1_25 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: |-
+                ="Berat Barang:"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =124
+            X: =349
+            Y: =191
+            ZIndex: =40
+
+        Label11_12 As label:
+            Height: =47
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Nama Atau Tipe Barang'
+            Width: =318
+            X: =240
+            Y: =122
+            ZIndex: =41
+
+        Label11_13 As label:
+            Height: =39
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Total Barang'
+            Width: =122
+            X: =144
+            Y: =184
+            ZIndex: =42
+
+        Label11_14 As label:
+            Height: =39
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Berat Per Barang (Kg)'
+            Width: =32
+            X: =477
+            Y: =184
+            ZIndex: =43
+
+        Label7_23 As label:
+            Height: =20
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: ="kg"
+            Width: =108
+            X: =497
+            Y: =193
+            ZIndex: =44
+
+        Button15_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Height: =58
+            OnSelect: =Set(Popsies, true)
+            Size: =18
+            Text: ="Hubungi"
+            Width: =135
+            X: =93
+            Y: =629
+            ZIndex: =45
+
+        Button3_10 As button:
+            Fill: =RGBA(221, 79, 14, 1)
+            Height: =58
+            OnSelect: |-
+                =UpdateContext({selectedList: Gallery2.Selected});
+                Patch('Confirmation List (Angkut)', LookUp('Confirmation List (Angkut)', ID = selectedList.ID), {Status: "Resolved"});
+            Size: =20
+            Text: ="Kirim ke Satker"
+            Visible: =Setuju
+            Width: =212
+            X: =252
+            Y: =629
+            ZIndex: =46
+
+    Icon1_13 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Waiting List Page')
+        X: =8
+        Y: =162
+        ZIndex: =4
+
+    Label1_18 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =25
+        Text: ="Waiting List"
+        Width: =520
+        X: =120
+        Y: =12
+        ZIndex: =5
+
+    Image10_15 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =12
+        ZIndex: =6
+
+    Popup2_4 As group:
+        Height: =5
+        Width: =5
+        X: =-221
+        Y: =20
+        ZIndex: =11
+
+        Rectangle6_5 As rectangle:
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =252
+            Visible: =Popsies
+            Width: =640
+            Y: =810
+            ZIndex: =7
+
+        Rectangle7_7 As rectangle:
+            Fill: =RGBA(153, 207, 236, 1)
+            Height: =36
+            Visible: =Popsies
+            Width: =640
+            Y: =774
+            ZIndex: =8
+
+        Icon5_4 As icon.Cancel:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =35
+            Icon: =Icon.Cancel
+            OnSelect: =Set(Popsies, false)
+            Visible: =Popsies
+            Width: =35
+            X: =605
+            Y: =774
+            ZIndex: =9
+
+        Label20_18 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            Size: =18
+            Text: ="Hubungi Lewat"
+            Visible: =Popsies
+            Width: =196
+            X: =9
+            Y: =831
+            ZIndex: =10
+
+        "Gallery3_5 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =232
+            Items: =Filter('User-to-Angkut', ID = YourID)
+            LoadingSpinner: =LoadingSpinner.Data
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =785
+            Visible: =Popsies
+            Y: =830
+            ZIndex: =12
+
+            Label22_10 As label:
+                Color: =RGBA(0, 134, 208, 1)
+                Font: =Font.Verdana
+                OnSelect: |-
+                    =Launch("tel://" & ThisItem.'Nomor Telepon')
+                Text: =ThisItem.'Nomor Telepon'
+                Underline: =true
+                Width: =199
+                X: =120
+                Y: =108
+                ZIndex: =3
+
+            Label23_22 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="No. Telp:"
+                Width: =92
+                X: =40
+                Y: =108
+                ZIndex: =4
+
+            Label22_11 As label:
+                Color: =RGBA(0, 134, 208, 1)
+                Font: =Font.Verdana
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.'Alamat Email'
+                Underline: =true
+                Width: =199
+                X: =447
+                Y: =108
+                ZIndex: =5
+
+            Label23_23 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="Email:"
+                Width: =92
+                X: =395
+                Y: =108
+                ZIndex: =6
+

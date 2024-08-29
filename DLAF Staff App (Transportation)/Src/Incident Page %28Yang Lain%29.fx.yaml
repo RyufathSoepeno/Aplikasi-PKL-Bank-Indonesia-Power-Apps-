@@ -1,0 +1,232 @@
+"'Incident Page (Yang Lain)' As screen":
+    OnVisible: =Reset(Radio1_2);
+
+    Rectangle1_11 As rectangle:
+        Width: =640
+        ZIndex: =1
+
+    Image2_11 As image:
+        Image: ='Screenshot 2024-05-30 172042'
+        ZIndex: =2
+
+    Label1_11 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Size: =25
+        Text: ="Insiden"
+        Width: =520
+        X: =120
+        Y: =15
+        ZIndex: =3
+
+    Label15_3 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =16
+        Text: |-
+            ="Info Kerusakan Kendaraan:"
+        Underline: =true
+        Width: =560
+        Y: =186
+        ZIndex: =4
+
+    Gallery4_3 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =254
+        Items: =Filter('Incident Reports', ID = IncidentID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =257
+        Y: =214
+        ZIndex: =5
+
+        Label18_6 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Nama Driver:"
+            Width: =155
+            X: =5
+            Y: =28
+            ZIndex: =1
+
+        Label18_7 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Keterangan:"
+            Width: =143
+            X: =5
+            Y: =61
+            ZIndex: =2
+
+        Label19_6 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Driver
+            Width: =418
+            X: =148
+            Y: =12
+            ZIndex: =3
+
+        Label19_7 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Height: =105
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Keterangan
+            Width: =418
+            X: =148
+            Y: =86
+            ZIndex: =4
+
+        Label18_9 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Keterangan:"
+            Width: =143
+            X: =5
+            Y: =187
+            ZIndex: =5
+
+        Label19_9 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.'Lokasi Insiden'
+            Width: =418
+            X: =148
+            Y: =187
+            ZIndex: =6
+
+    Icon1_7 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Incident Page_1')
+        X: =10
+        Y: =116
+        ZIndex: =6
+
+    Button8_5 As button:
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =44
+        Size: =16
+        Text: ="Kirim"
+        Width: =133
+        X: =483
+        Y: =937
+        ZIndex: =15
+
+    Label17_10 As label:
+        Height: =70
+        Size: =18
+        Text: ="Insiden ini tercantum sebagai..."
+        Width: =606
+        X: =1
+        Y: =604
+        ZIndex: =16
+
+    Gallery5_2 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =144
+        Items: =Filter('Incident Reports', ID = IncidentID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =148
+        Y: =468
+        ZIndex: =20
+
+        Label20_6 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Info Mobil:"
+            Underline: =true
+            Width: =246
+            Y: =9
+            ZIndex: =1
+
+        Label20_7 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Nama Mobil:"
+            Width: =246
+            Y: =50
+            ZIndex: =2
+
+        Label20_8 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Jenis Kendaraan:"
+            Width: =246
+            Y: =95
+            ZIndex: =3
+
+        Label20_13 As label:
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.'Nama Mobil'
+            Width: =246
+            X: =137
+            Y: =50
+            ZIndex: =4
+
+        Label20_14 As label:
+            Height: =33
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.'Jenis Mobil'
+            Width: =246
+            X: =177
+            Y: =95
+            ZIndex: =5
+
+    Radio1_2 As radio:
+        Align: =Align.Center
+        Items: =["Kerusakan", "Isu Driver", "Insidental", "Yang Lain"]
+        Layout: =Layout.Horizontal
+        LineHeight: =2
+        OnSelect: |-
+            =If(
+                Radio1_2.Selected.Value  = "Isu Driver", 
+                    Navigate('Incident Page (Isu Driver)'),
+                Radio1_2.Selected.Value  = "Kerusakan", 
+                    Navigate('Incident Page (Kerusakan)'),
+                Radio1_2.Selected.Value  = "Insidental", 
+                    Navigate('Incident Page (Incidental)')
+                );
+        RadioSize: =36
+        Size: =16
+        Width: =640
+        Y: =657
+        ZIndex: =21
+
+    Button8_7 As button:
+        Fill: =RGBA(141, 198, 63, 1)
+        Height: =44
+        Size: =16
+        Text: ="Hubungi"
+        Width: =133
+        X: =313
+        Y: =937
+        ZIndex: =22
+

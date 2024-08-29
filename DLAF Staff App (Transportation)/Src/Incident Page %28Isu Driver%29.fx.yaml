@@ -1,0 +1,196 @@
+"'Incident Page (Isu Driver)' As screen":
+    OnVisible: |-
+        =Set(FormsView, false);
+        Set(FormsView2, false);
+        Reset(Radio1);
+        Reset(Radio1_1);
+
+    Rectangle1_8 As rectangle:
+        Width: =640
+        ZIndex: =1
+
+    Image2_8 As image:
+        Image: ='Screenshot 2024-05-30 172042'
+        ZIndex: =2
+
+    Label1_8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Size: =25
+        Text: ="Insiden"
+        Width: =520
+        X: =120
+        Y: =15
+        ZIndex: =3
+
+    Label15 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =18
+        Text: |-
+            ="Info Isu Driver:"
+        Underline: =true
+        Width: =560
+        Y: =186
+        ZIndex: =4
+
+    Gallery4 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =254
+        Items: =Filter('Incident Reports', ID = IncidentID)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =257
+        Y: =214
+        ZIndex: =5
+
+        Label18 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =38
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Nama Driver:"
+            Width: =155
+            X: =5
+            Y: =28
+            ZIndex: =1
+
+        Label18_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: |-
+                ="Keterangan:"
+            Width: =143
+            X: =5
+            Y: =61
+            ZIndex: =2
+
+        Label19 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Driver
+            Width: =418
+            X: =148
+            Y: =12
+            ZIndex: =3
+
+        Label19_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Height: =105
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Keterangan
+            Width: =418
+            X: =148
+            Y: =92
+            ZIndex: =4
+
+    Button8 As button:
+        Fill: =RGBA(141, 198, 63, 1)
+        Height: =44
+        Size: =16
+        Text: ="Hubungi"
+        Width: =133
+        X: =313
+        Y: =855
+        ZIndex: =7
+
+    Label17 As label:
+        Height: =70
+        Size: =18
+        Text: |-
+            ="Tindakan yang Diambil untuk driver:"
+        Width: =560
+        X: =10
+        Y: =429
+        ZIndex: =8
+
+    Label17_1 As label:
+        Height: =70
+        Size: =18
+        Text: |-
+            ="Tindakan Lanjutan untuk driver:"
+        Width: =560
+        X: =10
+        Y: =627
+        ZIndex: =9
+
+    Radio1 As radio:
+        Align: =Align.Center
+        Items: =["Driver Dihubungi", "Yang Lain"]
+        Layout: =Layout.Horizontal
+        OnSelect: |
+            =If(
+                Radio1.Selected.Value = "Yang Lain",
+                Set(FormsView, true)
+            )
+        RadioSize: =36
+        Size: =18
+        Width: =640
+        Y: =480
+        ZIndex: =10
+
+    Radio1_1 As radio:
+        Align: =Align.Center
+        Items: =["Tidak Ada", "Ada"]
+        Layout: =Layout.Horizontal
+        OnSelect: |
+            =If(
+                Radio1_1.Selected.Value = "Ada",
+                Set(FormsView2, true)
+            )
+        RadioSize: =36
+        Size: =18
+        Width: =640
+        Y: =676
+        ZIndex: =12
+
+    TextInput2 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Default: =
+        Height: =80
+        HintText: ="Isi tindakan"
+        Size: =14
+        Visible: =FormsView
+        Width: =560
+        X: =10
+        Y: =542
+        ZIndex: =13
+
+    TextInput2_1 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Default: =
+        Height: =81
+        HintText: ="Isi tindakan"
+        Size: =14
+        Visible: =FormsView2
+        Width: =560
+        X: =10
+        Y: =738
+        ZIndex: =14
+
+    Button8_1 As button:
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =44
+        Size: =16
+        Text: ="Kirim"
+        Width: =133
+        X: =483
+        Y: =855
+        ZIndex: =15
+
+    Icon1_5 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Incident Page_1')
+        X: =18
+        Y: =111
+        ZIndex: =16
+

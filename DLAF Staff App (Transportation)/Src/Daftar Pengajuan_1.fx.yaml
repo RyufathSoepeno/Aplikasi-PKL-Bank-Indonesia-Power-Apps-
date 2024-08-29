@@ -1,0 +1,269 @@
+"'Daftar Pengajuan_1' As screen":
+    OnVisible: |-
+        =Set(DinasButton, false);
+        Set(SewaButton, false);
+        Set(Logout, false)
+
+    Rectangle1_15 As rectangle:
+        Width: =640
+        ZIndex: =1
+
+    Image2_16 As image:
+        Image: ='Screenshot 2024-05-30 172042'
+        ZIndex: =2
+
+    Label1_15 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Size: =21
+        Text: ="Daftar Pengajuan"
+        Width: =520
+        X: =108
+        Y: =15
+        ZIndex: =3
+
+    Label5_1 As label:
+        Color: =RGBA(237, 237, 237, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =26
+        OnSelect: =Navigate('Waiting List Page')
+        Size: =13.5
+        Text: ="Waiting List"
+        Underline: =true
+        Width: =117
+        X: =456
+        Y: =37
+        ZIndex: =4
+
+    "Gallery1_3 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =904
+        Items: |-
+            =
+            If(DinasButton, Sort(
+                Filter('User-to-Admin', 'Jenis (AlamatEmail)' = "Dinas"),
+                Modified,
+                SortOrder.Descending
+            ), 
+            SewaButton, Sort(
+                Filter('User-to-Admin', 'Jenis (AlamatEmail)' = "Sewa"),
+                Modified,
+                SortOrder.Descending
+            ), 
+            Sort('User-to-Admin', Modified, SortOrder.Descending))
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =116
+        Y: =212
+        ZIndex: =6
+
+        Title2_2 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.'Nama Pegawai'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =282
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2_3.Size*1.8 + 2 + Body1_2.Size*1.8)) / 2
+            ZIndex: =1
+
+        Subtitle2_3 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.'Nomor Pegawai'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =282
+            X: =Title2_2.X
+            Y: =Title2_2.Y + Title2_2.Height
+            ZIndex: =2
+
+        Body1_2 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Departemen
+            VerticalAlign: =VerticalAlign.Top
+            Width: =282
+            X: =Title2_2.X
+            Y: =Subtitle2_3.Y + Subtitle2_3.Height
+            ZIndex: =3
+
+        NextArrow2_2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(YourID, ThisItem.ID); /// Important for Next Screen where specific ID for 'Car Info' and 'Kirim' Button is chosen
+                Navigate('Confirmation Page')
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2_3 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle5_2 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =Parent.TemplateHeight - Separator2_3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Label8_10 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Title
+            Width: =147
+            X: =314
+            Y: =22
+            ZIndex: =7
+
+        Label8_11 As label:
+            Height: =29
+            OnSelect: =Select(Parent)
+            Size: =10
+            Text: =ThisItem.Tipe
+            Width: =147
+            X: =314
+            Y: =44
+            ZIndex: =8
+
+    Button2_4 As button:
+        DisplayMode: =If(DinasButton, DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: =RGBA(141, 198, 63, 1)
+        Height: =46
+        OnSelect: |-
+            =Set(DinasButton, true);
+            Set(SewaButton, false)
+        Size: =20
+        Text: ="Dinas"
+        Width: =141
+        X: =24
+        Y: =125
+        ZIndex: =7
+
+    Button2_5 As button:
+        DisplayMode: =If(SewaButton, DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =46
+        OnSelect: |-
+            =Set(DinasButton, false);
+            Set(SewaButton, true)
+        Size: =20
+        Text: ="Sewa"
+        Width: =141
+        X: =196
+        Y: =125
+        ZIndex: =8
+
+    Icon2_2 As icon.Reload:
+        Height: =27
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Refresh('User-to-Admin');
+            Refresh('Incident Reports');
+        Width: =51
+        X: =573
+        Y: =134
+        ZIndex: =9
+
+    Button2_3 As button:
+        DisplayMode: =If(SewaButton, DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =46
+        OnSelect: =Set(Logout, true)
+        Size: =20
+        Text: ="Exit"
+        Width: =141
+        X: =364
+        Y: =124
+        ZIndex: =10
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Rectangle5_3 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =2
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =302
+            Visible: =Logout
+            Width: =525
+            X: =48
+            Y: =399
+            ZIndex: =11
+
+        Label13_1 As label:
+            Height: =70
+            Size: =20
+            Text: ="Apakah Anda yakin mau Logout?"
+            Visible: =Logout
+            Width: =423
+            X: =108
+            Y: =416
+            ZIndex: =12
+
+        Button7_2 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =49
+            OnSelect: =Set(Logout, false)
+            Size: =20
+            Text: ="Tidak"
+            Visible: =Logout
+            Width: =134
+            X: =108
+            Y: =569
+            ZIndex: =13
+
+        Button7_3 As button:
+            Fill: =RGBA(0, 134, 208, 1)
+            Height: =49
+            OnSelect: =Exit()
+            Size: =20
+            Text: ="Iya"
+            Visible: =Logout
+            Width: =134
+            X: =364
+            Y: =569
+            ZIndex: =14
+

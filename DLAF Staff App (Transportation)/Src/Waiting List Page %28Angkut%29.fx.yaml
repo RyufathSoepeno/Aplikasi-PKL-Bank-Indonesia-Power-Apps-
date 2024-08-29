@@ -1,0 +1,107 @@
+"'Waiting List Page (Angkut)' As screen":
+    OnVisible: =
+
+    Image7_8 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    Button13_2 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =70
+        HoverFill: =
+        PressedFill: =
+        RadiusBottomLeft: =24
+        RadiusBottomRight: =24
+        RadiusTopLeft: =24
+        RadiusTopRight: =24
+        Size: =36
+        Text: =
+        Width: =640
+        Y: =134
+        ZIndex: =2
+
+    Label1_19 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =25
+        Text: ="Waiting List"
+        Width: =520
+        X: =120
+        Y: =15
+        ZIndex: =3
+
+    Gallery2_1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =960
+        Items: =Sort(Filter('Confirmation List (Angkut)', 'Status Pengajuan' = "Waiting List"), Modified, SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =141
+        Y: =176
+        ZIndex: =4
+
+        Label6_2 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =560
+            Y: =15
+            ZIndex: =1
+
+        Label6_3 As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Mulai
+            Width: =560
+            Y: =51
+            ZIndex: =2
+
+        Button4_1 As button:
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =37
+            OnSelect: |-
+                =Set(YourID2, ThisItem.ID); /// Important for Next Screen where specific ID for 'Car Info' and 'Kirim' Button is chosen
+                Navigate('Confirmation Page (Waiting List Angkut)')
+            PaddingLeft: =
+            Size: =17
+            Text: ="Propose"
+            Visible: =If (ThisItem.'Status Pengajuan' = "Waiting List", true, false)
+            Width: =125
+            X: =491
+            Y: =52
+            ZIndex: =3
+
+    Icon1_14 As icon.BackArrow:
+        Height: =59
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Menu')
+        Width: =52
+        X: =9
+        Y: =139
+        ZIndex: =5
+
+    Icon2_3 As icon.Reload:
+        Height: =44
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Refresh('User-to-Admin');
+            Refresh('Confirmation List');
+        Width: =59
+        X: =570
+        Y: =146
+        ZIndex: =6
+
+    Image10_16 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =15
+        ZIndex: =7
+

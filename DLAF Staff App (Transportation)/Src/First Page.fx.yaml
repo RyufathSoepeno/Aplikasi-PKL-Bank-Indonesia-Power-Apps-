@@ -1,0 +1,105 @@
+"'First Page' As screen":
+    OnVisible: =
+
+    Image6_23 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =4
+
+    LblAppName1_30 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =22
+        Text: ="Login Menu"
+        Width: =516
+        X: =108
+        ZIndex: =5
+
+    Image10_28 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =13
+        ZIndex: =6
+
+    Button9_10 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: |-
+            =// Navigate('Login Satker (NEW)') --> For Password Logins
+            Navigate('Main Menu')
+        Size: =24
+        Text: =
+        Width: =640
+        Y: =342
+        ZIndex: =7
+
+    Button9_11 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: |-
+            =// Navigate('Login Satker (REAL)') -> --> For Password Logins
+            Navigate('Main Menu (Satker)')
+        Size: =24
+        Text: =
+        Width: =640
+        Y: =626
+        ZIndex: =8
+
+    Label8_38 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Help Desk"
+        Width: =255
+        X: =201
+        Y: =390
+        ZIndex: =9
+
+    Label8_39 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =78
+        Size: =21
+        Text: ="Staff"
+        Width: =164
+        X: =201
+        Y: =672
+        ZIndex: =11
+
+    Image9 As image:
+        Height: =129
+        Image: ='912267'
+        Width: =145
+        X: =12
+        Y: =646
+        ZIndex: =14
+
+    Image11 As image:
+        Height: =166
+        Image: ='6070926'
+        Width: =145
+        X: =25
+        Y: =349
+        ZIndex: =15
+
+    Toggle2 As toggleSwitch:
+        Color: =RGBA(255, 255, 255, 1)
+        FalseFill: =RGBA(255, 255, 255, 1)
+        FalseHoverFill: =ColorFade(Self.TrueFill, 15%)
+        FalseText: ="Bahasa Indonesia"
+        HandleFill: =RGBA(0, 0, 0, 1)
+        Height: =49
+        OnChange: |-
+            =If(Toggle2.Value = true, Launch("https://apps.powerapps.com/play/e/759417a2-08f3-e498-9d17-08260e5ab68f/a/0413d915-a98f-4f4f-8f36-51fde1a5051a?tenantId=3018ecb9-2438-4581-b036-4b625dac9579&sourcetime=1724745274332"))
+        Reset: =true
+        Size: =15
+        TrueFill: =RGBA(246, 88, 16, 1)
+        TrueText: =""
+        Width: =274
+        X: =12
+        Y: =111
+        ZIndex: =16
+

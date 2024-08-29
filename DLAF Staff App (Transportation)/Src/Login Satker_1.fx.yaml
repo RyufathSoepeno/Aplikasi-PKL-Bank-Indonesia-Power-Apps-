@@ -1,0 +1,118 @@
+"'Login Satker_1' As screen":
+    OnVisible: |-
+        =Reset(TextInput1_2);
+        Reset(TextInput1_3);
+
+    Rectangle1_7 As rectangle:
+        Width: =640
+        ZIndex: =1
+
+    Image2_7 As image:
+        Image: ='Screenshot 2024-05-30 172042'
+        ZIndex: =2
+
+    Label1_7 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Size: =25
+        Text: ="Login Satker"
+        Width: =520
+        X: =120
+        Y: =15
+        ZIndex: =3
+
+    Label2_2 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: |-
+            ="Email:"
+        Width: =460
+        X: =87
+        Y: =441
+        ZIndex: =4
+
+    Label2_3 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: |-
+            ="Kata Sandi:"
+        Width: =460
+        X: =87
+        Y: =593
+        ZIndex: =5
+
+    TextInput1_2 As text:
+        Default: =
+        Height: =70
+        HintText: ="Email"
+        OnChange: |-
+            =UpdateContext({ThisIsRequired: !IsBlank(TextInput1_2.Text) && !IsBlank(TextInput1_3.Text)}) // A *Required* Condition
+        Size: =18
+        Width: =460
+        X: =87
+        Y: =511
+        ZIndex: =6
+
+    TextInput1_3 As text:
+        Default: =
+        Height: =70
+        HintText: ="Kata Sandi"
+        OnChange: |-
+            =UpdateContext({ThisIsRequired: !IsBlank(TextInput1_2.Text) && !IsBlank(TextInput1_3.Text)}) // A *Required* Condition
+        Size: =18
+        Width: =460
+        X: =87
+        Y: =663
+        ZIndex: =7
+
+    Rectangle2_1 As rectangle:
+        Height: =58
+        Width: =484
+        X: =78
+        Y: =362
+        ZIndex: =8
+
+    Rectangle3_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =407
+        Width: =484
+        X: =78
+        Y: =362
+        ZIndex: =9
+
+    Label3_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =58
+        Size: =21
+        Text: ="Login"
+        Width: =560
+        X: =80
+        Y: =362
+        ZIndex: =10
+
+    Button1_1 As button:
+        DisplayMode: =If (ThisIsRequired, DisplayMode.Edit, DisplayMode.Disabled)
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =70
+        Size: =21
+        Text: ="Masuk"
+        Width: =140
+        X: =455
+        Y: =835
+        ZIndex: =11
+
+    Button5_1 As button:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =58
+        OnSelect: =Exit()
+        Size: =24
+        Text: ="Logout"
+        Width: =192
+        X: =21
+        Y: =138
+        ZIndex: =12
+

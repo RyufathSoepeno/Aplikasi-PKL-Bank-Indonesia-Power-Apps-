@@ -1,0 +1,109 @@
+"'Calendar Menu' As screen.'phoneLayout_Calendar_ver3.0'":
+    OnVisible: |+
+        =/*retrieves calendar events for all days in current month view and selected calendar 
+        _minDate and _maxDate act as markers to prevent duplicate data collection*/         
+        If(IsBlank(_userDomain),         
+        	UpdateContext({_showLoading: true});         
+        	Set(_userDomain, Right(User().Email, Len(User().Email) - Find("@", User().Email)));         
+        	Set(_dateSelected, Today());         
+        	Set(_firstDayOfMonth, DateAdd(Today(), 1 - Day(Today()), TimeUnit.Days));         
+        	Set(_firstDayInView, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+        	Set(_lastDayOfMonth, DateAdd(DateAdd(_firstDayOfMonth, 1, TimeUnit.Months), -1, TimeUnit.Days))         
+        );         
+        Set(_calendarVisible, false);         
+        UpdateContext({_showLoading: true});                 
+        Set(_minDate, DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days));         
+        Set(_maxDate, DateAdd(DateAdd(_firstDayOfMonth, -(Weekday(_firstDayOfMonth) - 2 + 1), TimeUnit.Days), 40, TimeUnit.Days));                  
+        UpdateContext({_showLoading: false});         
+        Set(_calendarVisible, true);
+        
+
+    Image6_22 As image:
+        Height: =1136
+        Image: ='BI App Background (Portrait)'
+        Width: =640
+        ZIndex: =1
+
+    LblAppName1_29 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =22
+        Text: ="Calendar"
+        Width: =516
+        X: =108
+        Y: =13
+        ZIndex: =2
+
+    Image10_24 As image:
+        Height: =80
+        Image: ='DLAF-logo'
+        Width: =108
+        Y: =13
+        ZIndex: =3
+
+    Button9_8 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Calendar Page')
+        Size: =24
+        Text: =
+        Width: =640
+        Y: =342
+        ZIndex: =4
+
+    Button9_9 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =180
+        OnSelect: =Navigate('Calendar Page (Angkut)')
+        Size: =24
+        Text: =
+        Width: =640
+        Y: =626
+        ZIndex: =5
+
+    Label8_36 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =21
+        Text: ="Car"
+        Width: =141
+        X: =201
+        Y: =390
+        ZIndex: =6
+
+    Image2_23 As image:
+        Height: =150
+        Image: ='3737129'
+        Width: =173
+        X: =12
+        Y: =632
+        ZIndex: =7
+
+    Label8_37 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =78
+        Size: =21
+        Text: ="Pickup"
+        Width: =164
+        X: =201
+        Y: =672
+        ZIndex: =8
+
+    Image11_3 As image:
+        Height: =129
+        Image: ='450872'
+        Width: =127
+        X: =23
+        Y: =353
+        ZIndex: =9
+
+    Icon1_17 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Menu')
+        X: =12
+        Y: =101
+        ZIndex: =10
+
