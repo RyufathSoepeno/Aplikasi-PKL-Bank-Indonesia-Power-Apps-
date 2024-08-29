@@ -1,0 +1,88 @@
+"'Laporan Bulanan' As screen":
+
+    Image4_2 As image:
+        Height: =767
+        Image: ='BI App Background'
+        Width: =1366
+        ZIndex: =1
+
+    LblAppName3_2 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =64
+        PaddingLeft: =0
+        Size: =18
+        Text: ="Monthly Incident Reports"
+        Width: =1225
+        Wrap: =false
+        X: =108
+        ZIndex: =2
+
+    Image2_16 As image:
+        Height: =76
+        Image: ='DLAF-logo'
+        Width: =77
+        X: =11
+        ZIndex: =3
+
+    Icon1_16 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Laporan Data Insiden')
+        X: =17
+        Y: =79
+        ZIndex: =4
+
+    Rectangle10_1 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =608
+        Width: =1366
+        Y: =160
+        ZIndex: =5
+
+    CompositeColumnChart2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
+
+        Title4 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Height: =30
+            Size: =14
+            Text: ="Monthly Reports"
+            Width: =1220
+            X: =73
+            Y: =175
+            ZIndex: =7
+
+        ColumnChart2 As barChart:
+            Height: =495
+            Items: |-
+                =AddColumns(
+                        GroupBy(
+                            'Incident Reports',
+                            Bulan,
+                            KaliInsiden
+                        ),
+                        Months,
+                        CountRows(KaliInsiden)
+                    )
+            Width: =1220
+            X: =73
+            XLabelAngle: =
+            Y: =211
+            ZIndex: =8
+
+        Legend2 As legend:
+            Height: =30
+            ItemColorSet: =ColumnChart2.ItemColorSet
+            Items: =ColumnChart2.SeriesLabels
+            Width: =976
+            X: =195
+            Y: =706
+            ZIndex: =9
+

@@ -1,0 +1,257 @@
+"'Detail [Real]_3' As screen":
+    OnVisible: =Set(ShowThePopupBro, false)
+
+    Logo_7 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =91
+        ZIndex: =1
+
+    Label1_42 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =21
+        Text: ="Rincian Pengajuan"
+        Width: =1256
+        X: =110
+        ZIndex: =2
+
+    Icon1_11 As icon.BackArrow:
+        Color: =RGBA(153, 160, 196, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Screen_2')
+        X: =13
+        Y: =115
+        ZIndex: =3
+
+    Send_5 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: |
+            =Navigate('Main Screen_2')
+        Text: ="Kirim"
+        X: =1061
+        Y: =666
+        ZIndex: =4
+
+    Image9_3 As image:
+        Height: =160
+        Image: =
+        Width: =272
+        X: =547
+        Y: =88
+        ZIndex: =5
+
+    Gallery7_3 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =465
+        Items: =Filter('User-to-Admin', ID = selectedIDku) /// To make it only one item -- for Text purposes,
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplateSize: =448
+        Width: =1332
+        X: =34
+        Y: =201
+        ZIndex: =7
+
+        Label3_1 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Title
+            X: =52
+            Y: =75
+            ZIndex: =1
+
+        Label3_9 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Nama Pegawai'
+            X: =470
+            Y: =75
+            ZIndex: =2
+
+        Label3_10 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Tipe
+            X: =919
+            Y: =75
+            ZIndex: =3
+
+        Label3_11 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Vendor
+            X: =52
+            Y: =229
+            ZIndex: =4
+
+        Label3_12 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Tipe
+            X: =470
+            Y: =229
+            ZIndex: =5
+
+        Label3_13 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Alamat Email'
+            X: =919
+            Y: =229
+            ZIndex: =6
+
+        Label3_14 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Mulai
+            X: =52
+            Y: =393
+            ZIndex: =7
+
+        Label3_15 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Kontrak Pemeliharaan'
+            X: =470
+            Y: =393
+            ZIndex: =8
+
+        Label4_8 As label:
+            Color: =RGBA(0, 121, 187, 1)
+            OnSelect: =Set(ShowThePopupBro, true);
+            Size: =16
+            Text: ="Keterangan"
+            Underline: =true
+            Width: =282
+            X: =919
+            Y: =353
+            ZIndex: =9
+
+        Label2_16 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            Size: =18
+            Text: ="Tipe"
+            Width: =164
+            X: =470
+            Y: =176
+            ZIndex: =10
+
+        Label2_17 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            Size: =18
+            Text: ="Alamat Email"
+            Width: =164
+            X: =919
+            Y: =176
+            ZIndex: =11
+
+        Label2_18 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =46
+            Size: =18
+            Text: ="Kontrak Pemeliharaan"
+            Width: =363
+            X: =470
+            Y: =327
+            ZIndex: =12
+
+        Popup_2 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =16
+
+            Rectangle4_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
+                Height: =39
+                OnSelect: =Select(Parent)
+                Visible: =ShowThePopupBro
+                Width: =640
+                X: =331
+                Y: =62
+                ZIndex: =13
+
+            Icon2_2 As icon.Cancel:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =RGBA(255, 0, 0, 1)
+                Height: =39
+                Icon: =Icon.Cancel
+                OnSelect: =Set(ShowThePopupBro, false)
+                Visible: =ShowThePopupBro
+                Width: =47
+                X: =924
+                Y: =62
+                ZIndex: =14
+
+            Label5_2 As label:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                BorderThickness: =1
+                Fill: =RGBA(237, 237, 237, 1)
+                Height: =293
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Keterangan
+                Visible: =ShowThePopupBro
+                Width: =640
+                X: =331
+                Y: =100
+                ZIndex: =15
+
+    Label2_19 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =46
+        Size: =18
+        Text: ="Nama Mobil"
+        Width: =164
+        X: =91
+        Y: =224
+        ZIndex: =8
+
+    Label2_20 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =46
+        Size: =18
+        Text: ="Nama Pegawai"
+        Width: =264
+        X: =508
+        Y: =224
+        ZIndex: =9
+
+    Label2_21 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =46
+        Size: =18
+        Text: ="Jenis"
+        Width: =164
+        X: =957
+        Y: =224
+        ZIndex: =10
+
+    Label2_22 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =46
+        Size: =18
+        Text: ="Vendor"
+        Width: =164
+        X: =91
+        Y: =384
+        ZIndex: =11
+
+    Label2_23 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =46
+        Size: =18
+        Text: ="Mulai"
+        Width: =164
+        X: =91
+        Y: =535
+        ZIndex: =14
+
+    Send_4 As button:
+        Fill: =RGBA(99, 139, 44, 1)
+        OnSelect: |
+            =Navigate('Main Screen_2')
+        Text: ="Hubungi"
+        X: =875
+        Y: =666
+        ZIndex: =16
+

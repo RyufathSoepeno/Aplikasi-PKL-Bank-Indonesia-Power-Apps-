@@ -1,0 +1,286 @@
+"'Main Screen [DRAFT]' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    RectQuickActionBar2_3 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName1_3 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =88
+        Size: =18
+        Text: ="[Title]"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Canvas1_3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar2_3.Y + RectQuickActionBar2_3.Height
+        ZIndex: =3
+
+        DataCard1_3 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =910
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            "Gallery1_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+                BorderThickness: =2
+                DelayItemLoading: =true
+                Height: =607
+                Items: =["Kijang", "6/6/2024", "Budi Setiawan", "budi@mail.com", "Dinas", "MyVendor", "MyKontrak"]
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =0
+                TemplateSize: =104
+                Width: =1364
+                Y: =72
+                ZIndex: =2
+
+                Image2_1 As image:
+                    Height: =72
+                    Image: =Profiler
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =8
+                    RadiusBottomRight: =8
+                    RadiusTopLeft: =8
+                    RadiusTopRight: =8
+                    Width: =72
+                    X: =16
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =1
+
+                Subtitle1_2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 1)
+                    FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =12
+                    Text: =""
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =
+                    X: =
+                    Y: =
+                    ZIndex: =3
+
+                Separator2_2 As rectangle:
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =8
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - Self.Height
+                    ZIndex: =5
+
+                Rectangle2_2 As rectangle:
+                    Fill: =RGBA(0, 18, 107, 1)
+                    Height: =Parent.TemplateHeight - Separator2_2.Height
+                    OnSelect: =Select(Parent)
+                    Visible: =ThisItem.IsSelected
+                    Width: =4
+                    ZIndex: =6
+
+            Label5_16 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Budi Setiawan"
+                Width: =218
+                X: =115
+                Y: =90
+                ZIndex: =3
+
+            Label5_18 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Moh Rezki"
+                Width: =218
+                X: =115
+                Y: =192
+                ZIndex: =4
+
+            Label4_17 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =66
+                Size: =18
+                Text: ="Kijang"
+                Width: =271
+                X: =420
+                Y: =90
+                ZIndex: =5
+
+            Label4_18 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =66
+                Size: =18
+                Text: ="Kijang"
+                Width: =271
+                X: =420
+                Y: =188
+                ZIndex: =6
+
+            Label4_19 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =66
+                Size: =18
+                Text: ="Fortuner"
+                Width: =271
+                X: =420
+                Y: =290
+                ZIndex: =7
+
+            Label4_20 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =66
+                Size: =18
+                Text: ="Kijang"
+                Width: =271
+                X: =420
+                Y: =393
+                ZIndex: =8
+
+            Label5_21 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Aji"
+                Width: =218
+                X: =115
+                Y: =294
+                ZIndex: =9
+
+            Label5_22 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Alamsyah"
+                Width: =218
+                X: =115
+                Y: =397
+                ZIndex: =10
+
+            Label5_17 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Dinas"
+                Width: =218
+                X: =788
+                Y: =90
+                ZIndex: =11
+
+            Label5_19 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Sewa"
+                Width: =218
+                X: =788
+                Y: =194
+                ZIndex: =12
+
+            Label5_20 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Dinas"
+                Width: =218
+                X: =788
+                Y: =290
+                ZIndex: =13
+
+            Label5_23 As label:
+                FontWeight: =FontWeight.Semibold
+                Height: =62
+                Size: =18
+                Text: ="Dinas"
+                Width: =218
+                X: =788
+                Y: =397
+                ZIndex: =14
+
+            Button1_8 As button:
+                OnSelect: |-
+                    =Navigate(Detail_Revised, ScreenTransition.Fade, {selectedItem: "Kijang"})
+                Text: ="Lihat"
+                X: =1119
+                Y: =101
+                ZIndex: =15
+
+            Button1_9 As button:
+                OnSelect: |-
+                    =Navigate(Detail_Revised_1, ScreenTransition.Fade, {selectedItem: "Kijang"})
+                Text: ="Lihat"
+                X: =1119
+                Y: =205
+                ZIndex: =16
+
+            Button1_10 As button:
+                Text: ="Lihat"
+                X: =1119
+                Y: =305
+                ZIndex: =17
+
+            Button1_11 As button:
+                Text: ="Lihat"
+                X: =1119
+                Y: =406
+                ZIndex: =18
+
+    Label1_31 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =21
+        Text: ="Daftar Ajuan Kendaraan"
+        Width: =1256
+        X: =91
+        ZIndex: =4
+
+    Image2_5 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =91
+        ZIndex: =5
+
+    Label4_23 As label:
+        Height: =66
+        Size: =18
+        Text: ="Jenis"
+        X: =790
+        Y: =101
+        ZIndex: =10
+
+    Label4_22 As label:
+        Height: =66
+        Size: =18
+        Text: ="Nama Kendaraan"
+        Width: =271
+        X: =418
+        Y: =101
+        ZIndex: =11
+
+    Label4_21 As label:
+        Height: =66
+        Size: =18
+        Text: ="Nama Pegawai"
+        Width: =271
+        X: =119
+        Y: =101
+        ZIndex: =12
+

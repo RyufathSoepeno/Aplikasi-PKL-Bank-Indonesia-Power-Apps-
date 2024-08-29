@@ -1,0 +1,618 @@
+"'Detail [Real]_1' As screen":
+    OnVisible: =Set(DefaultDropDownValue, "Option2")
+
+    Logo_5 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =91
+        ZIndex: =1
+
+    Label1_33 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =21
+        Text: ="Daftar Ajuan Kendaraan"
+        Width: =1256
+        X: =110
+        ZIndex: =2
+
+    Icon1_5 As icon.BackArrow:
+        Color: =RGBA(153, 160, 196, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('Main Screen_2')
+        X: =13
+        Y: =115
+        ZIndex: =22
+
+    Button3_5 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: |
+            =Navigate('Main Screen_2')
+        Text: ="Kirim"
+        X: =1050
+        Y: =666
+        ZIndex: =31
+
+    Image9_1 As image:
+        Height: =160
+        Image: =
+        Width: =272
+        X: =547
+        Y: =88
+        ZIndex: =34
+
+    Gallery7_1 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =453
+        Items: =Filter('User-to-Admin', ID = selectedIDku) /// To make it only one item -- for Text purposes,
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =448
+        Width: =1332
+        X: =34
+        Y: =201
+        ZIndex: =35
+
+        Label4_1 As label:
+            Height: =420
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: |-
+                =Concatenate(
+                    "Nama Mobil -> ", ThisItem.Title,
+                    "                               Nama Pegawai -> ", ThisItem.'Nama Pegawai', "                               Jenis -> ", ThisItem.Tipe, Char(13), Char(13), Char(13), Char(13), 
+                    "Vendor -> ", ThisItem.Vendor, "                                                     Tipe -> ", ThisItem.Tipe, "                                    Alamat Email -> ", ThisItem.'Alamat Email', Char(13), Char(13), Char(13), Char(13), "Mulai -> ", ThisItem.Mulai, "                                                                    Kontrak Pemeliharaan -> ", ThisItem.'Kontrak Pemeliharaan'
+                )
+            Width: =1313
+            X: =3
+            Y: =3
+            ZIndex: =1
+
+    Form2_3 As form:
+        DataSource: ='User-to-Admin'
+        DefaultMode: =FormMode.New
+        Height: =30
+        Item: =LookUp('User-to-Admin', ID = selectedIDku) /// To get specific data forms
+        Visible: =false
+        Width: =1366
+        Y: =738
+        ZIndex: =36
+
+        Title_DataCard1_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,Title)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =136
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, Title)
+            Required: =false
+            Update: =
+            Width: =455
+            X: =0
+            Y: =0
+            ZIndex: =34
+
+            DataCardKey9_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage9_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible9_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey9_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9_3.Y
+                ZIndex: =4
+
+            Label3_25 As label:
+                Size: =14
+                Text: =ThisItem.Title
+                X: =30
+                Y: =64
+                ZIndex: =5
+
+        "'Nama Pegawai_DataCard1_3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NamaMobil"
+            Default: =ThisItem.'Nama Pegawai'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,'Nama Pegawai')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, 'Nama Pegawai')
+            Required: =false
+            Update: =
+            Width: =455
+            X: =1
+            Y: =0
+            ZIndex: =34
+
+            DataCardKey14_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage14_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible14_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey14_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey14_3.Y
+                ZIndex: =4
+
+            Label3_26 As label:
+                Size: =14
+                Text: =ThisItem.'Nama Pegawai'
+                X: =30
+                Y: =64
+                ZIndex: =5
+
+        "'Jenis (AlamatEmail)_DataCard1_3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="AlamatEmail"
+            Default: =ThisItem.'Jenis (AlamatEmail)'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,'Jenis (AlamatEmail)')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, 'Jenis (AlamatEmail)')
+            Required: =false
+            Update: =
+            Width: =455
+            X: =2
+            Y: =0
+            ZIndex: =34
+
+            DataCardKey15_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =15
+                Y: =9
+                ZIndex: =1
+
+            ErrorMessage15_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible15_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey15_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey15_3.Y
+                ZIndex: =4
+
+            Label3_27 As label:
+                Size: =14
+                Text: =ThisItem.Tipe
+                X: =15
+                Y: =64
+                ZIndex: =5
+
+        Vendor_DataCard2_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NomorTiket"
+            Default: =ThisItem.Vendor
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,Vendor)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =142
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, Vendor)
+            Required: =false
+            Update: =
+            Width: =455
+            X: =0
+            Y: =1
+            ZIndex: =34
+
+            DataCardKey10_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage10_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible10_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey10_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10_3.Y
+                ZIndex: =4
+
+            Label3_28 As label:
+                Size: =14
+                Text: =ThisItem.Vendor
+                X: =30
+                Y: =68
+                ZIndex: =5
+
+        Tipe_DataCard1_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Jenis"
+            Default: =ThisItem.Tipe
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,Tipe)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, Tipe)
+            Required: =false
+            Update: =
+            Width: =455
+            X: =1
+            Y: =1
+            ZIndex: =34
+
+            DataCardKey12_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage12_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible12_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey12_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey12_3.Y
+                ZIndex: =4
+
+            Label3_29 As label:
+                Size: =14
+                Text: =ThisItem.Tipe
+                X: =30
+                Y: =68
+                ZIndex: =5
+
+        "'Alamat Email_DataCard2_3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Lokasi"
+            Default: =ThisItem.'Alamat Email'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,'Alamat Email')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, 'Alamat Email')
+            Required: =false
+            Update: =
+            Width: =455
+            X: =2
+            Y: =1
+            ZIndex: =34
+
+            DataCardKey13_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage13_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible13_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey13_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey13_3.Y
+                ZIndex: =4
+
+            Label3_30 As label:
+                Size: =14
+                Text: =ThisItem.'Alamat Email'
+                X: =30
+                Y: =66
+                ZIndex: =5
+
+        Mulai_DataCard1_3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Mulai"
+            Default: =ThisItem.Mulai
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,Mulai)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, Mulai)
+            Required: =false
+            Update: =
+            Width: =455
+            X: =0
+            Y: =2
+            ZIndex: =34
+
+            DataCardKey11_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage11_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible11_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey11_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11_3.Y
+                ZIndex: =4
+
+            Label3_31 As label:
+                Size: =14
+                Text: =ThisItem.Mulai
+                X: =30
+                Y: =68
+                ZIndex: =5
+
+        "'Kontrak Pemeliharaan_DataCard2_3' As typedDataCard.textualEditCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="KontrakPemeliharaan"
+            Default: =ThisItem.'Kontrak Pemeliharaan'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@'User-to-Admin'],DataSourceInfo.DisplayName,'Kontrak Pemeliharaan')
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =144
+            MaxLength: =DataSourceInfo([@'User-to-Admin'], DataSourceInfo.MaxLength, 'Kontrak Pemeliharaan')
+            Required: =false
+            Update: =
+            Width: =455
+            X: =1
+            Y: =2
+            ZIndex: =34
+
+            DataCardKey16_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =34
+                Size: =17
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage16_3 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(168, 0, 0, 1)
+                FontWeight: =FontWeight.Semibold
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =
+                ZIndex: =3
+
+            StarVisible16_3 As label:
+                Align: =Align.Center
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(0, 18, 107, 1)
+                Height: =DataCardKey16_3.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16_3.Y
+                ZIndex: =4
+
+            Label3_32 As label:
+                Size: =14
+                Text: =ThisItem.'Kontrak Pemeliharaan'
+                X: =30
+                Y: =78
+                ZIndex: =5
+

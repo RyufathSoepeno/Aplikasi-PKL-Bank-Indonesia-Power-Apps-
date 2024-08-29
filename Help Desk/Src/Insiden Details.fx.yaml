@@ -1,0 +1,401 @@
+"'Insiden Details' As screen":
+    OnVisible: |-
+        =Set(isButton2Clicked, false);
+        Set(isButton1Enabled, false);
+        Set(isButton3Visible, false);
+        Set(NoPopup, false);
+
+    "Phonebook As gallery.'BrowseLayout_Vertical_OneTextVariant_ver5.0'":
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =4
+        DelayItemLoading: =true
+        Height: =299
+        Items: ='Phone Book'
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =103
+        Width: =1366
+        Y: =316
+        ZIndex: =1
+
+        Separator4 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =3
+
+        Rectangle5 As rectangle:
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =Parent.TemplateHeight - Separator4.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =4
+
+        Button2 As button:
+            DisplayMode: =If(isButton2Clicked, DisplayMode.Disabled, DisplayMode.Edit) /// To make the button inactive after it is clicked
+            Fill: =RGBA(141, 198, 63, 1)
+            OnSelect: |-
+                =/// Set(IncidentID, ThisItem.ID); /// Important for Next Screen where specific ID for 'Car Info' and 'Kirim' Button is chosen
+                Set(isButton2Clicked, true);
+                Set(isButton1Enabled, true);
+                Set(isButton3Visible, true);
+            Text: ="Tugaskan"
+            X: =1170
+            Y: =26
+            ZIndex: =5
+
+        Label15 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =18
+            Text: =ThisItem.Nama
+            Width: =332
+            X: =18
+            Y: =16
+            ZIndex: =6
+
+        Label16 As label:
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.Satker
+            Width: =193
+            X: =18
+            Y: =45
+            ZIndex: =7
+
+        Label17 As label:
+            OnSelect: =Select(Parent)
+            Size: =16
+            Text: =ThisItem.NIP
+            X: =556
+            Y: =27
+            ZIndex: =8
+
+    "Gallery4 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =228
+        Items: =Filter('Incident Reports', ID = selectedID) /// To make it only one item -- for Text purposes" 
+        LoadingSpinner: =LoadingSpinner.Data
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =1366
+        Width: =1366
+        Y: =88
+        ZIndex: =2
+
+        Label6 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Bold
+            OnSelect: =Select(Parent)
+            Size: =19
+            Text: =ThisItem.Title
+            Underline: =true
+            Width: =294
+            X: =527
+            Y: =3
+            ZIndex: =4
+
+        Label10 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Nama Mobil:"
+            Width: =133
+            X: =22
+            Y: =60
+            ZIndex: =5
+
+        Label10_1 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Jenis Mobil:"
+            Width: =146
+            X: =361
+            Y: =60
+            ZIndex: =6
+
+        Label10_2 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Tanggal Insiden:"
+            Width: =204
+            X: =619
+            Y: =60
+            ZIndex: =7
+
+        Label10_3 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Tempat Insiden:"
+            Width: =204
+            X: =940
+            Y: =60
+            ZIndex: =8
+
+        Label10_4 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Nama Pegawai:"
+            Width: =172
+            X: =49
+            Y: =127
+            ZIndex: =9
+
+        Label10_5 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Nama Departemen:"
+            Width: =204
+            X: =424
+            Y: =127
+            ZIndex: =10
+
+        Label10_6 As label:
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Select(Parent)
+            Size: =14
+            Text: |-
+                ="Keterangan:"
+            Width: =172
+            X: =778
+            Y: =127
+            ZIndex: =11
+
+        Label11 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Height: =82
+            OnSelect: =Select(Parent)
+            Size: =12.2
+            Text: =ThisItem.Keterangan
+            VerticalAlign: =VerticalAlign.Top
+            Width: =450
+            X: =908
+            Y: =133
+            ZIndex: =12
+
+        Label12 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Tugaskan kepada: "
+            Width: =240
+            Y: =188
+            ZIndex: =13
+
+        "'Nama Mobil' As label":
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Nama Mobil'
+            Width: =174
+            X: =142
+            Y: =60
+            ZIndex: =14
+
+        "'Nama Mobil_1' As label":
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Tanggal Insiden'
+            Width: =162
+            X: =778
+            Y: =60
+            ZIndex: =16
+
+        "'Nama Mobil_2' As label":
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Lokasi Insiden'
+            Width: =162
+            X: =1098
+            Y: =60
+            ZIndex: =17
+
+        "'Nama Mobil_3' As label":
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Nama Pegawai'
+            Width: =162
+            X: =193
+            Y: =127
+            ZIndex: =18
+
+        "'Nama Mobil_4' As label":
+            OnSelect: =Select(Parent)
+            Size: =12
+            Text: =ThisItem.'Departemen Pegawai'
+            Width: =162
+            X: =613
+            Y: =127
+            ZIndex: =19
+
+        Icon1_7 As icon.BackArrow:
+            Color: =RGBA(153, 160, 196, 1)
+            Height: =57
+            Icon: =Icon.BackArrow
+            OnSelect: =Navigate('Laporan Data Insiden')
+            Width: =50
+            X: =22
+            Y: =3
+            ZIndex: =21
+
+        Label14 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.'Jenis Mobil'
+            X: =472
+            Y: =60
+            ZIndex: =22
+
+    Label1_35 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =21
+        Text: ="Insiden Mobil Dinas"
+        Width: =1275
+        X: =91
+        ZIndex: =3
+
+    Image2_7 As image:
+        Height: =88
+        Image: ='Screenshot 2024-05-30 172042'
+        Width: =91
+        ZIndex: =4
+
+    Button1 As button:
+        DisplayMode: =If(isButton1Enabled, DisplayMode.Edit, DisplayMode.Disabled)
+        Fill: =RGBA(246, 88, 16, 1)
+        OnSelect: =Set(NoPopup, true)
+        Text: ="Konfirmasi"
+        X: =1185
+        Y: =675
+        ZIndex: =5
+
+    Button4 As button:
+        Fill: =RGBA(255, 0, 0, 1)
+        OnSelect: |-
+            =Set(isButton2Clicked, false); /// To return to default
+            Set(isButton1Enabled, false);
+            Set(isButton3Visible, false);
+        Text: ="Batalkan"
+        Visible: =isButton3Visible
+        X: =991
+        Y: =675
+        ZIndex: =6
+
+    Popup2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        Rectangle6 As rectangle:
+            Fill: =RGBA(232, 244, 217, 1)
+            Height: =292
+            Visible: =NoPopup
+            Width: =787
+            X: =261
+            Y: =313
+            ZIndex: =7
+
+        Rectangle7 As rectangle:
+            Fill: =RGBA(153, 207, 236, 1)
+            Height: =42
+            Visible: =NoPopup
+            Width: =788
+            X: =261
+            Y: =283
+            ZIndex: =8
+
+        Icon5 As icon.Cancel:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =41
+            Icon: =Icon.Cancel
+            Visible: =NoPopup
+            Width: =35
+            X: =1012
+            Y: =283
+            ZIndex: =9
+
+        Label20 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =44
+            Size: =18
+            Text: ="Hubungi Lewat"
+            Visible: =NoPopup
+            Width: =196
+            X: =557
+            Y: =336
+            ZIndex: =10
+
+        "Gallery3 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0'":
+            DelayItemLoading: =true
+            Height: =366
+            Items: ='Phone Book'
+            LoadingSpinner: =LoadingSpinner.Data
+            TemplatePadding: =0
+            TemplateSize: =785
+            Visible: =NoPopup
+            Width: =787
+            X: =261
+            Y: =336
+            ZIndex: =11
+
+            Label22 As label:
+                Color: =RGBA(0, 134, 208, 1)
+                Font: =Font.Verdana
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.'No. Telp'
+                Underline: =true
+                Width: =199
+                X: =120
+                Y: =108
+                ZIndex: =3
+
+            Label23 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="No. Telp:"
+                Width: =92
+                X: =40
+                Y: =108
+                ZIndex: =4
+
+            Label22_1 As label:
+                Color: =RGBA(0, 134, 208, 1)
+                Font: =Font.Verdana
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Email
+                Underline: =true
+                Width: =199
+                X: =447
+                Y: =108
+                ZIndex: =5
+
+            Label23_1 As label:
+                OnSelect: =Select(Parent)
+                Text: |-
+                    ="Email:"
+                Width: =92
+                X: =395
+                Y: =108
+                ZIndex: =6
+

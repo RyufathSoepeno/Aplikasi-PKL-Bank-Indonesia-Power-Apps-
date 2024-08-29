@@ -1,0 +1,15 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |-
+        =ClearCollect(BudiItems, ["Kijang", "22/10/24", "Budiman", "Budiman@mail.com", "Dinas", "MyVendor", "MyKontrak"]);
+        Set(DefaultDropDownValue, "—")
+    StartScreen: =
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

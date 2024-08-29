@@ -1,0 +1,231 @@
+"'Main Screen' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    OnVisible: |-
+        =Set(UnreadCount, CountRows(Filter('Incident Reports', Status = "Unread"))); // To count live
+        Set(Logout, false);
+
+    Image1 As image:
+        Height: =768
+        Image: ='BI App Background'
+        Width: =1366
+        ZIndex: =1
+
+    Button6 As button:
+        Fill: =RGBA(255, 255, 255, 1)
+        HoverBorderColor: =
+        PressedBorderColor: =
+        Text: ="Button"
+        Width: =1366
+        Y: =137
+        ZIndex: =2
+
+    "Gallery1_3 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =612
+        Items: =Sort('User-to-Admin', Modified, SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =114
+        Width: =1366
+        Y: =154
+        ZIndex: =3
+
+        Title2_1 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(50, 49, 48, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.'Nama Pegawai'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle1_3.Size * 1.8)) / 2
+            ZIndex: =1
+
+        Subtitle1_3 As label:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_1.Width
+            X: =Title2_1.X
+            Y: =Title2_1.Y + Title2_1.Height
+            ZIndex: =2
+
+        NextArrow2_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =108
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(selectedIDku, ThisItem.ID); /// Important for Next Screen where specific ID for 'Car Info' and 'Kirim' Button is chosen
+                Navigate('Detail [Real]');
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =72
+            X: =1281
+            ZIndex: =3
+
+        Separator3_1 As rectangle:
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(0, 18, 107, 1)
+            Height: =Parent.TemplateHeight - Separator3_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+    Label1_36 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =88
+        Size: =21
+        Text: ="List of Requests"
+        Width: =973
+        X: =91
+        Y: =7
+        ZIndex: =4
+
+    Label4_3 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =64
+        OnSelect: =Navigate('Laporan Data Insiden')
+        Size: =18
+        Text: ="Incident Reports"
+        Underline: =true
+        Width: =244
+        X: =1064
+        Y: =19
+        ZIndex: =5
+
+    Icon3_2 As icon.Reload:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =45
+        Icon: =Icon.Reload
+        OnSelect: |-
+            =Refresh('User-to-Admin');
+            Refresh('Incident Reports');
+        Width: =69
+        X: =1272
+        Y: =80
+        ZIndex: =6
+
+    Button3 As button:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =30
+        OnSelect: =Set(Logout, true)
+        PaddingTop: =3
+        RadiusBottomLeft: =3
+        RadiusBottomRight: =3
+        RadiusTopLeft: =3
+        RadiusTopRight: =3
+        Size: =13
+        Text: ="Logout"
+        Width: =97
+        X: =23
+        Y: =95
+        ZIndex: =8
+
+    Image2 As image:
+        Height: =76
+        Image: ='DLAF-logo'
+        Width: =77
+        X: =7
+        Y: =14
+        ZIndex: =13
+
+    Toggle2_1 As toggleSwitch:
+        Color: =RGBA(255, 255, 255, 1)
+        FalseFill: =RGBA(255, 255, 255, 1)
+        FalseHoverFill: =ColorFade(Self.TrueFill, 15%)
+        FalseText: ="Bahasa Indonesia"
+        HandleFill: =RGBA(0, 0, 0, 1)
+        Height: =49
+        OnChange: |-
+            =If(Toggle2_1.Value = true, Launch("https://apps.powerapps.com/play/e/759417a2-08f3-e498-9d17-08260e5ab68f/a/b109efa2-e80d-4259-900f-2b2fc7d0fcb7?tenantId=3018ecb9-2438-4581-b036-4b625dac9579&sourcetime=1724745526358"))
+        Reset: =true
+        Size: =15
+        TrueFill: =RGBA(246, 88, 16, 1)
+        TrueText: =""
+        Width: =274
+        X: =781
+        Y: =26
+        ZIndex: =14
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Rectangle8 As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =1
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =422
+            Visible: =Logout
+            Width: =745
+            X: =310
+            Y: =180
+            ZIndex: =9
+
+        Label1 As label:
+            Height: =71
+            Size: =24
+            Text: ="Apakah anda yakin mau logout?"
+            Visible: =Logout
+            Width: =519
+            X: =423
+            Y: =252
+            ZIndex: =10
+
+        Button5 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            Height: =56
+            OnSelect: =Set(Logout, false);
+            Size: =20
+            Text: ="Tidak"
+            Visible: =Logout
+            Width: =203
+            X: =398
+            Y: =414
+            ZIndex: =11
+
+        Button5_1 As button:
+            Fill: =RGBA(0, 134, 208, 1)
+            Height: =56
+            OnSelect: =Exit()
+            Size: =20
+            Text: ="Iya"
+            Visible: =Logout
+            Width: =203
+            X: =719
+            Y: =414
+            ZIndex: =12
+
